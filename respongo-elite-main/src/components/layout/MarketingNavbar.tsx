@@ -15,8 +15,6 @@ const defaultNav = [
 ] as const;
 
 const patientNav = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Patient", href: "/patient" },
   { label: "Assessment", href: "/patient#assessment" },
   { label: "Contact", href: "/contact" },

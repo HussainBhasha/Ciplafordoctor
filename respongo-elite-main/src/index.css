@@ -124,6 +124,33 @@ video {
     color: transparent;
     animation: rainbow-shift 5s ease-in-out infinite;
   }
+
+  .reveal-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    will-change: transform, opacity;
+  }
+  .reveal-word-visible {
+    animation: reveal-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-fade {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+  .reveal-fade-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 16s linear infinite;
+  }
+  .glow-pulse {
+    animation: glow-pulse 2.6s ease-in-out infinite;
+  }
 }
 
 @keyframes floaty {
@@ -146,6 +173,18 @@ video {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes rotate-slow {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.98); }
+  50% { opacity: 0.9; transform: scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce) {

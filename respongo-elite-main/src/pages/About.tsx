@@ -2,7 +2,9 @@ import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
 import aboutImage from "@/assets/ciplostem2.png";
-import aboutCiplaImage from "@/assets/about cipla.png";
+import ciplobottleImage from "@/assets/ciplobottle.png";
+import { useInView } from "@/hooks/useInView";
+import { useNavigate } from "react-router-dom";
 import { Award, Globe, Lightbulb, Users } from "lucide-react";
 
 const milestones = [
@@ -41,24 +43,79 @@ const team = [
 ];
 
 export default function About() {
+  const navigate = useNavigate();
+  const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.25, rootMargin: "0px 0px -10% 0px" });
+
   return (
     <div className="min-h-dvh bg-sky-50">
       <MarketingNavbar />
       <main className="pt-20">
-        <section className="bg-sky-50/70">
-          <div className="min-h-[60vh] sm:h-[70vh] md:h-[calc(100dvh-5rem)] w-full overflow-hidden bg-sky-100/60">
-            <img
-              src={aboutCiplaImage}
-              alt="CiploStem overview"
-              className="h-[60vh] sm:h-[70vh] md:h-[calc(100dvh-5rem)] w-full object-contain object-center"
-              decoding="async"
-              loading="eager"
-              fetchPriority="high"
-            />
-          </div>
+        <section
+          ref={(node) => { heroRef.current = node; }}
+          className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_80%_0%,rgba(56,189,248,0.18),transparent_60%)]" />
+
+          <Container>
+            <div className="mx-auto grid min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-12 py-14 lg:grid-cols-2">
+              <div className="max-w-xl">
+                <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
+                  <div className="mt-5 font-display text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-[#2f5fbf]">
+                    CiploStem
+                  </div>
+                </div>
+
+                <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
+                  <div className="mt-3 text-lg font-medium text-slate-700">
+                    Allogeneic Mesenchymal Stem Cells
+                  </div>
+                </div>
+
+                <p className={heroInView ? "reveal-fade reveal-fade-visible mt-4 text-sm leading-relaxed text-slate-600 sm:text-base" : "reveal-fade mt-4 text-sm leading-relaxed text-slate-600 sm:text-base"}>
+                  A next-generation regenerative product designed to support bone regeneration with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
+                </p>
+
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {[
+                    { label: "CELL TYPE", value: "Allogeneic MSCs" },
+                    { label: "INDICATION", value: "Bone regeneration" },
+                    { label: "APPROACH", value: "Protocol-driven" },
+                    { label: "CARE MODEL", value: "Guided recovery" },
+                  ].map((x, idx) => (
+                    <div
+                      key={x.label}
+                      className={[
+                        "rounded-xl bg-white px-5 py-4 shadow-soft-xl ring-1 ring-sky-100",
+                        "transition-all duration-300 ease-out",
+                        heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
+                      ].join(" ")}
+                      style={{ transitionDelay: `${140 + idx * 60}ms` }}
+                    >
+                      <div className="text-[11px] font-semibold tracking-[0.16em] text-sky-700/80 uppercase">
+                        {x.label}
+                      </div>
+                      <div className="mt-1 text-sm font-semibold text-slate-900">
+                        {x.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative mx-auto w-full max-w-md flex justify-center">
+                <img
+                  src={ciplobottleImage}
+                  alt="CiploStem vial"
+                  className="h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                  decoding="async"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </Container>
         </section>
 
-        <section className="py-14 sm:py-20">
+        <section id="mission" className="py-14 sm:py-20">
           <Container>
             <div className="grid items-center gap-8 md:gap-10 grid-cols-1 md:grid-cols-2">
               <div className="relative overflow-hidden rounded-[28px] bg-white ring-1 ring-sky-200/60 shadow-soft-xl">

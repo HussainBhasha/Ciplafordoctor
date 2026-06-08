@@ -18,8 +18,6 @@ export default function Footer() {
   const nav =
     portal === "patient"
       ? ([
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
           { label: "Patient", href: "/patient" },
           { label: "Assessment", href: "/patient#assessment" },
           { label: "Contact", href: "/contact" },
