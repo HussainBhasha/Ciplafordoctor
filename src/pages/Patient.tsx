@@ -3,6 +3,7 @@ import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 import patientLandingBg from "@/assets/patient landing.png";
+import patientLandingMobileBg from "@/assets/patient 2.png";
 import oaComparisonImage from "@/assets/OA.png";
 import postInjectionImage from "@/assets/postinjection.png";
 import symptomsImage from "@/assets/symptoms.png";
@@ -315,26 +316,50 @@ export default function Patient() {
       <MarketingNavbar />
       <main className="pt-20">
         <section className="relative h-[calc(100dvh-5rem)] w-full overflow-hidden">
+          {/* Mobile Image */}
           <img
-            src={patientLandingBg}
+            src={patientLandingMobileBg}
             alt=""
-            className="h-full w-full object-cover object-center"
+            className="block md:hidden h-full w-full object-cover object-center"
             decoding="async"
             loading="eager"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/45 to-transparent" />
+          {/* Desktop Image */}
+          <img
+            src={patientLandingBg}
+            alt=""
+            className="hidden md:block h-full w-full object-cover object-center"
+            decoding="async"
+            loading="eager"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/45 to-transparent md:from-white/85 md:via-white/45" />
           <Container>
             <div className="absolute inset-0">
               <div className="h-full flex items-center">
                 <div className="max-w-3xl pl-6 sm:pl-10 md:pl-14 -translate-y-4 sm:translate-y-0">
-                <div className="font-display text-5xl sm:text-6xl font-semibold tracking-[-0.04em] text-[#0b3a66]">
-                  Knee Osteoarthritis (OA)
+                {/* Mobile Text */}
+                <div className="md:hidden">
+                  <div className="font-display text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-[#0b3a66]">
+                    Your Knee Health Journey
+                  </div>
+                  <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
+                    Understand your knee condition better with our personalized assessment. Get insights into your knee health and discover solutions tailored for you.
+                  </p>
                 </div>
-                <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
-                  Osteoarthritis is a common joint condition where knee cartilage gradually wears down, causing pain, stiffness, and reduced
-                  mobility. Early awareness and assessment can help you understand your knee health better.
-                </p>
+                
+                {/* Desktop Text */}
+                <div className="hidden md:block">
+                  <div className="font-display text-5xl sm:text-6xl font-semibold tracking-[-0.04em] text-[#0b3a66]">
+                    Knee Osteoarthritis (OA)
+                  </div>
+                  <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
+                    Osteoarthritis is a common joint condition where knee cartilage gradually wears down, causing pain, stiffness, and reduced
+                    mobility. Early awareness and assessment can help you understand your knee health better.
+                  </p>
+                </div>
+                
                 <div className="mt-6">
                   <button
                     type="button"

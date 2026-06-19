@@ -88,7 +88,14 @@ export default function Home() {
     const digits = doctorPhone.replace(/[^\d]/g, "");
 
     if (cleanName.length < 2) next.name = "Enter your name.";
-    if (cleanMci.length < 4 || !/^[a-zA-Z0-9/-]+$/.test(cleanMci)) next.mciCode = "Enter a valid MCI code.";
+    
+    // Updated Medical Registration Number validation
+    if (!cleanMci) {
+      next.mciCode = "Medical Registration Number is required.";
+    } else if (!/^[A-Za-z0-9\/\-\s]{5,30}$/.test(cleanMci)) {
+      next.mciCode = "Enter a valid Medical Registration Number.";
+    }
+    
     if (cleanCity.length < 2) next.city = "Enter your city.";
     if (digits.length !== 10) next.phone = "Enter a valid 10-digit contact number.";
 
@@ -156,11 +163,11 @@ export default function Home() {
         <div className="pointer-events-none absolute -left-32 top-12 h-[420px] w-[420px] rounded-full bg-sky-400/20 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-10 h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-3xl" />
 
-        <div className="absolute top-6 left-0 sm:top-8 pl-4 sm:pl-6 lg:pl-8 z-20">
+        <div className="absolute top-4 sm:top-6 left-0 sm:top-8 pl-3 sm:pl-6 lg:pl-8 z-20">
           <img
             src={ciplaLogo}
             alt="Cipla"
-            className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain object-left"
             decoding="async"
             loading="eager"
           />
@@ -173,20 +180,20 @@ export default function Home() {
                 welcomeMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
               )}
             >
-              <div className="mt-12 font-display text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-slate-900">
+              <div className="mt-8 sm:mt-12 font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.04em] text-slate-900">
                 Welcome to <span className="text-[#2f5fbf]">next step</span> in <span className="text-[#55c2c6]">Knee OA Management</span>
               </div>
-              <div className="mt-3 text-sm sm:text-base text-slate-600">
+              <div className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base text-slate-600">
                 Choose your pathway
               </div>
             </div>
 
-            <div className="mt-10 grid w-full max-w-5xl gap-6 md:grid-cols-2">
+            <div className="mt-6 sm:mt-10 grid w-full max-w-5xl gap-4 sm:gap-6 md:grid-cols-2">
               <button
                 type="button"
                 onClick={() => enterPortal("patient", "/patient")}
                 className={cn(
-                  "group relative overflow-hidden rounded-[28px] min-h-[480px] text-left ring-1 ring-sky-200/70 shadow-soft-xl transition-all duration-500",
+                  "group relative overflow-hidden rounded-[20px] sm:rounded-[28px] min-h-[320px] sm:min-h-[480px] text-left ring-1 ring-sky-200/70 shadow-soft-xl transition-all duration-500",
                   "hover:-translate-y-1 hover:scale-[1.02] hover:ring-2 hover:ring-sky-500/60 hover:shadow-[0_26px_80px_rgba(2,8,23,0.12)] active:translate-y-0",
                   welcomeMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
                 )}
@@ -195,7 +202,9 @@ export default function Home() {
                 <img 
                   src={patientImage} 
                   alt="Patient" 
-                  className="absolute inset-0 h-full w-full object-cover object-right"
+                  className="absolute inset-0 h-full w-full object-cover object-right will-change-auto"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_30%_0%,rgba(56,189,248,0.26),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -222,7 +231,7 @@ export default function Home() {
                 type="button"
                 onClick={() => setDoctorModalOpen(true)}
                 className={cn(
-                  "group relative overflow-hidden rounded-[28px] min-h-[480px] text-left ring-1 ring-blue-200/70 shadow-soft-xl transition-all duration-500",
+                  "group relative overflow-hidden rounded-[20px] sm:rounded-[28px] min-h-[320px] sm:min-h-[480px] text-left ring-1 ring-blue-200/70 shadow-soft-xl transition-all duration-500",
                   "hover:-translate-y-1 hover:scale-[1.02] hover:ring-2 hover:ring-blue-500/55 hover:shadow-[0_26px_80px_rgba(2,8,23,0.12)] active:translate-y-0",
                   welcomeMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
                 )}
@@ -231,7 +240,9 @@ export default function Home() {
                 <img 
                   src={doctorImage} 
                   alt="Doctor" 
-                  className="absolute inset-0 h-full w-full object-cover object-right"
+                  className="absolute inset-0 h-full w-full object-cover object-right will-change-auto"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_30%_0%,rgba(59,130,246,0.22),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -293,7 +304,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <div className="text-xs font-semibold text-slate-700">MCI Code</div>
+                    <div className="text-xs font-semibold text-slate-700">Medical Registration Number</div>
                     <input
                       value={doctorMciCode}
                       onChange={(e) => {
@@ -301,7 +312,7 @@ export default function Home() {
                         setDoctorErrors((p) => ({ ...p, mciCode: "" }));
                       }}
                       className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
-                      placeholder="Enter MCI code"
+                      placeholder="APMC/FMR/12345"
                     />
                     {doctorErrors.mciCode ? <div className="mt-2 text-xs text-rose-600">{doctorErrors.mciCode}</div> : null}
                   </div>

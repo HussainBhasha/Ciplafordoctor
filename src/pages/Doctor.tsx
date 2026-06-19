@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import stemcellImage from "@/assets/stemcell.png";
 import doctorLandingImage from "@/assets/doctor landing page.png";
+import doctorLandingMobileImage from "@/assets/doctor 2.png";
 import cartilageDegenerationImage from "@/assets/Cartilage Degeneration.png";
 import inflammatoryChangesImage from "@/assets/Inflammatory Changes.png";
 import mobilityChallengesImage from "@/assets/Mobility Challenges.png";
@@ -66,8 +67,8 @@ function PlaceholderImage({
       aria-label={label}
       className={cn(
         src
-          ? "relative overflow-hidden rounded-[28px]"
-          : "relative overflow-hidden rounded-[28px] bg-white/80 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur",
+          ? "relative overflow-hidden rounded-[16px] sm:rounded-[24px] md:rounded-[28px]"
+          : "relative overflow-hidden rounded-[16px] sm:rounded-[24px] md:rounded-[28px] bg-white/80 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur",
         className,
       )}
     >
@@ -83,7 +84,7 @@ function PlaceholderImage({
         <>
           <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_20%,rgba(56,189,248,0.18),transparent_55%)]" />
           <div className="absolute inset-0 opacity-60 hero-dots" />
-          <div className="relative grid h-full w-full place-items-center px-6 text-center text-xs font-semibold tracking-[0.18em] text-sky-700/80">
+          <div className="relative grid h-full w-full place-items-center px-4 sm:px-6 text-center text-xs sm:text-sm font-semibold tracking-[0.18em] text-sky-700/80">
             {label}
           </div>
         </>
@@ -148,6 +149,8 @@ export default function Doctor() {
     const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     if (prefersReduced) return;
 
+    const isMobile = window.innerWidth < 768;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const mscEl = mscVisualRef.current;
@@ -156,7 +159,9 @@ export default function Doctor() {
     const ctx = gsap.context(() => {
       const sectionEl = mscRef.current;
       gsap.set(mscEl, { transformOrigin: "50% 50%" });
-      if (sectionEl) {
+      
+      // Only apply scroll-based animation on desktop
+      if (sectionEl && !isMobile) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionEl,
@@ -173,6 +178,7 @@ export default function Doctor() {
         ).to(mscEl, { x: -780, y: -140, opacity: 0, scale: 0.84, ease: "none", duration: 0.45 });
       }
 
+      // Keep rotation animation for all devices
       gsap.to(mscEl, {
         rotation: 360,
         duration: 40,
@@ -368,11 +374,21 @@ export default function Doctor() {
           ref={(node) => { heroRef.current = node; }}
           className="relative h-[calc(100dvh-5rem)] overflow-hidden"
         >
+          {/* Mobile Image */}
+          <img
+            src={doctorLandingMobileImage}
+            alt=""
+            className="block md:hidden pointer-events-none absolute inset-0 h-full w-full object-cover object-right will-change-transform"
+            decoding="async"
+            loading="eager"
+            aria-hidden="true"
+          />
+          {/* Desktop Image */}
           <img
             ref={heroBgRef}
             src={doctorLandingImage}
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right will-change-transform sm:object-center"
+            className="hidden md:block pointer-events-none absolute inset-0 h-full w-full object-cover object-right will-change-transform sm:object-center"
             decoding="async"
             loading="eager"
             aria-hidden="true"
@@ -389,19 +405,38 @@ export default function Doctor() {
           <Container>
             <div className="mx-auto flex h-[calc(100dvh-5rem)] max-w-6xl items-center">
               <div className="relative max-w-xl py-12 sm:py-16">
-                <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
-                  FOR DOCTORS
+                {/* Mobile Content */}
+                <div className="block md:hidden">
+                  <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
+                    CLINICAL SOLUTIONS
+                  </div>
+                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(2.25rem,5.2vw,4.5rem)]">
+                    <RevealWords text="Regenerative Care for Knee Health" active={heroInView} />
+                  </div>
+                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(1rem,1.5vw,1.25rem)]", heroInView && "reveal-fade-visible")}>
+                    Advanced stem cell therapy solutions
+                  </div>
+                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1.1vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
+                    Discover evidence-backed regenerative approaches to support your patients' joint health and mobility.
+                  </p>
                 </div>
-                <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(2.25rem,5.2vw,4.5rem)]">
-                  <RevealWords text="Advancing Knee Care Through Regenerative Science" active={heroInView} />
+
+                {/* Desktop Content */}
+                <div className="hidden md:block">
+                  <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
+                    FOR DOCTORS
+                  </div>
+                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(2.25rem,5.2vw,4.5rem)]">
+                    <RevealWords text="Advancing Knee Care Through Regenerative Science" active={heroInView} />
+                  </div>
+                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(1rem,1.5vw,1.25rem)]", heroInView && "reveal-fade-visible")}>
+                    Evidence-based cellular therapy solutions for Knee Osteoarthritis management
+                  </div>
+                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1.1vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
+                    Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved
+                    joint health.
+                  </p>
                 </div>
-                <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(1rem,1.5vw,1.25rem)]", heroInView && "reveal-fade-visible")}>
-                  Evidence-based cellular therapy solutions for Knee Osteoarthritis management
-                </div>
-                <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1.1vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
-                  Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved
-                  joint health.
-                </p>
 
                 <div className={cn("mt-8 flex flex-wrap gap-3 reveal-fade", heroInView && "reveal-fade-visible")}>
                   <Button

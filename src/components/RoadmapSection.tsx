@@ -133,11 +133,11 @@ const RoadmapPin = ({ year, icon }: { year: string; icon: React.ReactNode }) => 
 
 // Milestone card with glassmorphism
 const MilestoneCard = ({ year, title, description }: { year: string; title: string; description: string }) => (
-  <div className="group relative rounded-[24px] p-6 bg-white/70 backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(47,95,207,0.12)] hover:bg-white/80">
-    <div className="absolute inset-0 rounded-[24px] border border-transparent group-hover:border-[#34BCD4]/20 pointer-events-none" />
-    <span className="text-sm font-extrabold text-[#34BCD4] tracking-wider uppercase">{year}</span>
-    <h4 className="text-lg xl:text-xl font-bold text-[#0B1635] mt-1 group-hover:text-[#2F5FCF] transition-colors duration-300">{title}</h4>
-    <p className="text-slate-600 mt-2 text-xs xl:text-sm leading-relaxed">{description}</p>
+  <div className="group relative rounded-[16px] md:rounded-[24px] p-3 md:p-6 bg-white/85 md:bg-white/70 backdrop-blur-sm md:backdrop-blur-md border border-white/60 md:border-white/50 shadow-[0_4px_12px_rgba(0,0,0,0.05)] md:shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(47,95,207,0.12)] hover:bg-white/80">
+    <div className="absolute inset-0 rounded-[16px] md:rounded-[24px] border border-transparent group-hover:border-[#34BCD4]/20 pointer-events-none" />
+    <span className="text-xs md:text-sm font-extrabold text-[#34BCD4] tracking-wider uppercase">{year}</span>
+    <h4 className="text-base md:text-lg xl:text-xl font-bold text-[#0B1635] mt-1 group-hover:text-[#2F5FCF] transition-colors duration-300">{title}</h4>
+    <p className="text-slate-600 mt-1.5 md:mt-2 text-[10px] md:text-xs xl:text-sm leading-relaxed">{description}</p>
   </div>
 );
 
@@ -145,12 +145,12 @@ const MilestoneCard = ({ year, title, description }: { year: string; title: stri
 const MobileMilestoneItem = ({ year, title, description, icon }: { year: string; title: string; description: string; icon: React.ReactNode }) => (
   <div className="relative pl-8">
     <div className="absolute -left-4 top-1 w-9 h-9 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10">
-      <div className="scale-75 text-white">{icon}</div>
+      <div className="scale-75 text-white will-change-auto">{icon}</div>
     </div>
-    <div className="rounded-[20px] p-5 bg-white/80 backdrop-blur-sm border border-white/40 shadow-sm">
-      <span className="text-xs font-bold text-[#34BCD4]">{year}</span>
-      <h4 className="text-lg font-bold text-[#0B1635] mt-0.5">{title}</h4>
-      <p className="text-slate-600 mt-1.5 text-xs leading-relaxed">{description}</p>
+    <div className="rounded-[14px] md:rounded-[20px] p-3 md:p-5 bg-white/90 md:bg-white/80 backdrop-blur-none md:backdrop-blur-sm border border-white/60 md:border-white/40 shadow-sm">
+      <span className="text-[10px] md:text-xs font-bold text-[#34BCD4]">{year}</span>
+      <h4 className="text-base md:text-lg font-bold text-[#0B1635] mt-0.5">{title}</h4>
+      <p className="text-slate-600 mt-1 md:mt-1.5 text-[9px] md:text-xs leading-relaxed">{description}</p>
     </div>
   </div>
 );
@@ -502,14 +502,14 @@ export const RoadmapSection: React.FC = () => {
         <div className="md:hidden px-2 sm:px-4">
           <div className="relative">
             {/* Central vertical line */}
-            <div className="absolute left-5 sm:left-6 top-0 bottom-8 w-1 bg-gradient-to-b from-[#2F5FCF] via-[#34BCD4] to-[#0B1635] rounded-full opacity-90" />
+            <div className="absolute left-5 sm:left-6 top-0 bottom-8 w-0.5 md:w-1 bg-gradient-to-b from-[#2F5FCF] via-[#34BCD4] to-[#0B1635] rounded-full opacity-95" />
             
-            <div className="space-y-6 pt-2">
+            <div className="space-y-4 md:space-y-6 pt-2">
               {/* 2016 */}
               <div className="relative pl-14 sm:pl-16">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
-                    <FlaskConical className="w-5 h-5 text-white" />
+                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
+                    <FlaskConical className="w-4 md:w-5 h-4 md:h-5 text-white" />
                   </div>
                 </ScrollReveal>
                 <ScrollReveal>
@@ -522,8 +522,8 @@ export const RoadmapSection: React.FC = () => {
               {/* 2018 */}
               <div className="relative pl-14 sm:pl-16">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
-                    <Microscope className="w-5 h-5 text-white" />
+                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
+                    <Microscope className="w-4 md:w-5 h-4 md:h-5 text-white" />
                   </div>
                 </ScrollReveal>
                 <ScrollReveal>
@@ -536,8 +536,8 @@ export const RoadmapSection: React.FC = () => {
               {/* 2020 */}
               <div className="relative pl-14 sm:pl-16">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
-                    <TrendingUp className="w-5 h-5 text-white" />
+                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
+                    <TrendingUp className="w-4 md:w-5 h-4 md:h-5 text-white" />
                   </div>
                 </ScrollReveal>
                 <ScrollReveal>
@@ -550,8 +550,8 @@ export const RoadmapSection: React.FC = () => {
               {/* 2022 */}
               <div className="relative pl-14 sm:pl-16">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
-                    <FileCheck className="w-5 h-5 text-white" />
+                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
+                    <FileCheck className="w-4 md:w-5 h-4 md:h-5 text-white" />
                   </div>
                 </ScrollReveal>
                 <ScrollReveal>
@@ -564,8 +564,8 @@ export const RoadmapSection: React.FC = () => {
               {/* 2023 */}
               <div className="relative pl-14 sm:pl-16">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
-                    <Rocket className="w-5 h-5 text-white" />
+                  <div className="absolute -left-2 sm:-left-1.5 top-1 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10 milestone-hover transition-all duration-300 cursor-pointer">
+                    <Rocket className="w-4 md:w-5 h-4 md:h-5 text-white" />
                   </div>
                 </ScrollReveal>
                 <ScrollReveal>
@@ -576,10 +576,10 @@ export const RoadmapSection: React.FC = () => {
               </div>
               
               {/* Goal */}
-              <div className="relative pl-14 sm:pl-16 pt-4">
+              <div className="relative pl-14 sm:pl-16 pt-2 md:pt-4">
                 <ScrollReveal>
-                  <div className="absolute -left-2 sm:-left-1.5 top-4 w-12 h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-md z-10">
-                    <span className="text-white font-extrabold text-[8px] uppercase tracking-wider text-center">Goal</span>
+                  <div className="absolute -left-2 sm:-left-1.5 top-4 w-10 md:w-12 h-10 md:h-12 rounded-full bg-[#0B1635] border-2 border-[#34BCD4] flex items-center justify-center shadow-sm md:shadow-md z-10">
+                    <span className="text-white font-extrabold text-[6px] md:text-[8px] uppercase tracking-wider text-center">Goal</span>
                   </div>
                 </ScrollReveal>
               </div>

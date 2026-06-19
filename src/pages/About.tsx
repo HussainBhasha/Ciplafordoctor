@@ -23,25 +23,25 @@ export default function About() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_80%_0%,rgba(56,189,248,0.18),transparent_60%)]" />
 
           <Container>
-            <div className="mx-auto grid min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-12 py-14 lg:grid-cols-2">
+            <div className="mx-auto grid min-h-auto md:min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-6 md:gap-12 py-8 md:py-14 lg:grid-cols-2">
               <div className="max-w-xl">
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mt-5 font-display text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
+                  <div className="mt-2 md:mt-5 font-display text-[clamp(1.75rem,5vw,4rem)] md:text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
                     <span style={{ color: 'rgb(41 87 186)' }}>Ciplo</span><span className="text-cyan-500">Stem</span>
                   </div>
                 </div>
 
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mt-3 text-lg font-medium text-slate-700">
+                  <div className="mt-2 md:mt-3 text-base md:text-lg font-medium text-slate-700">
                     Allogeneic Mesenchymal Stem Cells
                   </div>
                 </div>
 
-                <p className={heroInView ? "reveal-fade reveal-fade-visible mt-4 text-sm leading-relaxed text-slate-600 sm:text-base" : "reveal-fade mt-4 text-sm leading-relaxed text-slate-600 sm:text-base"}>
+                <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-xs md:text-sm leading-relaxed text-slate-600 sm:text-base" : "reveal-fade mt-3 md:mt-4 text-xs md:text-sm leading-relaxed text-slate-600 sm:text-base"}>
                   A next-generation regenerative product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
                 </p>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">
                   {[
                     { label: "CELL TYPE", value: "Allogeneic MSCs" },
                     { label: "INDICATION", value: "Cartilage preservation" },
@@ -51,17 +51,17 @@ export default function About() {
                     <div
                       key={x.label}
                       className={[
-                        "rounded-xl bg-white px-5 py-4 shadow-soft-xl ring-1 ring-sky-100",
+                        "rounded-lg md:rounded-xl bg-white px-3 md:px-5 py-3 md:py-4 shadow-soft-xl ring-1 ring-sky-100",
                         "transition-all duration-300 ease-out",
                         "cursor-pointer hover:ring-sky-300 hover:shadow-soft-2xl hover:scale-105",
                         heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
                       ].join(" ")}
                       style={{ transitionDelay: `${140 + idx * 60}ms` }}
                     >
-                      <div className="text-[11px] font-semibold tracking-[0.16em] text-sky-700/80 uppercase">
+                      <div className="text-[9px] md:text-[11px] font-semibold tracking-[0.16em] text-sky-700/80 uppercase">
                         {x.label}
                       </div>
-                      <div className="mt-1 text-sm font-semibold text-slate-900">
+                      <div className="mt-1 text-xs md:text-sm font-semibold text-slate-900">
                         {x.value}
                       </div>
                     </div>
@@ -73,7 +73,7 @@ export default function About() {
                 <img
                   src={ciplobottleImage}
                   alt="CiploStem vial"
-                  className="h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                  className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
                   decoding="async"
                   loading="eager"
                 />
@@ -82,22 +82,22 @@ export default function About() {
           </Container>
         </section>
 
-        <section id="mission" className="py-14 sm:py-20">
+        <section id="mission" className="py-8 md:py-14 sm:py-20">
           <Container>
-            <div className="grid items-center gap-8 md:gap-10 grid-cols-1 md:grid-cols-2">
-              <div className="relative overflow-hidden rounded-[28px] bg-white ring-1 ring-sky-200/60 shadow-soft-xl">
-                <img src={aboutImage} alt="CiploStem clinic" className="h-[240px] sm:h-[340px] md:h-[420px] w-full object-cover" />
+            <div className="grid items-center gap-4 md:gap-8 md:gap-10 grid-cols-1 md:grid-cols-2">
+              <div className="relative overflow-hidden rounded-[20px] md:rounded-[28px] bg-white ring-1 ring-sky-200/60 shadow-soft-xl">
+                <img src={aboutImage} alt="CiploStem clinic" className="h-[180px] sm:h-[240px] md:h-[340px] lg:h-[420px] w-full object-cover" />
               </div>
 
               <div>
-                <div className="text-h2 text-slate-900">
+                <div className="text-2xl md:text-h2 text-slate-900 font-bold">
                   Our Mission
                 </div>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 md:mt-3 max-w-xl text-xs md:text-sm leading-relaxed text-slate-600">
                   To bring regenerative therapies within reach of every patient suffering from joint disease — combining clinical rigor,
                   supply-chain reliability, and compassionate care.
                 </p>
-                <div className="mt-6 space-y-3 text-sm text-slate-700">
+                <div className="mt-4 md:mt-6 space-y-2 md:space-y-3 text-xs md:text-sm text-slate-700">
                   {[
                     "Standardized, off-the-shelf product",
                     "Backed by Phase III evidence",
