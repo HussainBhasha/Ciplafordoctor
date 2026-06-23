@@ -31,7 +31,7 @@ const milestones = [
 
 export const RoadmapSection: React.FC = () => {
   return (
-    <section className="relative w-full pt-16 sm:pt-20 md:pt-24 pb-6 px-3 sm:px-4 overflow-x-hidden bg-[#F4F7FB]">
+    <section className="relative w-full pt-16 sm:pt-20 md:pt-24 pb-6 px-3 sm:px-4 overflow-x-hidden bg-[#e0f2fe]">
       {/* Global Animations */}
       <style>{`
         @keyframes float { 
@@ -206,7 +206,7 @@ export const RoadmapSection: React.FC = () => {
                         top: `${position.roadDotTop + 112}px`,
                       }}
                     >
-                      <div className="relative w-60 bg-white rounded-[20px] p-5 shadow-xl border-b-[6px] border-[#1E5EFF]">
+                      <div className="relative w-60 bg-white rounded-[20px] p-5 shadow-xl border-b-[6px] border-[#1E5EFF] transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:border-[#14B8C4] hover:bg-blue-50">
                         {/* Triangle */}
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-0 h-0
                           border-l-[14px]

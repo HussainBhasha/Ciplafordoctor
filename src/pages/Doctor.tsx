@@ -1,5 +1,6 @@
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
+import DoctorReferencesSection from "@/components/DoctorReferencesSection";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import stemcellImage from "@/assets/stemcell.png";
@@ -970,6 +971,7 @@ export default function Doctor() {
           </Container>
         </section>
       </main>
+      <DoctorReferencesSection />
       <Footer />
 
       {/* Modal */}

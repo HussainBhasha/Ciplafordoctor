@@ -8,13 +8,12 @@ const references = [
   "Appl Sci. 2023;13:10617. MSC Differentiation Potential.",
   "J Arthrosc Surg Sports Med. 2024;5:119-124. Orthobiologics in Knee OA.",
   "Gupta PK et al. Am J Sports Med. 2023;51(9):2254-2266. Clinical Evaluation of Allogenic BMMSCs in Knee OA.",
-  "CiploStem Prescribing Information.",
   "Stempeutics Research Pvt. Ltd. Data on File.",
 ];
 
 export default function ReferencesSection() {
   return (
-    <section className="bg-[#f5f5f5] border-t border-slate-200 py-10 sm:py-14">
+    <section className="bg-[#e0f2fe] border-t border-sky-200 py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <h2 className="text-2xl font-bold text-[#0b3a66] sm:text-3xl">

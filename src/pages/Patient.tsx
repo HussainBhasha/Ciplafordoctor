@@ -442,9 +442,7 @@ export default function Patient() {
           <Container>
             <div className="mx-auto max-w-6xl">
               <div className="max-w-xl">
-                <div className={cn("text-sm font-semibold text-[#0b3a66] reveal-fade", symptomsInView && "reveal-fade-visible")}>
-                  Knee OA: Symptoms
-                </div>
+                <h1 className={cn("text-5xl font-extrabold text-[#0b3a66] reveal-fade", symptomsInView && "reveal-fade-visible")}>Knee OA: Symptoms</h1>
                 <div className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] text-[#0b3a66] sm:text-4xl">
                   <RevealWords text="Signs Your Knee May Be Telling You" active={symptomsInView} />
                 </div>

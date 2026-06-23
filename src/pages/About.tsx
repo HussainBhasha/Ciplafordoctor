@@ -264,7 +264,7 @@ export default function About() {
           `}</style>
         </section>
 
-        <section className="bg-sky-100 py-20 sm:py-32">
+        <section className="bg-sky-100 pt-10 pb-0 sm:pt-16 sm:pb-0">
           <RoadmapSection />
         </section>
       </main>
