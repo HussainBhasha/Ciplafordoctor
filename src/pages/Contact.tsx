@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
@@ -30,16 +30,20 @@ export default function Contact() {
   })();
 
   const contactName = portal === "patient" ? "Cipla" : "Ciplostem";
+  
+  useEffect(() => {
+    document.title = `${contactName} | Contact`;
+  }, [contactName]);
 
   return (
     <div className="min-h-dvh bg-sky-50">
       <MarketingNavbar />
-      <main className="pt-24">
+      <main className="pt-16">
         <section className="bg-sky-50/70">
           <Container>
-            <div className="py-14 text-center sm:py-20">
+            <div className="py-8 text-center sm:py-12">
               <div className="text-[11px] font-semibold tracking-[0.32em] text-sky-700/80">CONTACT</div>
-              <div className="mx-auto mt-5 max-w-4xl text-display text-slate-900">
+              <div className="mx-auto mt-3 max-w-4xl text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-slate-900">
                 Get in touch with{" "}
                 <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">{contactName}</span>.
               </div>
@@ -47,7 +51,7 @@ export default function Contact() {
           </Container>
         </section>
 
-        <section className="py-14 sm:py-20">
+        <section className="py-8 sm:py-12">
           <Container>
             <div className="grid gap-8 lg:grid-cols-[380px_1fr]">
               <div className="space-y-5">

@@ -1,16 +1,73 @@
+import { useEffect } from "react";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
 import ciplobottleImage from "@/assets/Ciplobottle2.png";
 import brandLogo from "@/assets/logo.png";
 import { useInView } from "@/hooks/useInView";
-import { useNavigate } from "react-router-dom";
 import { Award, Globe, Lightbulb, Users } from "lucide-react";
 import { RoadmapSection } from '@/components/RoadmapSection';
 
+const features = [
+  { label: "CELL TYPE", value: "Allogeneic MSCs" },
+  { label: "INDICATION", value: "Cartilage preservation" },
+  { label: "APPROACH", value: "Protocol-driven" },
+  { label: "CARE MODEL", value: "Guided recovery" },
+];
+
+const values = [
+  {
+    title: "Purpose Inspired",
+    text: "Cipla has been built brick by brick on the foundation of Care. We are driven by this purpose – a purpose that lies at the center of all our thoughts and plans, driving our actions.",
+    icon: <Users className="h-10 w-10" />,
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-sky-600",
+    delay: "0ms",
+  },
+  {
+    title: "Responsibility Centered",
+    text: "We are accountable for our actions and results – sharing the accolades and shouldering the responsibility. Ownership and accountability matter the most.",
+    icon: <Award className="h-10 w-10" />,
+    iconBg: "from-blue-400 to-blue-600",
+    accentColor: "bg-blue-500",
+    titleColor: "text-blue-600",
+    delay: "150ms",
+  },
+  {
+    title: "Innovation Driven",
+    text: "We believe that innovation is transformational and a critical component in leading the organization towards its goal.",
+    icon: <Lightbulb className="h-10 w-10" />,
+    iconBg: "from-cyan-400 to-cyan-600",
+    accentColor: "bg-cyan-500",
+    titleColor: "text-cyan-600",
+    delay: "300ms",
+  },
+  {
+    title: "Integrity & Trust-Anchored",
+    text: "We do the right thing, the right way. We place integrity at the core of our endeavours and take pride in the trust our stakeholders place in us.",
+    icon: <Globe className="h-10 w-10" />,
+    iconBg: "from-blue-500 to-indigo-600",
+    accentColor: "bg-blue-600",
+    titleColor: "text-blue-700",
+    delay: "450ms",
+  },
+  {
+    title: "Excellence Focused",
+    text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to our purpose.",
+    icon: <Award className="h-10 w-10" />,
+    iconBg: "from-sky-500 to-indigo-600",
+    accentColor: "bg-indigo-600",
+    titleColor: "text-indigo-700",
+    delay: "600ms",
+  },
+];
+
 export default function About() {
-  console.log("NEW ABOUT FILE LOADED");
-  const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "Ciplostem";
+  }, []);
+
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.25, rootMargin: "0px 0px -10% 0px" });
 
   return (
@@ -31,6 +88,8 @@ export default function About() {
                     <img
                       src={brandLogo}
                       alt="CiploStem"
+                      width={1000}
+                      height={300}
                       className="w-[260px] sm:w-[320px] md:w-[380px] lg:w-[450px] xl:w-[500px] h-auto object-contain"
                     />
                   </div>
@@ -47,12 +106,7 @@ export default function About() {
                 </p>
 
                 <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">
-                  {[
-                    { label: "CELL TYPE", value: "Allogeneic MSCs" },
-                    { label: "INDICATION", value: "Cartilage preservation" },
-                    { label: "APPROACH", value: "Protocol-driven" },
-                    { label: "CARE MODEL", value: "Guided recovery" },
-                  ].map((x, idx) => (
+                  {features.map((x, idx) => (
                     <div
                       key={x.label}
                       className={[
@@ -78,9 +132,12 @@ export default function About() {
                 <img
                   src={ciplobottleImage}
                   alt="CiploStem vial"
+                  width={800}
+                  height={1000}
                   className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
                   decoding="async"
                   loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -155,53 +212,7 @@ export default function About() {
 
             <div className="relative z-20 mx-auto max-w-7xl mt-10 mb-24">
               <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
-                {[
-                  {
-                    title: "Purpose Inspired",
-                    text: "Cipla has been built brick by brick on the foundation of Care. We are driven by this purpose – a purpose that lies at the center of all our thoughts and plans, driving our actions.",
-                    icon: <Users className="h-10 w-10" />,
-                    iconBg: "from-sky-400 to-sky-600",
-                    accentColor: "bg-sky-500",
-                    titleColor: "text-sky-600",
-                    delay: "0ms",
-                  },
-                  {
-                    title: "Responsibility Centered",
-                    text: "We are accountable for our actions and results – sharing the accolades and shouldering the responsibility. Ownership and accountability matter the most.",
-                    icon: <Award className="h-10 w-10" />,
-                    iconBg: "from-blue-400 to-blue-600",
-                    accentColor: "bg-blue-500",
-                    titleColor: "text-blue-600",
-                    delay: "150ms",
-                  },
-                  {
-                    title: "Innovation Driven",
-                    text: "We believe that innovation is transformational and a critical component in leading the organization towards its goal.",
-                    icon: <Lightbulb className="h-10 w-10" />,
-                    iconBg: "from-cyan-400 to-cyan-600",
-                    accentColor: "bg-cyan-500",
-                    titleColor: "text-cyan-600",
-                    delay: "300ms",
-                  },
-                  {
-                    title: "Integrity & Trust-Anchored",
-                    text: "We do the right thing, the right way. We place integrity at the core of our endeavours and take pride in the trust our stakeholders place in us.",
-                    icon: <Globe className="h-10 w-10" />,
-                    iconBg: "from-blue-500 to-indigo-600",
-                    accentColor: "bg-blue-600",
-                    titleColor: "text-blue-700",
-                    delay: "450ms",
-                  },
-                  {
-                    title: "Excellence Focused",
-                    text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to our purpose.",
-                    icon: <Award className="h-10 w-10" />,
-                    iconBg: "from-sky-500 to-indigo-600",
-                    accentColor: "bg-indigo-600",
-                    titleColor: "text-indigo-700",
-                    delay: "600ms",
-                  },
-                ].map((v, idx) => (
+                {values.map((v) => (
                   <div
                     key={v.title}
                     className="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[300px]"

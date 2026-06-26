@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
 
 export default function Privacy() {
+  useEffect(() => {
+    document.title = "Cipla | Privacy Policy";
+  }, []);
   return (
     <div className="min-h-dvh">
       <MarketingNavbar />

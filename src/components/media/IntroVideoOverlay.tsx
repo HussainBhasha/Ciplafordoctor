@@ -49,7 +49,7 @@ export default function IntroVideoOverlay({ src, onDone }: Props) {
         muted
         playsInline
         autoPlay
-        preload="auto"
+        preload="metadata"
         className="h-full w-full object-cover"
         onEnded={handleEnd}
         onError={handleEnd}

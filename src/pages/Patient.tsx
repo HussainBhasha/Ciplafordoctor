@@ -1,3 +1,4 @@
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
@@ -19,8 +20,7 @@ import stemcellImage from "@/assets/stemcell.png";
 import newStemCellImage from "@/assets/newstemcell.png";
 import mscImage from "@/assets/MSC.png";
 import mscPreparationImage from "@/assets/MSC preparation.png";
-import { Activity, Armchair, ArrowRight, BadgeCheck, ClipboardList, Droplets, Footprints, TrendingUp, Stethoscope, Pill, Mail, Phone, MapPin, Send } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Armchair, ArrowRight, Droplets, Footprints, Send, TrendingUp, Phone, Mail, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useInView } from "@/hooks/useInView";
 import gsap from "gsap";
@@ -33,7 +33,7 @@ type RevealWordsProps = {
   delay?: number;
 };
 
-function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsProps) {
+const RevealWords = memo(function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsProps) {
   const words = text.split(" ").filter(Boolean);
   return (
     <span aria-label={text} role="text">
@@ -49,7 +49,7 @@ function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsPro
       ))}
     </span>
   );
-}
+});
 
 const oaSymptomHighlights = [
   {
@@ -110,6 +110,9 @@ const grades = [
 ];
 
 export default function Patient() {
+  useEffect(() => {
+    document.title = "Cipla";
+  }, []);
   const { ref: oaRef, inView: oaInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: symptomsRef, inView: symptomsInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: gradeRef, inView: gradeInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
@@ -320,19 +323,25 @@ export default function Patient() {
           <img
             src={patientLandingMobileBg}
             alt=""
+            width={1200}
+            height={1600}
             className="block md:hidden h-full w-full object-cover object-center"
             decoding="async"
             loading="eager"
             aria-hidden="true"
+            fetchPriority="high"
           />
           {/* Desktop Image */}
           <img
             src={patientLandingBg}
             alt=""
+            width={1920}
+            height={1080}
             className="hidden md:block h-full w-full object-cover object-center"
             decoding="async"
             loading="eager"
             aria-hidden="true"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/45 to-transparent md:from-white/85 md:via-white/45" />
           <Container>
@@ -427,6 +436,8 @@ export default function Patient() {
                   <img
                     src={oaComparisonImage}
                     alt="Healthy knee vs osteoarthritis comparison"
+                    width={1200}
+                    height={800}
                     className="h-full w-full object-contain"
                     decoding="async"
                     loading="eager"
@@ -505,6 +516,8 @@ export default function Patient() {
                   <img
                     src={symptomsImage}
                     alt="Knee OA symptoms wheel"
+                    width={800}
+                    height={800}
                     className="h-full w-full max-w-[430px] object-contain"
                     decoding="async"
                     loading="lazy"
@@ -543,6 +556,8 @@ export default function Patient() {
                     <img
                       src={g.image}
                       alt={`${g.k} illustration`}
+                      width={800}
+                      height={600}
                       className="h-full w-full object-cover"
                       decoding="async"
                       loading="lazy"
@@ -561,6 +576,8 @@ export default function Patient() {
                             <img
                               src={g.treatmentImage}
                               alt={`${g.k} treatment`}
+                              width={800}
+                              height={400}
                               className="h-full w-full object-cover"
                               decoding="async"
                               loading="lazy"
@@ -614,6 +631,8 @@ export default function Patient() {
                     <img
                       src={stemcellImage}
                       alt="3D stem cell visual"
+                      width={800}
+                      height={800}
                       className="mx-auto w-full max-w-[420px] select-none animate-floaty animate-rotate-slow object-contain"
                       decoding="async"
                       loading="lazy"
@@ -724,6 +743,8 @@ export default function Patient() {
                       <img
                         src={newStemCellImage}
                         alt="Stem cells"
+                        width={800}
+                        height={800}
                         className="h-full w-full object-contain"
                         decoding="async"
                         loading="lazy"
@@ -744,6 +765,8 @@ export default function Patient() {
                     <img
                       src={mscImage}
                       alt="Mesenchymal Stem Cells"
+                      width={1200}
+                      height={800}
                       className="relative w-full h-auto"
                       decoding="async"
                       loading="lazy"
@@ -872,6 +895,8 @@ export default function Patient() {
                   <img
                     src={mscPreparationImage}
                     alt="MSC Preparation"
+                    width={1200}
+                    height={800}
                     className="w-full h-auto object-contain"
                     decoding="async"
                     loading="lazy"

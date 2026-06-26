@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Privacy from "@/pages/Privacy";
 import About from "@/pages/About";
@@ -45,15 +45,17 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/patient" element={<Patient />} />
-        <Route path="/doctor" element={<Doctor />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/patient" element={<Patient />} />
+          <Route path="/doctor" element={<Doctor />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

@@ -35,6 +35,7 @@ export default function Home() {
   const [doctorPhone, setDoctorPhone] = useState("");
   const [doctorErrors, setDoctorErrors] = useState<Record<string, string>>({});
 
+  // ALL useEffect calls first, before any conditional returns!
   useEffect(() => {
     if (introDone) return;
     const prev = document.body.style.overflow;
@@ -79,6 +80,18 @@ export default function Home() {
       void 0;
     }
   }, [doctorModalOpen]);
+
+  // If both intro and welcome are done, redirect to patient
+  useEffect(() => {
+    if (introDone && welcomeDone) {
+      const portal = sessionStorage.getItem("ciplostem:portal");
+      if (portal === "doctor") {
+        navigate("/doctor");
+      } else {
+        navigate("/patient");
+      }
+    }
+  }, [introDone, welcomeDone, navigate]);
 
   const validateDoctor = () => {
     const next: Record<string, string> = {};
@@ -362,18 +375,6 @@ export default function Home() {
       </main>
     );
   }
-
-  // If both intro and welcome are done, redirect to patient
-  useEffect(() => {
-    if (introDone && welcomeDone) {
-      const portal = sessionStorage.getItem("ciplostem:portal");
-      if (portal === "doctor") {
-        navigate("/doctor");
-      } else {
-        navigate("/patient");
-      }
-    }
-  }, [introDone, welcomeDone, navigate]);
 
   return null;
 }

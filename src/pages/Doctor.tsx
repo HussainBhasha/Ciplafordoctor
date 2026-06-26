@@ -1,31 +1,25 @@
+import { memo, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
-import DoctorReferencesSection from "@/components/DoctorReferencesSection";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import stemcellImage from "@/assets/stemcell.png";
 import doctorLandingImage from "@/assets/doctor landing page.png";
 import doctorLandingMobileImage from "@/assets/doctor 2.png";
-import cartilageDegenerationImage from "@/assets/Cartilage Degeneration.png";
-import inflammatoryChangesImage from "@/assets/Inflammatory Changes.png";
-import mobilityChallengesImage from "@/assets/Mobility Challenges.png";
-import kneeVsOaImage from "@/assets/knee vs OA.png";
 import orthopaedicRegenerationImage from "@/assets/Orthopaedic Regeneration.png";
 import mechanismIllustrationImage from "@/assets/mechanism.png";
 import advancedCellularTherapyImage from "@/assets/Advanced Cellular Therapy.png";
 import clinicalTrialsImage from "@/assets/Clinical Trials.png";
-import safetyProfileImage from "@/assets/Safety Profile.png";
 import patientOutcomesImage from "@/assets/Patient Outcomes.png";
 import scientificPublicationsImage from "@/assets/scientific publications.png";
-import ciplobottleImage from "@/assets/Ciplobottle2.png";
 import newstemcellImage from "@/assets/newstemcell.png";
-import { Activity, ArrowRight, ChevronDown, Droplet, Pill, Stethoscope, X, Users, FlaskConical, Syringe, Bone, FileText, BarChart3, MapPin, Calendar, CheckCircle2, Smile, Star, UsersRound } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { ArrowRight, ChevronDown, X, FlaskConical, Syringe, Bone, Users, Pill, FileText, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useInView } from "@/hooks/useInView";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ReferencesSection from "@/components/ReferencesSection";
 
 type RevealWordsProps = {
   text: string;
@@ -34,7 +28,7 @@ type RevealWordsProps = {
   delay?: number;
 };
 
-function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsProps) {
+const RevealWords = memo(function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsProps) {
   const words = text.split(" ").filter(Boolean);
   return (
     <span aria-label={text} role="text">
@@ -50,9 +44,9 @@ function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsPro
       ))}
     </span>
   );
-}
+});
 
-function PlaceholderImage({
+const PlaceholderImage = memo(function PlaceholderImage({
   label,
   className,
   src,
@@ -78,6 +72,8 @@ function PlaceholderImage({
         <img
           src={src}
           alt={label}
+          width={1200}
+          height={800}
           className={cn("h-full w-full", imgClassName ?? "object-contain")}
           decoding="async"
           loading="lazy"
@@ -93,26 +89,29 @@ function PlaceholderImage({
       )}
     </div>
   );
-}
+});
 
 export default function Doctor() {
   const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "CiploStem | For Doctors";
+  }, []);
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
-  const { ref: overviewRef, inView: overviewInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
-  const { ref: gapRef, inView: gapInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: orthoRef, inView: orthoInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: mscRef, inView: mscInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: moaRef, inView: moaInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: techRef, inView: techInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: evidenceRef, inView: evidenceInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
   const { ref: resourcesRef, inView: resourcesInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
-  const { ref: ctaRef, inView: ctaInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
-  const [openTreatment, setOpenTreatment] = useState<string | null>(null);
+  const { ref: overviewRef, inView: overviewInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+  const { ref: gapRef, inView: gapInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+  const { ref: ctaRef, inView: ctaInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const [openMoaStep, setOpenMoaStep] = useState<string | null>(null);
-  const [overviewStep, setOverviewStep] = useState(0);
   const [evidenceStep, setEvidenceStep] = useState(0);
   const [resourcesStep, setResourcesStep] = useState(0);
   const [openModal, setOpenModal] = useState<string | null>(null);
+  const [openTreatment, setOpenTreatment] = useState<string | null>(null);
+  const [overviewStep, setOverviewStep] = useState(0);
 
   const heroBgRef = useRef<HTMLImageElement | null>(null);
   const mscVisualRef = useRef<HTMLDivElement | null>(null);
@@ -380,20 +379,26 @@ export default function Doctor() {
           <img
             src={doctorLandingMobileImage}
             alt=""
+            width={1200}
+            height={1600}
             className="block md:hidden pointer-events-none absolute inset-0 h-full w-full object-cover object-right will-change-transform"
             decoding="async"
             loading="eager"
             aria-hidden="true"
+            fetchPriority="high"
           />
           {/* Desktop Image */}
           <img
             ref={heroBgRef}
             src={doctorLandingImage}
             alt=""
+            width={1920}
+            height={1080}
             className="hidden md:block pointer-events-none absolute inset-0 h-full w-full object-cover object-right will-change-transform sm:object-center"
             decoding="async"
             loading="eager"
             aria-hidden="true"
+            fetchPriority="high"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#EAF7FF] to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
@@ -474,6 +479,8 @@ export default function Doctor() {
                     <img
                       src={orthopaedicRegenerationImage}
                       alt="Regenerative medicine / stem cell"
+                      width={1600}
+                      height={900}
                       className="h-full w-full object-contain rounded-[32px]"
                       decoding="async"
                       loading="lazy"
@@ -621,6 +628,8 @@ export default function Doctor() {
                   <img
                     src={stemcellImage}
                     alt="3D Stem Cell Image"
+                    width={800}
+                    height={800}
                     className="mx-auto w-full max-w-[460px] select-none animate-floaty object-contain"
                     decoding="async"
                     loading="lazy"
@@ -762,6 +771,8 @@ export default function Doctor() {
                       <img
                         src={mechanismIllustrationImage}
                         alt="Stem cell mechanism illustration"
+                        width={1600}
+                        height={900}
                         className="relative h-full w-full select-none object-contain animate-floaty rounded-[32px]"
                         decoding="async"
                         loading="lazy"
@@ -800,6 +811,8 @@ export default function Doctor() {
                       <img
                         src={x.image}
                         alt={x.title}
+                        width={1200}
+                        height={800}
                         className="h-full w-full object-contain"
                         decoding="async"
                         loading="lazy"
@@ -868,6 +881,8 @@ export default function Doctor() {
                           <img
                             src={x.image}
                             alt={x.label}
+                            width={1600}
+                            height={900}
                             className="w-full h-auto object-contain"
                             decoding="async"
                             loading="lazy"
@@ -890,6 +905,8 @@ export default function Doctor() {
                               <img
                                 src={x.image}
                                 alt={x.label}
+                                width={1600}
+                                height={900}
                                 className={cn(
                                   "absolute inset-0 h-full w-full",
                                   "object-[center_40%]",
@@ -902,6 +919,8 @@ export default function Doctor() {
                             <img
                               src={x.image}
                               alt={x.label}
+                              width={1600}
+                              height={900}
                               className={cn(
                                 "absolute inset-0 h-full w-full",
                                 x.label === "Product Information" ? "object-contain" : "object-cover",
@@ -971,7 +990,7 @@ export default function Doctor() {
           </Container>
         </section>
       </main>
-      <DoctorReferencesSection />
+      <ReferencesSection />
       <Footer />
 
       {/* Modal */}
