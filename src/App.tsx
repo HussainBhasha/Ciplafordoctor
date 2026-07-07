@@ -1,12 +1,11 @@
 import React, { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Privacy from "@/pages/Privacy";
 import About from "@/pages/About";
 import Doctor from "@/pages/Doctor";
 import Contact from "@/pages/Contact";
-import Admin from "@/pages/Admin";
 import Home from "@/pages/Home";
-import Patient from "@/pages/Patient";
+import ClinicalTrials from "@/pages/ClinicalTrials";
+import PatientOutcomes from "@/pages/PatientOutcomes";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -49,11 +48,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/patient" element={<Patient />} />
           <Route path="/doctor" element={<Doctor />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/clinical-trials" element={<ClinicalTrials />} />
+          <Route path="/patient-outcomes" element={<PatientOutcomes />} />
         </Routes>
       </Suspense>
     </Router>

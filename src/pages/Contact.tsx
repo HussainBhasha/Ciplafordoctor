@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
@@ -7,7 +6,6 @@ import Button from "@/components/ui/Button";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 export default function Contact() {
-  const location = useLocation();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [fullName, setFullName] = useState("");
@@ -15,25 +13,11 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-
-  // Detect portal type
-  const portal = (() => {
-    if (location.pathname.startsWith("/patient")) return "patient" as const;
-    if (location.pathname.startsWith("/doctor")) return "doctor" as const;
-    try {
-      const v = sessionStorage.getItem("ciplostem:portal");
-      if (v === "patient" || v === "doctor") return v;
-    } catch {
-      void 0;
-    }
-    return null;
-  })();
-
-  const contactName = portal === "patient" ? "Cipla" : "Ciplostem";
+  const contactName = "Cipla";
   
   useEffect(() => {
-    document.title = `${contactName} | Contact`;
-  }, [contactName]);
+    document.title = "Cipla";
+  }, []);
 
   return (
     <div className="min-h-dvh bg-sky-50">
@@ -41,7 +25,7 @@ export default function Contact() {
       <main className="pt-16">
         <section className="bg-sky-50/70">
           <Container>
-            <div className="py-8 text-center sm:py-12">
+             <div className="pt-8 pb-2 text-center sm:pt-12 sm:pb-4">
               <div className="text-[11px] font-semibold tracking-[0.32em] text-sky-700/80">CONTACT</div>
               <div className="mx-auto mt-3 max-w-4xl text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-slate-900">
                 Get in touch with{" "}
@@ -51,7 +35,7 @@ export default function Contact() {
           </Container>
         </section>
 
-        <section className="py-8 sm:py-12">
+        <section className="pt-2 pb-8 sm:pt-4 sm:pb-12">
           <Container>
             <div className="grid gap-8 lg:grid-cols-[380px_1fr]">
               <div className="space-y-5">

@@ -186,9 +186,135 @@ video {
   }
 }
 
+@layer utilities {
+  .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .text-base {
+    font-size: 1.125rem !important;
+    line-height: 1.75 !important;
+  }
+
+  .text-2xl {
+    font-size: 1.875rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .text-3xl {
+    font-size: 2.4rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .text-4xl {
+    font-size: 3rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .text-5xl {
+    font-size: 3.5rem !important;
+    line-height: 1.05 !important;
+  }
+
+  @media (min-width: 640px) {
+    .sm\:text-base {
+      font-size: 1.25rem !important;
+      line-height: 1.75 !important;
+    }
+
+    .sm\:text-lg {
+      font-size: 1.35rem !important;
+      line-height: 1.75 !important;
+    }
+
+    .sm\:text-3xl {
+      font-size: 2.9rem !important;
+      line-height: 1.12 !important;
+    }
+
+    .sm\:text-4xl {
+      font-size: 3.45rem !important;
+      line-height: 1.08 !important;
+    }
+
+    .sm\:text-5xl {
+      font-size: 4rem !important;
+      line-height: 1.05 !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:text-base {
+      font-size: 1.25rem !important;
+      line-height: 1.75 !important;
+    }
+
+    .md\:text-5xl {
+      font-size: 4.2rem !important;
+      line-height: 1.05 !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:text-4xl {
+      font-size: 3.8rem !important;
+      line-height: 1.08 !important;
+    }
+
+    .lg\:text-5xl {
+      font-size: 4.5rem !important;
+      line-height: 1.05 !important;
+    }
+  }
+
+  .text-slate-900,
+  .text-slate-800,
+  .text-slate-700,
+  .text-slate-600,
+  .text-slate-500,
+  .text-sky-700,
+  .text-sky-700\/80,
+  .text-sky-700\/90,
+  .text-blue-900,
+  .text-blue-800,
+  .text-blue-700,
+  .text-blue-600,
+  .text-cyan-700,
+  .text-cyan-600,
+  .text-purple-900,
+  .text-purple-800,
+  .text-purple-700,
+  .text-rose-800,
+  .text-rose-700,
+  .text-amber-900,
+  .text-amber-800,
+  .text-amber-700,
+  .text-emerald-900,
+  .text-emerald-800,
+  .text-emerald-700,
+  .text-indigo-700,
+  .text-indigo-600 {
+    color: #000 !important;
+  }
+
+  .fill-slate-600,
+  .fill-slate-700 {
+    fill: #000 !important;
+  }
+
+  .bg-clip-text.text-transparent {
+    background-image: none !important;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+}
+
 @keyframes floaty {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -10px, 0); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(3px, -8px, 0) rotate(1deg); }
+  50% { transform: translate3d(0, -15px, 0) rotate(0deg); }
+  75% { transform: translate3d(-3px, -8px, 0) rotate(-1deg); }
 }
 @keyframes orbit {
   from { transform: rotate(0deg); }

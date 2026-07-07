@@ -14,7 +14,10 @@ import clinicalTrialsImage from "@/assets/Clinical Trials.png";
 import patientOutcomesImage from "@/assets/Patient Outcomes.png";
 import scientificPublicationsImage from "@/assets/scientific publications.png";
 import newstemcellImage from "@/assets/newstemcell.png";
-import { ArrowRight, ChevronDown, X, FlaskConical, Syringe, Bone, Users, Pill, FileText, BarChart3 } from "lucide-react";
+import icon1 from "@/assets/icon1.png";
+import icon2 from "@/assets/icon2.png";
+import icon3 from "@/assets/icon3.png";
+import { ArrowRight, ChevronDown, X, FlaskConical, Syringe, Bone, Users, Pill, FileText, BarChart3, Shield, Flame, Activity, Microscope, Dna, Sparkles, Zap, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useInView } from "@/hooks/useInView";
 import gsap from "gsap";
@@ -94,7 +97,7 @@ const PlaceholderImage = memo(function PlaceholderImage({
 export default function Doctor() {
   const navigate = useNavigate();
   useEffect(() => {
-    document.title = "CiploStem | For Doctors";
+    document.title = "Cipla";
   }, []);
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: orthoRef, inView: orthoInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
@@ -370,10 +373,10 @@ export default function Doctor() {
   return (
     <div ref={pageRef} className="min-h-dvh bg-sky-100">
       <MarketingNavbar />
-      <main className="pt-20">
+      <main>
         <section
           ref={(node) => { heroRef.current = node; }}
-          className="relative h-[calc(100dvh-5rem)] overflow-hidden"
+          className="relative h-dvh overflow-hidden pt-20"
         >
           {/* Mobile Image */}
           <img
@@ -385,7 +388,7 @@ export default function Doctor() {
             decoding="async"
             loading="eager"
             aria-hidden="true"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           {/* Desktop Image */}
           <img
@@ -398,7 +401,7 @@ export default function Doctor() {
             decoding="async"
             loading="eager"
             aria-hidden="true"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#EAF7FF] to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
@@ -417,13 +420,13 @@ export default function Doctor() {
                   <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
                     CLINICAL SOLUTIONS
                   </div>
-                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(2.25rem,5.2vw,4.5rem)]">
+                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(1.6rem,4vw,3rem)]">
                     <RevealWords text="Regenerative Care for Knee Health" active={heroInView} />
                   </div>
-                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(1rem,1.5vw,1.25rem)]", heroInView && "reveal-fade-visible")}>
+                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
                     Advanced stem cell therapy solutions
                   </div>
-                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1.1vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
+                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.9rem,1vw,1rem)]", heroInView && "reveal-fade-visible")}>
                     Discover evidence-backed regenerative approaches to support your patients' joint health and mobility.
                   </p>
                 </div>
@@ -433,13 +436,13 @@ export default function Doctor() {
                   <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
                     FOR DOCTORS
                   </div>
-                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(2.25rem,5.2vw,4.5rem)]">
+                  <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(1.8rem,4vw,3.5rem)]">
                     <RevealWords text="Advancing Knee Care Through Regenerative Science" active={heroInView} />
                   </div>
-                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(1rem,1.5vw,1.25rem)]", heroInView && "reveal-fade-visible")}>
+                  <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
                     Evidence-based cellular therapy solutions for Knee Osteoarthritis management
                   </div>
-                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1.1vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
+                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1vw,1.02rem)]", heroInView && "reveal-fade-visible")}>
                     Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved
                     joint health.
                   </p>
@@ -469,28 +472,24 @@ export default function Doctor() {
 
         <section ref={(node) => { orthoRef.current = node; }} className="py-14 sm:py-20">
           <Container>
-            <div className="mx-auto grid max-w-6xl gap-10 lg:min-h-[70vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-stretch">
               <div className={cn(
-                "transition-all duration-700 ease-out",
+                "transition-all duration-700 ease-out h-full",
                 "opacity-100 translate-y-0"
               )}>
-                <div className="flex items-center justify-center">
-                  <div className="flex w-full max-w-[920px] aspect-[16/9] items-center justify-center overflow-hidden rounded-[32px]">
-                    <img
-                      src={orthopaedicRegenerationImage}
-                      alt="Regenerative medicine / stem cell"
-                      width={1600}
-                      height={900}
-                      className="h-full w-full object-contain rounded-[32px]"
-                      decoding="async"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+                <img
+                  src={orthopaedicRegenerationImage}
+                  alt="Regenerative medicine / stem cell"
+                  width={1600}
+                  height={900}
+                  className="w-full h-full rounded-[28px] shadow-[0_20px_60px_rgba(2,132,199,0.15)] object-cover"
+                  decoding="async"
+                  loading="lazy"
+                />
               </div>
 
-              <div>
-                <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
+              <div className="flex flex-col justify-center">
+                <div className="font-display text-2xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-3xl">
                   <RevealWords text="The Future of Orthopaedic Regenerative therapy" active={orthoInView} />
                 </div>
                 <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", orthoInView && "reveal-fade-visible")}>
@@ -531,16 +530,16 @@ export default function Doctor() {
         <section ref={(node) => { techRef.current = node; }} className="relative overflow-hidden bg-sky-50/60 py-14 sm:py-20">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_25%_20%,rgba(56,189,248,0.18),transparent_55%)]" />
           <Container>
-            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_680px] lg:items-center">
-              <div>
-                <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
-                  <RevealWords text="Ciplostem — Advanced Cellular Therapy" active={techInView} />
+            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-stretch">
+              <div className="flex flex-col justify-center">
+                <div className="font-display text-2xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-3xl">
+                  <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
                 <p className={cn("mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", techInView && "reveal-fade-visible")}>
-                  Ciplostem is an adult human bone marrow-derived, expanded, cultured and pooled allogenic mesenchymal stromal cell therapy.
+                  Mesenchymal Stem Cells is an adult human bone marrow-derived, expanded, cultured and pooled allogenic mesenchymal stromal cell therapy.
                 </p>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
                     "Allogenic MSC Technology",
                     "Standardized Cell Preparation",
@@ -551,7 +550,7 @@ export default function Doctor() {
                     <div
                       key={x}
                       className={cn(
-                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-6 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-0.5 hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
+                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-0.5 hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
                         "js-scroll-card",
                         idx === arr.length - 1 && "sm:col-span-2 sm:mx-auto sm:max-w-[520px]",
                         techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
@@ -559,7 +558,7 @@ export default function Doctor() {
                       style={{ transitionDelay: `${idx * 70}ms` }}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-100">
+                        <div className="mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-100 text-xs">
                           ✓
                         </div>
                         <div className="text-sm font-semibold text-slate-900">{x}</div>
@@ -569,8 +568,13 @@ export default function Doctor() {
                 </div>
               </div>
 
-              <div className={cn("transition-all duration-700 ease-out", techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")}>
-                <PlaceholderImage label="Advanced Cellular Therapy" src={advancedCellularTherapyImage} className="aspect-[16/9]" />
+              <div className={cn("transition-all duration-700 ease-out h-full", techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")}>
+                <PlaceholderImage
+                  label="Advanced Cellular Therapy"
+                  src={advancedCellularTherapyImage}
+                  className="w-full h-full shadow-[0_20px_60px_rgba(2,132,199,0.15)] rounded-[28px] overflow-hidden"
+                  imgClassName="w-full h-full object-cover"
+                />
               </div>
             </div>
           </Container>
@@ -596,10 +600,10 @@ export default function Doctor() {
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {[
-                    { title: "🧬 Self Renewal", text: "Maintains cell population" },
-                    { title: "🔬 Differentiation", text: "Supports tissue repair" },
-                    { title: "🛡 Immunomodulation", text: "Helps regulate inflammatory response" },
-                    { title: "🔥 Anti-inflammatory Action", text: "Supports inflammatory balance" },
+                    { title: "Self Renewal", text: "Maintains cell population" },
+                    { title: "Differentiation", text: "Supports tissue repair" },
+                    { title: "Immunomodulation", text: "Helps regulate inflammatory response" },
+                    { title: "Anti-inflammatory Action", text: "Supports inflammatory balance" },
                   ].map((x, idx) => (
                     <div
                       key={x.title}
@@ -610,7 +614,10 @@ export default function Doctor() {
                       )}
                       style={{ transitionDelay: `${idx * 90}ms` }}
                     >
-                      <div className="text-sm font-semibold text-slate-900">{x.title}</div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="h-2 w-2 flex-none rounded-full bg-sky-600" />
+                        <div className="text-sm font-semibold text-slate-900">{x.title}</div>
+                      </div>
                       <div className="mt-2 text-sm leading-relaxed text-slate-600">{x.text}</div>
                     </div>
                   ))}
@@ -620,25 +627,25 @@ export default function Doctor() {
               <div
                 ref={mscVisualRef}
                 className={cn(
-                  "relative mx-auto max-w-[520px] will-change-transform",
+                  "relative mx-auto lg:ml-20 lg:translate-x-4 max-w-[440px] will-change-transform",
                 )}
               >
-                <div className="absolute -inset-12 rounded-full bg-sky-400/15 blur-3xl glow-pulse" />
+                <div className="absolute -inset-10 rounded-full bg-sky-400/20 blur-3xl glow-pulse" />
                 <div className="relative">
                   <img
-                    src={stemcellImage}
+                    src={newstemcellImage}
                     alt="3D Stem Cell Image"
                     width={800}
                     height={800}
-                    className="mx-auto w-full max-w-[460px] select-none animate-floaty object-contain"
+                    className="mx-auto w-full max-w-[380px] select-none animate-floaty object-contain"
                     decoding="async"
                     loading="lazy"
                   />
                   <div className="pointer-events-none absolute inset-0">
-                    <div className="absolute left-[18%] top-[22%] h-1.5 w-1.5 rounded-full bg-sky-400/60 blur-[1px] animate-floaty" />
-                    <div className="absolute left-[62%] top-[18%] h-2 w-2 rounded-full bg-sky-300/55 blur-[1px] animate-floaty" />
-                    <div className="absolute left-[72%] top-[58%] h-1.5 w-1.5 rounded-full bg-sky-500/55 blur-[1px] animate-floaty" />
-                    <div className="absolute left-[34%] top-[68%] h-2 w-2 rounded-full bg-sky-400/55 blur-[1px] animate-floaty" />
+                    <div className="absolute left-[18%] top-[22%] h-1.5 w-1.5 rounded-full bg-sky-400/70 blur-[1px] animate-floaty" style={{ animationDelay: '0s' }} />
+                    <div className="absolute left-[62%] top-[18%] h-2.5 w-2.5 rounded-full bg-sky-300/65 blur-[1px] animate-floaty" style={{ animationDelay: '0.5s' }} />
+                    <div className="absolute left-[72%] top-[58%] h-2 w-2 rounded-full bg-sky-500/65 blur-[1px] animate-floaty" style={{ animationDelay: '1s' }} />
+                    <div className="absolute left-[34%] top-[68%] h-2.5 w-2.5 rounded-full bg-sky-400/60 blur-[1px] animate-floaty" style={{ animationDelay: '1.5s' }} />
                   </div>
                 </div>
               </div>
@@ -646,141 +653,132 @@ export default function Doctor() {
           </Container>
         </section>
 
-        <section id="science" ref={(node) => { moaRef.current = node; }} className="py-14 sm:py-20 scroll-mt-24">
+        <section
+          id="moa"
+          ref={(node) => { moaRef.current = node; }}
+          className="relative overflow-hidden bg-sky-50/60 py-14 sm:py-20"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_30%_30%,rgba(56,189,248,0.18),transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-0 opacity-70 hero-dots" />
+
           <Container>
             <div className="mx-auto max-w-6xl">
-              <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
-                <RevealWords text="How Stem Cells Support Knee Health" active={moaInView} />
+              {/* Main Title */}
+              <div className="text-center mb-12">
+                <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
+                  <RevealWords text="Mesenchymal Stem Cells - Mechanism of Action in Knee OA" active={moaInView} />
+                </div>
+                <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base max-w-3xl mx-auto reveal-fade", moaInView && "reveal-fade-visible")}>
+                  Multi-modal action addressing the key pathophysiological pathways in knee osteoarthritis
+                </p>
               </div>
 
-              <div className="mt-10 grid gap-10 lg:min-h-[70vh] lg:grid-cols-[1fr_720px] lg:items-center">
-                <div className="grid max-w-xl gap-4">
-                  {[
-                    {
-                      key: "stem-cells",
-                      title: "Stem Cells",
-                      icon: "🧬",
-                      iconLabel: "Cell regeneration",
-                      description:
-                        "Mesenchymal Stem Cells (MSCs) are specialized cells with regenerative and immunomodulatory properties. They interact with the damaged joint environment and support the body's natural repair mechanisms.",
-                    },
-                    {
-                      key: "reduce-inflammation",
-                      title: "Reduce Inflammation",
-                      icon: "🔥",
-                      iconLabel: "Anti-inflammatory response",
-                      description:
-                        "Stem cells release biological signals that help regulate inflammatory responses. This may create a healthier environment inside the knee joint and support recovery.",
-                    },
-                    {
-                      key: "support-cartilage",
-                      title: "Support Cartilage Environment",
-                      icon: "🦵",
-                      iconLabel: "Cartilage protection",
-                      description:
-                        "MSCs help maintain a supportive joint environment by promoting beneficial cellular activity and protecting the cartilage surrounding the knee joint.",
-                    },
-                    {
-                      key: "promote-tissue-repair",
-                      title: "Promote Tissue Repair",
-                      icon: "🔬",
-                      iconLabel: "Tissue regeneration",
-                      description:
-                        "Stem cells communicate with surrounding tissues and release growth factors that support tissue maintenance and natural healing processes.",
-                    },
-                    {
-                      key: "improve-joint-function",
-                      title: "Improve Joint Function",
-                      icon: "⚡",
-                      iconLabel: "Improved mobility",
-                      description:
-                        "By supporting joint health and reducing inflammatory factors, regenerative approaches aim to improve mobility, comfort, and overall knee function.",
-                    },
-                  ].map((step, idx) => {
-                    const isOpen = openMoaStep === step.key;
-                    const contentId = `moa-step-${step.key}`;
-
-                    return (
-                      <div
-                        key={step.key}
-                        className={cn(
-                          "rounded-[22px] bg-white/70 px-6 py-4 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(2,132,199,0.16)]",
-                          isOpen && "ring-sky-400/70 shadow-[0_22px_85px_rgba(56,189,248,0.25)]",
-                          "js-scroll-card",
-                          moaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-                        )}
-                        style={{ transitionDelay: `${idx * 90}ms` }}
-                      >
-                        <button
-                          type="button"
-                          aria-expanded={isOpen}
-                          aria-controls={contentId}
-                          onClick={() => setOpenMoaStep((v) => (v === step.key ? null : step.key))}
-                          className="flex w-full items-center justify-between gap-4 text-left"
-                        >
-                          <div className="flex min-w-0 items-center gap-3">
-                            <div className="grid h-9 w-9 flex-none place-items-center rounded-xl bg-sky-50 text-base ring-1 ring-sky-100 text-sky-800">
-                              <span aria-label={step.iconLabel} role="img">
-                                {step.icon}
-                              </span>
-                            </div>
-                            <div className="min-w-0">
-                              <div className="truncate text-sm font-semibold text-slate-900">{step.title}</div>
-                            </div>
-                          </div>
-                          <ChevronDown className={cn("h-5 w-5 flex-none text-sky-700 transition-transform duration-300", isOpen && "rotate-180")} />
-                        </button>
-
-                        <div
-                          className={cn(
-                            "grid transition-[grid-template-rows] duration-500 ease-out",
-                            isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                          )}
-                        >
-                          <div className="overflow-hidden">
-                            <div
-                              id={contentId}
-                              className={cn(
-                                "mt-4 rounded-[18px] bg-sky-50/70 p-4 ring-1 ring-sky-100 transition-opacity duration-300",
-                                isOpen ? "opacity-100" : "opacity-0",
-                              )}
-                            >
-                              <div className="text-sm leading-relaxed text-slate-600">{step.description}</div>
-                            </div>
-                          </div>
+              {/* Multi-modal Action Cards */}
+              <div className="mt-10 grid gap-6 md:grid-cols-3">
+                {/* Anti-inflammatory */}
+                <div className={cn(
+                  "relative overflow-hidden rounded-[24px] bg-gradient-to-b from-blue-50/80 to-white p-6 shadow-lg ring-1 ring-blue-200/60 backdrop-blur-xl transition-all duration-700 ease-out hover:-translate-y-0.5 hover:shadow-xl",
+                  "js-scroll-card",
+                  moaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+                )} style={{ transitionDelay: "0ms" }}>
+                  <div className="flex flex-col items-center text-center">
+                    {/* Icon with logo filling entire circle */}
+                    <div className="mb-4 relative">
+                      <div className="h-28 w-28 rounded-full overflow-hidden shadow-lg ring-4 ring-blue-100/50 flex items-center justify-center">
+                        <img src={icon1} alt="Anti-inflammatory" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-blue-800 mb-3">ANTI-INFLAMMATORY</h3>
+                    <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
+                      <p className="text-sm font-semibold text-slate-900">Counteracts Chronic Inflammation</p>
+                    </div>
+                    <div className="space-y-2 text-left w-full">
+                      {[
+                        "Reduces C-reactive protein (CRP)",
+                        "Reduces Prostaglandins (PGE2)",
+                        "Reduces Leukotrienes (LT B4)",
+                        "Reduces Cytokines: TNF, IL-1β, IL-6, IL-17"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="mt-1.5 h-3 w-3 flex-none rounded-full bg-blue-600" />
+                          <div className="text-sm leading-relaxed text-slate-700">{item}</div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className={cn("transition-all duration-700 ease-out", moaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")}>
-                  <div className="flex items-center justify-center">
-                    <div
-                      ref={moaVisualRef}
-                      className="relative flex w-full max-w-[920px] items-center justify-center overflow-hidden rounded-[32px]"
-                    >
-                      <div className="pointer-events-none absolute -inset-10 rounded-full bg-sky-400/15 blur-3xl glow-pulse" />
-                      <div className="pointer-events-none absolute inset-0">
-                        <div className="absolute left-[12%] top-[26%] h-1.5 w-1.5 rounded-full bg-sky-400/55 blur-[1px] animate-floaty" />
-                        <div className="absolute left-[40%] top-[18%] h-2 w-2 rounded-full bg-sky-300/45 blur-[1px] animate-floaty" />
-                        <div className="absolute left-[70%] top-[34%] h-1.5 w-1.5 rounded-full bg-sky-500/50 blur-[1px] animate-floaty" />
-                        <div className="absolute left-[58%] top-[72%] h-2 w-2 rounded-full bg-sky-400/45 blur-[1px] animate-floaty" />
-                        <div className="absolute left-[22%] top-[78%] h-1.5 w-1.5 rounded-full bg-sky-300/45 blur-[1px] animate-floaty" />
-                      </div>
-                      <img
-                        src={mechanismIllustrationImage}
-                        alt="Stem cell mechanism illustration"
-                        width={1600}
-                        height={900}
-                        className="relative h-full w-full select-none object-contain animate-floaty rounded-[32px]"
-                        decoding="async"
-                        loading="lazy"
-                      />
+                      ))}
                     </div>
                   </div>
+                  {/* Bottom border */}
+                  <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-blue-600 to-blue-400"></div>
+                </div>
+
+                {/* Immunomodulatory */}
+                <div className={cn(
+                  "relative overflow-hidden rounded-[24px] bg-gradient-to-b from-teal-50/80 to-white p-6 shadow-lg ring-1 ring-teal-200/60 backdrop-blur-xl transition-all duration-700 ease-out hover:-translate-y-0.5 hover:shadow-xl",
+                  "js-scroll-card",
+                  moaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+                )} style={{ transitionDelay: "90ms" }}>
+                  <div className="flex flex-col items-center text-center">
+                    {/* Icon with logo filling entire circle */}
+                    <div className="mb-4 relative">
+                      <div className="h-28 w-28 rounded-full overflow-hidden shadow-lg ring-4 ring-teal-100/50 flex items-center justify-center">
+                        <img src={icon2} alt="Immunomodulatory" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-teal-800 mb-3">IMMUNOMODULATORY</h3>
+                    <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
+                      <p className="text-sm font-semibold text-slate-900">Reduces Immune Cell Involvement</p>
+                    </div>
+                    <div className="space-y-2 text-left w-full">
+                      {[
+                        "Modulates immune response by interacting with Macrophages & mast cells",
+                        "Thereby prevents cartilage damage"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="mt-1.5 h-3 w-3 flex-none rounded-full bg-teal-600" />
+                          <div className="text-sm leading-relaxed text-slate-700">{item}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Bottom border */}
+                  <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-teal-600 to-teal-400"></div>
+                </div>
+
+                {/* Cartilage Preservation */}
+                <div className={cn(
+                  "relative overflow-hidden rounded-[24px] bg-gradient-to-b from-purple-50/80 to-white p-6 shadow-lg ring-1 ring-purple-200/60 backdrop-blur-xl transition-all duration-700 ease-out hover:-translate-y-0.5 hover:shadow-xl",
+                  "js-scroll-card",
+                  moaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+                )} style={{ transitionDelay: "180ms" }}>
+                  <div className="flex flex-col items-center text-center">
+                    {/* Icon with logo filling entire circle */}
+                    <div className="mb-4 relative">
+                      <div className="h-28 w-28 rounded-full overflow-hidden shadow-lg ring-4 ring-purple-100/50 flex items-center justify-center">
+                        <img src={icon3} alt="Cartilage Preservation" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CARTILAGE PRESERVATION</h3>
+                    <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
+                      <p className="text-sm font-semibold text-slate-900">Stimulates Differentiation & Maintains Cartilage Integrity</p>
+                    </div>
+                    <div className="space-y-2 text-left w-full">
+                      {[
+                        "To mature existing progenitor cells into Chondrocytes",
+                        "Maintains Hyaline Cartilage: Enhancing Collagen I, IX & XI production",
+                        "Prevents Fibrous cartilage: Modulating Collagen X"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="mt-1.5 h-3 w-3 flex-none rounded-full bg-purple-600" />
+                          <div className="text-sm leading-relaxed text-slate-700">{item}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Bottom border */}
+                  <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-purple-600 to-purple-400"></div>
                 </div>
               </div>
+
+              {/* Summary Card */}
             </div>
           </Container>
         </section>
@@ -806,14 +804,14 @@ export default function Doctor() {
                     style={{ transitionDelay: `${idx * 90}ms` }}
                   >
                     <div className="text-base font-semibold text-slate-900">{x.title}</div>
-                    <div className="mt-2 text-sm leading-relaxed text-slate-600">{x.text}</div>
+                    <div className="mt-2 text-sm leading-relaxed text-slate-600 min-h-[48px]">{x.text}</div>
                     <div className="mt-6 -mx-8 mb-4 h-[240px] sm:h-[290px]">
                       <img
                         src={x.image}
                         alt={x.title}
                         width={1200}
                         height={800}
-                        className="h-full w-full object-contain"
+                        className="h-full w-full object-cover object-center"
                         decoding="async"
                         loading="lazy"
                       />
@@ -821,7 +819,15 @@ export default function Doctor() {
                     <button
                       type="button"
                       className="mt-auto inline-flex items-center justify-center rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-sky-700 active:scale-95"
-                      onClick={() => setOpenModal(x.title)}
+                      onClick={() => {
+                        if (x.title === "Clinical Trials") {
+                          navigate("/clinical-trials");
+                        } else if (x.title === "Patient Outcomes") {
+                          navigate("/patient-outcomes");
+                        } else {
+                          setOpenModal(x.title);
+                        }
+                      }}
                     >
                       Read more <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
@@ -844,7 +850,7 @@ export default function Doctor() {
                   {
                     image: scientificPublicationsImage,
                     label: "Scientific Publications",
-                    link: "https://online.fliphtml5.com/HUssain1608/1602-Ciplostem-LBL-1-combined-ci2z/",
+                    link: "https://online.fliphtml5.com/leljv/Scientific-publications/",
                     external: true,
                   },
                   {
@@ -852,17 +858,17 @@ export default function Doctor() {
                     label: "Clinical Trial Data",
                     target: "evidence",
                   },
-{
-                      image: mechanismIllustrationImage,
-                      label: "Mechanism of Action",
-                      target: "science",
-                    },
-                    {
-                      image: newstemcellImage,
-                      label: "Product Information",
-                      link: "https://online.fliphtml5.com/leljv/CIPLOSTEM_PPT/#p=1",
-                      external: true,
-                    },
+                  {
+                    image: mechanismIllustrationImage,
+                    label: "Mechanism of Action",
+                    target: "moa",
+                  },
+                  {
+                    image: newstemcellImage,
+                    label: "Product Information",
+                    link: "https://online.fliphtml5.com/leljv/CIPLOSTEM_PPT2/",
+                    external: true,
+                  },
                 ].map((x, idx) => {
                   // Reveal 2 at a time: cards 0,1 → step>=1; cards 2,3 → step>=3
                   const visible = idx < 2 ? resourcesStep >= 1 : resourcesStep >= 3;
@@ -897,7 +903,7 @@ export default function Doctor() {
                         >
                           {x.label === "Scientific Publications" ? (
                             <a
-                              href="https://online.fliphtml5.com/HUssain1608/1602-Ciplostem-LBL-1-combined-ci2z/"
+                              href="https://online.fliphtml5.com/leljv/Scientific-publications/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="block h-full w-full cursor-pointer"

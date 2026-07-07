@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
-import ciplobottleImage from "@/assets/Ciplobottle2.png";
-import brandLogo from "@/assets/logo.png";
+import newstemcellImage from "@/assets/newstemcell.png";
+import ciplaLogo from "@/assets/Cipla_logo.svg.png";
 import { useInView } from "@/hooks/useInView";
 import { Award, Globe, Lightbulb, Users } from "lucide-react";
 import { RoadmapSection } from '@/components/RoadmapSection';
@@ -22,50 +22,50 @@ const values = [
     icon: <Users className="h-10 w-10" />,
     iconBg: "from-sky-400 to-sky-600",
     accentColor: "bg-sky-500",
-    titleColor: "text-sky-600",
+    titleColor: "text-slate-900",
     delay: "0ms",
   },
   {
     title: "Responsibility Centered",
     text: "We are accountable for our actions and results – sharing the accolades and shouldering the responsibility. Ownership and accountability matter the most.",
     icon: <Award className="h-10 w-10" />,
-    iconBg: "from-blue-400 to-blue-600",
-    accentColor: "bg-blue-500",
-    titleColor: "text-blue-600",
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
     delay: "150ms",
   },
   {
     title: "Innovation Driven",
     text: "We believe that innovation is transformational and a critical component in leading the organization towards its goal.",
     icon: <Lightbulb className="h-10 w-10" />,
-    iconBg: "from-cyan-400 to-cyan-600",
-    accentColor: "bg-cyan-500",
-    titleColor: "text-cyan-600",
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
     delay: "300ms",
   },
   {
     title: "Integrity & Trust-Anchored",
     text: "We do the right thing, the right way. We place integrity at the core of our endeavours and take pride in the trust our stakeholders place in us.",
     icon: <Globe className="h-10 w-10" />,
-    iconBg: "from-blue-500 to-indigo-600",
-    accentColor: "bg-blue-600",
-    titleColor: "text-blue-700",
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
     delay: "450ms",
   },
   {
     title: "Excellence Focused",
     text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to our purpose.",
     icon: <Award className="h-10 w-10" />,
-    iconBg: "from-sky-500 to-indigo-600",
-    accentColor: "bg-indigo-600",
-    titleColor: "text-indigo-700",
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
     delay: "600ms",
   },
 ];
 
 export default function About() {
   useEffect(() => {
-    document.title = "Ciplostem";
+    document.title = "Cipla";
   }, []);
 
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.25, rootMargin: "0px 0px -10% 0px" });
@@ -86,22 +86,22 @@ export default function About() {
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
                   <div className="mb-2 md:mb-4">
                     <img
-                      src={brandLogo}
-                      alt="CiploStem"
+                      src={ciplaLogo}
+                      alt="Cipla"
                       width={1000}
                       height={300}
-                      className="w-[260px] sm:w-[320px] md:w-[380px] lg:w-[450px] xl:w-[500px] h-auto object-contain"
+                      className="w-[150px] sm:w-[180px] md:w-[220px] lg:w-[260px] xl:w-[300px] h-auto object-contain"
                     />
                   </div>
                 </div>
 
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mt-0 text-lg md:text-xl font-medium text-slate-700">
+                  <div className="mt-0 text-lg md:text-xl font-medium text-black">
                     Allogeneic Mesenchymal Stem Cells
                   </div>
                 </div>
 
-                <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-xs md:text-sm leading-relaxed text-slate-600 sm:text-base" : "reveal-fade mt-3 md:mt-4 text-xs md:text-sm leading-relaxed text-slate-600 sm:text-base"}>
+                <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg" : "reveal-fade mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg"}>
                   A next-generation regenerative product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
                 </p>
 
@@ -130,14 +130,14 @@ export default function About() {
 
               <div className="relative mx-auto w-full max-w-md flex justify-center">
                 <img
-                  src={ciplobottleImage}
+                  src={newstemcellImage}
                   alt="CiploStem vial"
                   width={800}
                   height={1000}
-                  className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                  className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)] animate-[spin_32s_linear_infinite]"
                   decoding="async"
                   loading="eager"
-                  fetchPriority="high"
+                  fetchpriority="high"
                 />
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function About() {
                       <div className="pointer-events-none absolute inset-x-8 top-4 h-1/3 rounded-[50%] bg-gradient-to-b from-white/60 to-transparent blur-md" />
 
                       {/* Content */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center px-10 text-center">
+                      <div className="absolute inset-0 flex flex-col items-center justify-start pt-16 px-8 text-center">
                         {/* Icon with glow halo */}
                         <div className="relative mb-5">
                           <div className={`absolute -inset-2 rounded-full bg-gradient-to-br ${v.iconBg} opacity-40 blur-xl transition-all duration-500 group-hover:opacity-60`} />
@@ -251,7 +251,7 @@ export default function About() {
                         </p>
 
                         {/* Bottom Accent Line */}
-                        <div className={`mt-5 h-1 w-12 ${v.accentColor} rounded-full transition-all duration-500 group-hover:w-16`} />
+                        <div className={`absolute bottom-16 left-1/2 -translate-x-1/2 h-1 w-12 ${v.accentColor} rounded-full transition-all duration-500 group-hover:w-16`} />
                       </div>
                     </div>
                   </div>

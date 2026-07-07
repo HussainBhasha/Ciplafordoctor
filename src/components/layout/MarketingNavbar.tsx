@@ -3,23 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
-import brandLogo from "@/assets/ciplostem-logo.png";
-import ciplaLogo from "@/assets/Cipla_logo.svg.png";
+import brandLogo from "@/assets/Cipla_logo.svg.png";
 
-const defaultNav = [
-  { label: "About", href: "/about" },
-  { label: "Doctor", href: "/doctor" },
-  { label: "Assessment", href: "/patient#assessment" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-const patientNav = [
-  { label: "Home", href: "/patient" },
-  { label: "Assessment", href: "/patient#assessment" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-const doctorNav = [
+const nav = [
   { label: "About", href: "/about" },
   { label: "Doctor", href: "/doctor" },
   { label: "Contact", href: "/contact" },
@@ -29,31 +15,6 @@ export default function MarketingNavbar() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const setPortal = (next: "patient" | "doctor" | null) => {
-    if (!next) return;
-    try {
-      sessionStorage.setItem("ciplostem:portal", next);
-    } catch {
-      void 0;
-    }
-  };
-  const portal = (() => {
-    if (location.pathname.startsWith("/patient")) return "patient" as const;
-    if (location.pathname.startsWith("/doctor")) return "doctor" as const;
-    try {
-      const v = sessionStorage.getItem("ciplostem:portal");
-      if (v === "patient" || v === "doctor") return v;
-    } catch {
-      void 0;
-    }
-    return null;
-  })();
-  const nav = portal === "patient" ? patientNav : portal === "doctor" ? doctorNav : defaultNav;
-
-  useEffect(() => {
-    if (location.pathname.startsWith("/patient")) setPortal("patient");
-    if (location.pathname.startsWith("/doctor")) setPortal("doctor");
-  }, [location.pathname]);
 
   useEffect(() => {
     setOpen(false);
@@ -89,29 +50,16 @@ export default function MarketingNavbar() {
         )}
       >
         <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 pl-4 sm:pl-6 lg:pl-8 flex items-center">
-          {portal === "patient" ? (
-            <Link to="/" className="inline-flex items-center gap-2 shrink-0">
-              <img
-                src={ciplaLogo}
-                alt="Cipla"
-                className="h-10 sm:h-14 lg:h-16 w-auto object-contain contrast-125"
-                decoding="async"
-                loading="eager"
-              />
-              <span className="sr-only">Cipla</span>
-            </Link>
-          ) : (
-            <Link to="/" className="inline-flex items-center gap-2 shrink-0">
-              <img
-                src={brandLogo}
-                alt="CiploStem"
-                className="h-10 sm:h-14 lg:h-16 w-auto object-contain contrast-125"
-                decoding="async"
-                loading="eager"
-              />
-              <span className="sr-only">CiploStem</span>
-            </Link>
-          )}
+          <Link to="/" className="inline-flex items-center gap-2 shrink-0">
+            <img
+              src={brandLogo}
+              alt="CiploStem"
+              className="h-10 sm:h-14 lg:h-16 w-auto object-contain contrast-125"
+              decoding="async"
+              loading="eager"
+            />
+            <span className="sr-only">CiploStem</span>
+          </Link>
         </div>
         <Container>
           <div className={cn("flex h-16 sm:h-20 items-center justify-between relative")}>
@@ -136,9 +84,6 @@ export default function MarketingNavbar() {
                       active && "text-slate-950 font-semibold",
                     )}
                     onClick={(e: MouseEvent<HTMLAnchorElement>) => {
-                      if (item.href.startsWith("/patient")) setPortal("patient");
-                      if (item.href.startsWith("/doctor")) setPortal("doctor");
-
                       if (hash && location.pathname === normalizedPath) {
                         e.preventDefault();
                         const el = document.getElementById(hash);
@@ -160,30 +105,15 @@ export default function MarketingNavbar() {
 
             {/* Right: Mobile menu button (if needed) */}
             <div className="relative z-20">
-              {!portal && (
-                <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/80 ring-1 ring-sky-200/70 text-slate-80 backdrop-blur transition active:scale-95"
-                    aria-label={open ? "Close menu" : "Open menu"}
-                    aria-expanded={open}
-                    onClick={() => setOpen((v) => !v)}
-                  >
-                    {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                  </button>
-                </div>
-              )}
-              {portal && (
-                <button
-                  type="button"
-                  className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/80 ring-1 ring-sky-200/70 text-slate-80 backdrop-blur transition active:scale-95"
-                  aria-label={open ? "Close menu" : "Open menu"}
-                  aria-expanded={open}
-                  onClick={() => setOpen((v) => !v)}
-                >
-                  {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </button>
-              )}
+              <button
+                type="button"
+                className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/80 ring-1 ring-sky-200/70 text-slate-80 backdrop-blur transition active:scale-95"
+                aria-label={open ? "Close menu" : "Open menu"}
+                aria-expanded={open}
+                onClick={() => setOpen((v) => !v)}
+              >
+                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
             </div>
           </div>
         </Container>
@@ -209,11 +139,7 @@ export default function MarketingNavbar() {
                 key={item.label}
                 to={item.href}
                 className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-800 hover:bg-sky-50 active:bg-sky-100 transition"
-                onClick={() => {
-                  if (item.href.startsWith("/patient")) setPortal("patient");
-                  if (item.href.startsWith("/doctor")) setPortal("doctor");
-                  setOpen(false);
-                }}
+                onClick={() => setOpen(false)}
               >
                 <span>{item.label}</span>
                 <span className="text-sky-500">→</span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlaskConical, Microscope, TrendingUp, FileCheck, Rocket } from 'lucide-react';
+import { Activity, Dna, Award, FileCheck, Rocket } from 'lucide-react';
 
 const milestones = [
   {
@@ -126,11 +126,11 @@ export const RoadmapSection: React.FC = () => {
             <div className="absolute inset-0" style={{ zIndex: 10 }}>
               {milestones.map((item, index) => {
                 const icons = [
-                  <FlaskConical key="icon-1" className="w-10 h-10 text-[#1E5EFF]" />,
-                  <Microscope key="icon-2" className="w-10 h-10 text-[#1E5EFF]" />,
-                  <TrendingUp key="icon-3" className="w-10 h-10 text-[#1E5EFF]" />,
-                  <FileCheck key="icon-4" className="w-10 h-10 text-[#1E5EFF]" />,
-                  <Rocket key="icon-5" className="w-10 h-10 text-[#1E5EFF]" />,
+                  <Activity key="icon-1" className="w-10 h-10 text-[#1E5EFF]" strokeWidth={2.5} />,
+                  <Dna key="icon-2" className="w-10 h-10 text-[#1E5EFF]" strokeWidth={2.5} />,
+                  <Award key="icon-3" className="w-10 h-10 text-[#1E5EFF]" strokeWidth={2.5} fill="currentColor" />,
+                  <FileCheck key="icon-4" className="w-10 h-10 text-[#1E5EFF]" strokeWidth={2.5} />,
+                  <Rocket key="icon-5" className="w-10 h-10 text-[#1E5EFF]" strokeWidth={2.5} fill="currentColor" />,
                 ];
 
                 const positions = [
@@ -238,11 +238,11 @@ export const RoadmapSection: React.FC = () => {
             <div className="space-y-8 md:space-y-12">
               {milestones.map((item, index) => {
                 const icons = [
-                  <FlaskConical key="mobile-icon-1" className="w-6 h-6 sm:w-7 sm:h-7 text-white" />,
-                  <Microscope key="mobile-icon-2" className="w-6 h-6 sm:w-7 sm:h-7 text-white" />,
-                  <TrendingUp key="mobile-icon-3" className="w-6 h-6 sm:w-7 sm:h-7 text-white" />,
-                  <FileCheck key="mobile-icon-4" className="w-6 h-6 sm:w-7 sm:h-7 text-white" />,
-                  <Rocket key="mobile-icon-5" className="w-6 h-6 sm:w-7 sm:h-7 text-white" />,
+                  <Activity key="mobile-icon-1" className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />,
+                  <Dna key="mobile-icon-2" className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />,
+                  <Award key="mobile-icon-3" className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} fill="currentColor" />,
+                  <FileCheck key="mobile-icon-4" className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />,
+                  <Rocket key="mobile-icon-5" className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} fill="currentColor" />,
                 ];
 
                 return (
