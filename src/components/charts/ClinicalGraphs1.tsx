@@ -59,8 +59,7 @@ export function Phase2VASChart() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          {/* Highlight Box for 25M */}
-          <div className="absolute bottom-[60px] left-[15%] right-[15%] h-[120px] border-2 border-green-400 rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_15px_rgba(74,222,128,0.2)]" />
+
         </div>
 
         <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
@@ -155,7 +154,7 @@ export function Phase2WOMACChart() {
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col items-center">
         <p className="text-lg md:text-xl font-bold text-slate-800 text-center leading-relaxed">
-          Significant <span className="text-sky-600">improvement in pain, stiffness & physical function</span> noted<br/> in group treated with <span className="text-sky-600">25M Stempeucel/Mesenchymal Stem Cells dose</span> @ 3, 6 & 12 months
+          Patients receiving the <span className="text-sky-600">25 million Stempeucel (BMMSC) dose</span> demonstrated significant <span className="text-sky-600">improvements in pain, stiffness, and physical function</span> at 3, 6, and 12 months.
         </p>
       </div>
     </div>

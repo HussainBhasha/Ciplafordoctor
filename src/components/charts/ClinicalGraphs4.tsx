@@ -93,7 +93,7 @@ export function Phase3MRICartilageChart() {
   return (
     <div className="w-full bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="w-full relative">
-        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Average Cartilage Score<br/><span className="text-base font-semibold text-slate-700">(Medial FT compartment)</span></h3>
+        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Average Cartilage Score<br/><span className="text-base font-semibold text-slate-700">(Medial femoro tibial compartment)</span></h3>
         <div className="h-[350px] w-full max-w-3xl mx-auto">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={mriCartilageData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} barGap={0} barSize={40}>
@@ -140,9 +140,10 @@ const il10Data = [
 
 export function Phase3IL10Chart() {
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-full flex flex-col gap-8">
+      <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="flex-1 w-full relative">
-        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">IL-10 (change from baseline)</h3>
+        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Interleukin-10 (IL-10) <span className="font-normal text-slate-600 text-lg">(change from baseline)</span></h3>
         <div className="h-[400px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={il10Data} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} barGap={0} barSize={25}>
@@ -156,12 +157,15 @@ export function Phase3IL10Chart() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        <p className="mt-6 text-xs text-slate-500 text-center px-4 leading-relaxed max-w-2xl mx-auto">
+          <span className="font-semibold">IL-10:</span> Interleukin-10; an anti-inflammatory cytokine and biomarker associated with cartilage protection. Increased IL-10 levels indicate a favorable anti-inflammatory response.
+        </p>
       </div>
       
       <div className="w-full lg:w-1/3 flex flex-col gap-8">
         <div className="bg-sky-50/50 rounded-tr-3xl rounded-bl-3xl rounded-tl-md rounded-br-md p-8 border border-green-400 shadow-[0_4px_20px_-5px_rgba(74,222,128,0.2)] text-center">
           <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed">
-            IL-10 levels increased significantly at <span className="text-blue-800">3 & 24 months in the Allogenic BMMSC group</span>
+            Interleukin-10 (IL-10) levels increased significantly at <span className="text-blue-800">3 & 24 months in the Allogenic BMMSC group</span>
           </p>
         </div>
         <p className="text-xl md:text-2xl font-bold text-blue-900 text-center tracking-tight">
@@ -169,7 +173,14 @@ export function Phase3IL10Chart() {
         </p>
       </div>
     </div>
-  );
+      
+    <div className="bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 text-center max-w-4xl mx-auto px-4 w-full">
+      <p className="text-sm md:text-base text-slate-700 font-medium leading-relaxed">
+        Interleukin-10 (IL-10) is an anti-inflammatory cytokine that helps regulate immune responses and protect cartilage from inflammation-associated damage. Higher IL-10 levels are associated with reduced inflammation and improved cartilage health in patients with osteoarthritis.
+      </p>
+    </div>
+  </div>
+);
 }
 
 // 4. CTX-II Biomarker Analysis
@@ -221,7 +232,7 @@ export function Phase3CTXIIChart() {
           <tbody>
             <tr className="border-b border-slate-200">
               <td className="py-3 px-4 font-bold text-red-700 text-left flex items-center gap-2">
-                <span className="w-3 h-3 bg-red-600 block rounded-sm"></span> BMSC arm
+                <span className="w-3 h-3 bg-red-600 block rounded-sm"></span> BMMSC arm
               </td>
               {ctx2Data.map((d) => <td key={d.time} className="py-3 px-4 text-slate-800">{d.BMMSCs}</td>)}
             </tr>
@@ -235,42 +246,7 @@ export function Phase3CTXIIChart() {
         </table>
       </div>
 
-      <p className="text-xs text-slate-500 mb-6 text-center max-w-4xl">
-        *The fragment of C-terminal cross-linked telopeptide of type II collagen (CTX-II) is released into circulation and subsequently secreted into urine and indicative of disease progression
-      </p>
 
-      {/* Secondary Table */}
-      <div className="w-full max-w-3xl overflow-x-auto mb-8 border-2 border-slate-700">
-        <table className="w-full text-base text-center">
-          <thead>
-            <tr className="border-b-2 border-slate-700">
-              <th className="py-3 px-4"></th>
-              <th className="py-3 px-4 font-bold text-slate-900 border-l-2 border-slate-700">Estimate (95% CI)</th>
-              <th className="py-3 px-4 font-bold text-slate-900 border-l-2 border-slate-700">p Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-b-2 border-slate-700">
-              <td className="py-3 px-4 font-medium text-slate-700">Time</td>
-              <td className="py-3 px-4 text-slate-800 border-l-2 border-slate-700">-0.46 (-0.99, 0.06)</td>
-              <td className="py-3 px-4 text-slate-800 border-l-2 border-slate-700">0.082</td>
-            </tr>
-            <tr>
-              <td className="py-3 px-4 font-medium text-slate-700">Group (BMSC)</td>
-              <td className="py-3 px-4 text-slate-800 border-l-2 border-slate-700">-7.79 (-96.18, 80.60)</td>
-              <td className="py-3 px-4 text-slate-800 border-l-2 border-slate-700">0.863</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="text-center max-w-5xl">
-        <p className="text-lg md:text-xl font-bold text-blue-900 leading-relaxed">
-          CTX II levels decreases in BMSC arm till D90 of injection...GEE method of analysis shows 
-          BMSC arm has 7.79 units decrease in average CTX II values as compared to placebo arm 
-          irrespective of time till one year follow up
-        </p>
-      </div>
     </div>
   );
 }

@@ -74,10 +74,7 @@ export function Phase2ICOAPChart() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      {/* Green highlight box for 25M (C1 only) to match the other charts */}
-      {isC1 && (
-        <div className="absolute bottom-[60px] left-[15%] right-[15%] h-[120px] border-2 border-green-400 rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_15px_rgba(74,222,128,0.2)]" />
-      )}
+
     </div>
   );
 
@@ -91,23 +88,16 @@ export function Phase2ICOAPChart() {
       </div>
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col md:flex-row items-center justify-around gap-6">
-        <div className="flex-1 max-w-lg text-center md:text-left border-r-0 md:border-r border-sky-200 md:pr-6">
-          <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed">
-            ICOAP total <span className="text-sky-600">decreased by 34.6%</span><br/>
-            in the <span className="text-sky-600">25 M group</span> compared to<br/>
-            29.0% & 22.2% in the 50 M and P1 groups
-          </p>
-        </div>
-        <div className="flex-1 max-w-lg">
-          <h5 className="font-bold text-slate-900 mb-4 text-center md:text-left">Similar trend seen in ICOAP subscores:</h5>
-          <ul className="space-y-3">
-            <li className="flex items-center justify-center md:justify-start gap-3 font-semibold text-slate-700">
-              <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Constant pain reduced by 26.5 ± 25.3
+        <div className="flex-1 max-w-lg text-center mx-auto">
+          <h5 className="font-bold text-slate-900 mb-4 text-center">Similar trend seen in ICOAP subscores:</h5>
+          <ul className="space-y-3 inline-block text-left">
+            <li className="flex items-center justify-center gap-3 font-semibold text-slate-700">
+              <svg className="w-5 h-5 text-sky-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              <span>Constant pain reduced by 26.5 ± 25.3</span>
             </li>
-            <li className="flex items-center justify-center md:justify-start gap-3 font-semibold text-slate-700">
-              <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Intermittent pain reduced by 17.1 ± 28.4
+            <li className="flex items-center justify-center gap-3 font-semibold text-slate-700">
+              <svg className="w-5 h-5 text-sky-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              <span>Intermittent pain reduced by 17.1 ± 28.4</span>
             </li>
           </ul>
         </div>

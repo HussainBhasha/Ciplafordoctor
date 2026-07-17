@@ -164,23 +164,6 @@ export default function Doctor() {
       const sectionEl = mscRef.current;
       gsap.set(mscEl, { transformOrigin: "50% 50%" });
 
-      // Only apply scroll-based animation on desktop
-      if (sectionEl && !isMobile) {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionEl,
-            start: "top 90%",
-            end: "bottom 20%",
-            scrub: 1.2,
-          },
-        });
-
-        tl.fromTo(
-          mscEl,
-          { x: -780, y: -140, opacity: 0, scale: 0.84 },
-          { x: 0, y: 0, opacity: 1, scale: 1, ease: "none", duration: 0.55 },
-        ).to(mscEl, { x: -780, y: -140, opacity: 0, scale: 0.84, ease: "none", duration: 0.45 });
-      }
 
       // Keep rotation animation for all devices
       gsap.to(mscEl, {
@@ -388,7 +371,7 @@ export default function Doctor() {
             decoding="async"
             loading="eager"
             aria-hidden="true"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           {/* Desktop Image */}
           <img
@@ -401,7 +384,7 @@ export default function Doctor() {
             decoding="async"
             loading="eager"
             aria-hidden="true"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#EAF7FF] to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
@@ -496,10 +479,9 @@ export default function Doctor() {
                   Orthobiologics use biological substances and cellular therapies to support tissue repair, healing and restoration.
                 </p>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-8 grid gap-4">
                   {[
-                    { title: "Blood Derived Therapies", items: ["PRP", "GFC", "ACS"] },
-                    { title: "Cell Based Therapies", items: ["Mesenchymal Stem Cells"] },
+                    { title: "Cell Based Therapies", items: ["Mesenchymal Stem Cells (MSCs)", "Anti-inflammatory", "Immunomodulatory", "Self-replication", "Differentiation", "Low Immunogenicity"] },
                   ].map((card, idx) => (
                     <div
                       key={card.title}
@@ -510,8 +492,8 @@ export default function Doctor() {
                       )}
                       style={{ transitionDelay: `${idx * 90}ms` }}
                     >
-                      <div className="text-sm font-semibold text-slate-900">{card.title}</div>
-                      <div className="mt-3 space-y-2 text-sm text-slate-600">
+                      <div className="text-lg font-semibold text-slate-900 text-center mb-4">{card.title}</div>
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2 text-sm text-slate-600">
                         {card.items.map((x) => (
                           <div key={x} className="flex items-start gap-3">
                             <div className="mt-1.5 h-2 w-2 flex-none rounded-full bg-sky-600" />
@@ -536,23 +518,21 @@ export default function Doctor() {
                   <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
                 <p className={cn("mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", techInView && "reveal-fade-visible")}>
-                  Mesenchymal Stem Cells is an adult human bone marrow-derived, expanded, cultured and pooled allogenic mesenchymal stromal cell therapy.
+                  Stempeucel is an allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
-                    "Allogenic MSC Technology",
+                    "Bone Marrow-Derived BMMSCs",
                     "Standardized Cell Preparation",
                     "GMP Manufacturing",
                     "Off-the-Shelf Availability",
-                    "Clinical Development Support",
                   ].map((x, idx, arr) => (
                     <div
                       key={x}
                       className={cn(
                         "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-0.5 hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
                         "js-scroll-card",
-                        idx === arr.length - 1 && "sm:col-span-2 sm:mx-auto sm:max-w-[520px]",
                         techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
                       style={{ transitionDelay: `${idx * 70}ms` }}
@@ -600,25 +580,26 @@ export default function Doctor() {
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {[
-                    { title: "Self Renewal", text: "Maintains cell population" },
-                    { title: "Differentiation", text: "Supports tissue repair" },
-                    { title: "Immunomodulation", text: "Helps regulate inflammatory response" },
-                    { title: "Anti-inflammatory Action", text: "Supports inflammatory balance" },
+                    { title: "Self-Replication" },
+                    { title: "Differentiation" },
+                    { title: "Anti-Inflammatory" },
+                    { title: "Immunomodulatory" },
+                    { title: "Anti-Catabolic" },
+                    { title: "Low Immunogenicity" },
                   ].map((x, idx) => (
                     <div
                       key={x.title}
                       className={cn(
-                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-700 ease-out",
+                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-700 ease-out flex items-center h-full",
                         "js-scroll-card",
                         mscInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
                       style={{ transitionDelay: `${idx * 90}ms` }}
                     >
-                      <div className="flex items-center gap-2 mb-1">
+                      <div className="flex items-center gap-2">
                         <div className="h-2 w-2 flex-none rounded-full bg-sky-600" />
-                        <div className="text-sm font-semibold text-slate-900">{x.title}</div>
+                        <div className="text-sm font-semibold text-slate-900 uppercase tracking-wide">{x.title}</div>
                       </div>
-                      <div className="mt-2 text-sm leading-relaxed text-slate-600">{x.text}</div>
                     </div>
                   ))}
                 </div>
@@ -756,7 +737,7 @@ export default function Doctor() {
                         <img src={icon3} alt="Cartilage Preservation" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CARTILAGE PRESERVATION</h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CHONDROPRESERVATIVE</h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Stimulates Differentiation & Maintains Cartilage Integrity</p>
                     </div>

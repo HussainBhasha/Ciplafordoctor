@@ -51,20 +51,20 @@ export default function ClinicalTrials() {
                 Clinical Development Program
               </h2>
 
-              <div className="relative flex flex-col md:flex-row justify-between items-center gap-4 lg:gap-2">
+              <div className="relative flex flex-col md:flex-row justify-between items-stretch gap-4 lg:gap-2">
                 {[
                   "Preclinical Studies",
-                  "Phase I Safety",
-                  "Phase II Dose Finding",
-                  "Phase III RCT",
-                  "24-Month Extension",
-                  "DCGI Approval",
-                  "Post Marketing"
+                  "Phase I Clinical trial",
+                  "Phase II dose finding study",
+                  "Phase III Clinical Trial",
+                  "Phase 3 Extension Clinical trial",
+                  "DCGI/CDSCO",
+                  "Post marketing surveillance study"
                 ].map((milestone, idx, arr) => (
                   <Fragment key={idx}>
-                    <div className="relative flex items-center justify-center group w-full md:w-auto opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${idx * 150}ms` }}>
-                      <div className="bg-white border-2 border-sky-200 rounded-full flex items-center justify-center px-4 py-3 min-w-[120px] lg:min-w-[140px] h-full transition-all duration-300 group-hover:border-sky-500 group-hover:shadow-md shadow-sm z-10">
-                        <span className="text-xs lg:text-sm font-bold text-slate-800 text-center leading-tight">
+                    <div className="relative flex flex-1 items-stretch justify-center group w-full opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${idx * 150}ms` }}>
+                      <div className="bg-white border-2 border-sky-200 rounded-2xl flex items-center justify-center p-3 w-full transition-all duration-300 group-hover:border-sky-500 group-hover:shadow-md shadow-sm z-10 min-h-[90px]">
+                        <span className="text-[11px] lg:text-xs xl:text-sm font-bold text-slate-800 text-center leading-snug">
                           {milestone}
                         </span>
                       </div>
@@ -98,7 +98,7 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Objective</h3>
-                  <p className="text-slate-700 leading-relaxed">To determine the optimal dose and evaluate the safety and efficacy of Mesenchymal Stem Cells in knee osteoarthritis.</p>
+                  <p className="text-slate-700 leading-relaxed">To determine the optimal dose and evaluate the safety and efficacy of allogeneic BM-MSCs.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
@@ -108,12 +108,12 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Patient Population</h3>
-                  <p className="text-slate-700 leading-relaxed">Patients with diagnosed Grade II and Grade III Knee Osteoarthritis.</p>
+                  <p className="text-slate-700 leading-relaxed">Patients with diagnosed with Grade II and Grade III Knee Osteoarthritis.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Dose Groups</h3>
-                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses (e.g., 25M, 50M, 75M, 150M) vs Placebo arm.</p>
+                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses vs Placebo arm.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
@@ -150,12 +150,12 @@ export default function ClinicalTrials() {
                 </div>
                 <hr className="border-slate-100" />
                 <div>
-                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm">3</span> ICOAP assesses pain as <span className="text-sky-600 font-normal">"constant" pain & "intermittent" pain</span></h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">3</span> <span>ICOAP (Intermittent and Constant Osteoarthritis Pain) evaluates both constant and intermittent pain associated with knee osteoarthritis.</span></h3>
                   <Phase2ICOAPChart />
                 </div>
                 <hr className="border-slate-100" />
                 <div>
-                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm">4</span> WORMS Scoring (MRI) <span className="text-sky-600 font-normal">to evaluate structural change in Knee OA</span></h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">4</span> <span>Whole-Organ Magnetic Resonance Imaging Score (WORMS) MRI-based assessment of structural changes in Knee Osteoarthritis</span></h3>
                   <Phase2WormsTable />
                 </div>
               </div>
@@ -179,15 +179,15 @@ export default function ClinicalTrials() {
                       <td className="border border-slate-200 py-5 px-6 text-slate-700">Randomized, Double Blind, Placebo Controlled</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
-                      <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Patients</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146</td>
+                      <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Study Participants</th>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146 (73 Active; 73 Placebo)</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Treatment Arms</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700 font-medium">
-                        <span className="text-sky-700">BMMSC + HA</span>
-                        <span className="mx-3 text-slate-400 text-xs uppercase">vs</span>
-                        <span className="text-slate-600">Placebo + HA</span>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700 font-medium leading-relaxed">
+                        <span className="text-sky-700">25 Million Allogeneic BMMSCs + Hyaluronic Acid (n=73)</span>
+                        <span className="mx-3 text-slate-400 text-xs uppercase font-bold inline-block">vs</span>
+                        <span className="text-slate-600">Placebo + Hyaluronic Acid (n=73)</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">

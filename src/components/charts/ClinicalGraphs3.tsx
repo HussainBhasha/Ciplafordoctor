@@ -55,7 +55,7 @@ export function Phase2WormsTable() {
       
       <div className="mt-8 text-center max-w-3xl mx-auto px-4">
         <p className="text-sm md:text-base text-slate-700 font-normal leading-relaxed">
-          No perceptible change in WORMS score, including cartilage signal and morphology from baseline to follow-up visits in any of the groups of patients.
+          No significant change in WORMS scores was observed from baseline to follow-up across all treatment groups, indicating stable structural joint features with no detectable progression of cartilage damage or other MRI-assessed abnormalities.
         </p>
       </div>
     </div>
@@ -90,9 +90,13 @@ const phase3Womac = [
 
 export function Phase3WOMACChart() {
   return (
-    <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-full flex flex-col gap-8">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="flex-1 w-full relative">
-        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">The WOMAC Total score <span className="font-semibold text-slate-700 text-lg">(Pain, Stiffness & Physical Function)</span></h3>
+        <h3 className="text-center text-xl font-bold text-slate-900 mb-6 flex flex-col gap-1">
+          <span>WOMAC Total Score</span>
+          <span className="font-semibold text-slate-700 text-lg">Assessment of Pain, Stiffness & Physical Function</span>
+        </h3>
         <div className="h-[400px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={phase3Womac} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
@@ -106,6 +110,9 @@ export function Phase3WOMACChart() {
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <p className="mt-6 text-xs text-slate-500 text-center px-4 leading-relaxed max-w-2xl mx-auto">
+          <span className="font-semibold">WOMAC:</span> Western Ontario and McMaster Universities Osteoarthritis Index – a validated questionnaire used to assess pain, stiffness, and physical function in patients with knee osteoarthritis.
+        </p>
       </div>
       
       <div className="w-full lg:w-1/3 flex flex-col gap-12 border-l-2 border-sky-200 pl-8">
@@ -128,5 +135,12 @@ export function Phase3WOMACChart() {
         </div>
       </div>
     </div>
-  );
+      
+    <div className="bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 text-center max-w-4xl mx-auto px-4 w-full">
+      <p className="text-sm md:text-base text-slate-700 font-medium leading-relaxed">
+        A progressive reduction in WOMAC Total Score was observed in the BMMSC-treated group throughout the 24-month follow-up, reflecting sustained improvements in pain, stiffness, and physical function compared with the placebo group. Lower WOMAC scores indicate improved patient outcomes.
+      </p>
+    </div>
+  </div>
+);
 }

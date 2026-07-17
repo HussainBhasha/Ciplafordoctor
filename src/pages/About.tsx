@@ -9,10 +9,9 @@ import { Award, Globe, Lightbulb, Users } from "lucide-react";
 import { RoadmapSection } from '@/components/RoadmapSection';
 
 const features = [
-  { label: "CELL TYPE", value: "Allogeneic MSCs" },
-  { label: "INDICATION", value: "Cartilage preservation" },
+  { label: "CELL TYPE", value: "Allogeneic Bone marrow derived MSCs" },
+  { label: "INDICATION", value: "Grade II & III Knee Osteoarthritis" },
   { label: "APPROACH", value: "Protocol-driven" },
-  { label: "CARE MODEL", value: "Guided recovery" },
 ];
 
 const values = [
@@ -34,15 +33,7 @@ const values = [
     titleColor: "text-slate-900",
     delay: "150ms",
   },
-  {
-    title: "Innovation Driven",
-    text: "We believe that innovation is transformational and a critical component in leading the organization towards its goal.",
-    icon: <Lightbulb className="h-10 w-10" />,
-    iconBg: "from-sky-400 to-sky-600",
-    accentColor: "bg-sky-500",
-    titleColor: "text-slate-900",
-    delay: "300ms",
-  },
+
   {
     title: "Integrity & Trust-Anchored",
     text: "We do the right thing, the right way. We place integrity at the core of our endeavours and take pride in the trust our stakeholders place in us.",
@@ -52,15 +43,7 @@ const values = [
     titleColor: "text-slate-900",
     delay: "450ms",
   },
-  {
-    title: "Excellence Focused",
-    text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to our purpose.",
-    icon: <Award className="h-10 w-10" />,
-    iconBg: "from-sky-400 to-sky-600",
-    accentColor: "bg-sky-500",
-    titleColor: "text-slate-900",
-    delay: "600ms",
-  },
+
 ];
 
 export default function About() {
@@ -102,7 +85,7 @@ export default function About() {
                 </div>
 
                 <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg" : "reveal-fade mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg"}>
-                  A next-generation regenerative product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
+                  A next-generation orthobiologic product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
                 </p>
 
                 <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">
@@ -111,9 +94,11 @@ export default function About() {
                       key={x.label}
                       className={[
                         "rounded-lg md:rounded-xl bg-white px-3 md:px-5 py-3 md:py-4 shadow-soft-xl ring-1 ring-sky-100",
+                        "flex flex-col justify-center min-h-[80px] md:min-h-[100px]",
                         "transition-all duration-300 ease-out",
                         "cursor-pointer hover:ring-sky-300 hover:shadow-soft-2xl hover:scale-105",
                         heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
+                        idx === 2 ? "sm:col-span-2 sm:w-[calc(50%-0.25rem)] md:w-[calc(50%-0.375rem)] sm:mx-auto w-full" : "w-full"
                       ].join(" ")}
                       style={{ transitionDelay: `${140 + idx * 60}ms` }}
                     >
@@ -203,14 +188,9 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="relative z-50 mx-auto max-w-4xl text-center mb-24 px-6">
-              <p className="text-lg md:text-xl leading-relaxed font-medium text-slate-700">
-                Our core values guide every conversation, organizational decision and anchor the actions of our employees.
-                We consistently revisit them and recalibrate strategies to stay ever-relevant to our stakeholders.
-              </p>
-            </div>
 
-            <div className="relative z-20 mx-auto max-w-7xl mt-10 mb-24">
+
+            <div className="relative z-20 mx-auto max-w-7xl mt-10 mb-4">
               <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
                 {values.map((v) => (
                   <div
@@ -275,7 +255,7 @@ export default function About() {
           `}</style>
         </section>
 
-        <section className="bg-sky-100 pt-10 pb-0 sm:pt-16 sm:pb-0">
+        <section className="bg-sky-100 pt-4 pb-0 sm:pt-8 sm:pb-0">
           <RoadmapSection />
         </section>
       </main>

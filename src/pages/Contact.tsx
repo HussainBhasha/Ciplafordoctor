@@ -26,10 +26,10 @@ export default function Contact() {
         <section className="bg-sky-50/70">
           <Container>
              <div className="pt-8 pb-2 text-center sm:pt-12 sm:pb-4">
-              <div className="text-[11px] font-semibold tracking-[0.32em] text-sky-700/80">CONTACT</div>
+              <div className="text-[11px] font-semibold tracking-[0.32em] text-sky-700/80">FOR MORE INFORMATION</div>
               <div className="mx-auto mt-3 max-w-4xl text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-slate-900">
-                Get in touch with{" "}
-                <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">{contactName}</span>.
+                Contact the{" "}
+                <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">{contactName} Team</span>
               </div>
             </div>
           </Container>
