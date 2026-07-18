@@ -420,7 +420,7 @@ export default function Doctor() {
                     FOR DOCTORS
                   </div>
                   <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(1.8rem,4vw,3.5rem)]">
-                    <RevealWords text="Advancing Knee Care Through Regenerative Science" active={heroInView} />
+                    <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
                     Evidence-based cellular therapy solutions for Knee Osteoarthritis management
