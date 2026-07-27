@@ -6,6 +6,7 @@ import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
 import ClinicalTrials from "@/pages/ClinicalTrials";
 import PatientOutcomes from "@/pages/PatientOutcomes";
+import Disclaimer from "@/pages/Disclaimer"; // Legal Disclaimer Page
 
 function ScrollToTop() {
   const location = useLocation();
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/clinical-trials" element={<ClinicalTrials />} />
           <Route path="/patient-outcomes" element={<PatientOutcomes />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
       </Suspense>
     </Router>

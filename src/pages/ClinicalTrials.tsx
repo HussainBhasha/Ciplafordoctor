@@ -47,7 +47,7 @@ export default function ClinicalTrials() {
         <section className="py-20 bg-transparent">
           <Container>
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-12 text-center tracking-tight border-b border-slate-200 pb-4">
+              <h2 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-black mb-12 text-center tracking-tight border-b border-slate-200 pb-4">
                 Clinical Development Program
               </h2>
 
@@ -63,8 +63,8 @@ export default function ClinicalTrials() {
                 ].map((milestone, idx, arr) => (
                   <Fragment key={idx}>
                     <div className="relative flex flex-1 items-stretch justify-center group w-full opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${idx * 150}ms` }}>
-                      <div className="bg-white border-2 border-sky-200 rounded-2xl flex items-center justify-center p-3 w-full transition-all duration-300 group-hover:border-sky-500 group-hover:shadow-md shadow-sm z-10 min-h-[90px]">
-                        <span className="text-[11px] lg:text-xs xl:text-sm font-bold text-slate-800 text-center leading-snug">
+                      <div className="bg-white border-2 border-sky-200 rounded-2xl flex items-center justify-center p-3 w-full transition-all duration-300 group-hover:border-sky-500 group-hover:shadow-md shadow-sm z-10 min-h-[90px] md:min-h-[90px]">
+                        <span className="text-sm md:text-[11px] lg:text-xs xl:text-sm font-bold text-slate-800 text-center leading-snug">
                           {milestone}
                         </span>
                       </div>
@@ -140,12 +140,12 @@ export default function ClinicalTrials() {
 
               <div className="flex flex-col gap-16 mt-12">
                 <div>
-                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm">1</span> Visual Analog Scale (VAS) measures pain severity</h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">1</span> <span>Visual Analog Scale (VAS) measures pain severity</span></h3>
                   <Phase2VASChart />
                 </div>
                 <hr className="border-slate-100" />
                 <div>
-                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm">2</span> The WOMAC Total score measures: <span className="text-sky-600 font-normal">pain, stiffness & physical function.</span></h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">2</span> <span>The WOMAC Total score measures: <span className="text-sky-600 font-normal block sm:inline mt-1 sm:mt-0">pain, stiffness & physical function.</span></span></h3>
                   <Phase2WOMACChart />
                 </div>
                 <hr className="border-slate-100" />

@@ -122,7 +122,7 @@ export default function About() {
                   className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)] animate-[spin_32s_linear_infinite]"
                   decoding="async"
                   loading="eager"
-                  fetchpriority="high"
+                  fetchPriority="high"
                 />
               </div>
             </div>

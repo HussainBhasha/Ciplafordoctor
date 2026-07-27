@@ -401,16 +401,16 @@ export default function Doctor() {
                 {/* Mobile Content */}
                 <div className="block md:hidden">
                   <div className={cn("text-[11px] font-semibold tracking-[0.32em] text-sky-700/90 reveal-fade", heroInView && "reveal-fade-visible")}>
-                    CLINICAL SOLUTIONS
+                    FOR DOCTORS
                   </div>
                   <div className="mt-5 font-display font-semibold tracking-[-0.03em] leading-[1.05] text-slate-900 drop-shadow-[0_10px_30px_rgba(255,255,255,0.85)] text-[clamp(1.6rem,4vw,3rem)]">
-                    <RevealWords text="Regenerative Care for Knee Health" active={heroInView} />
+                    <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
-                    Advanced stem cell therapy solutions
+                    Evidence-based cellular therapy solutions for Knee Osteoarthritis management
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.9rem,1vw,1rem)]", heroInView && "reveal-fade-visible")}>
-                    Discover evidence-backed regenerative approaches to support your patients' joint health and mobility.
+                    Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved joint health.
                   </p>
                 </div>
 

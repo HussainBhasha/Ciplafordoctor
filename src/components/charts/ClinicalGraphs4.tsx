@@ -48,16 +48,14 @@ export function Phase3VASDecreaseChart() {
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
               <Bar dataKey="Placebo" fill={colors.blue} />
-              <Bar dataKey="BMMSCs" fill={colors.red}>
-                <LabelList dataKey="label" position="bottom" fill="#0f172a" fontSize={12} fontWeight="bold" />
-              </Bar>
+              <Bar dataKey="BMMSCs" fill={colors.red} />
             </BarChart>
           </ResponsiveContainer>
         </div>
       </div>
       
-      <div className="w-full lg:w-1/3 flex flex-col gap-8 border-l-2 border-slate-100 pl-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-4">% Pain reduction:</h3>
+      <div className="w-full lg:w-1/3 flex flex-col gap-8 lg:border-l-2 lg:border-t-0 border-t-2 border-slate-100 lg:pl-8 lg:pt-0 pt-8 px-2 lg:px-0">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4">% Pain reduction:</h3>
         <div className="flex flex-col gap-8">
           <div className="flex items-center gap-4">
             <svg className="w-12 h-12 text-red-600" viewBox="0 0 24 24" fill="currentColor">
@@ -102,12 +100,8 @@ export function Phase3MRICartilageChart() {
               <YAxis domain={[35, 43]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
-              <Bar dataKey="BMMSCs" fill={colors.red}>
-                <LabelList dataKey="BMMSCs" position="top" fill="#dc2626" fontSize={12} fontWeight="bold" />
-              </Bar>
-              <Bar dataKey="Placebo" fill={colors.blue}>
-                <LabelList dataKey="Placebo" position="top" fill="#0284c7" fontSize={12} fontWeight="bold" />
-              </Bar>
+              <Bar dataKey="BMMSCs" fill={colors.red} />
+              <Bar dataKey="Placebo" fill={colors.blue} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -199,22 +193,18 @@ export function Phase3CTXIIChart() {
   return (
     <div className="w-full flex flex-col items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="w-full relative mb-8">
-        <h3 className="text-center text-2xl font-bold text-slate-900 mb-2">CTX – II (urine)</h3>
-        <p className="absolute top-0 right-4 text-sm font-semibold text-slate-600">Normal: 65 – 618 pg/ml</p>
+        <h3 className="text-center text-xl sm:text-2xl font-bold text-slate-900 mb-2">CTX – II (urine)</h3>
+        <p className="static text-center lg:absolute lg:top-0 lg:right-4 text-sm font-semibold text-slate-600 mb-6 lg:mb-0 mt-2 lg:mt-0">Normal: 65 – 618 pg/ml</p>
         <div className="h-[350px] w-full max-w-5xl mx-auto">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={ctx2Data} margin={{ top: 30, right: 20, bottom: 0, left: 20 }} barGap={0} barSize={35}>
+            <BarChart data={ctx2Data} margin={{ top: 30, right: 10, bottom: 0, left: -20 }} barGap={0} maxBarSize={35}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="time" tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} />
               <YAxis domain={[0, 600]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
-              <Bar dataKey="BMMSCs" fill={colors.red}>
-                <LabelList dataKey="BMMSCs" position="center" fill="#fff" fontSize={10} fontWeight="bold" />
-              </Bar>
-              <Bar dataKey="Placebo" fill={colors.blue}>
-                <LabelList dataKey="p" position="top" fill="#0f172a" fontSize={11} fontWeight="bold" dy={-10} />
-              </Bar>
+              <Bar dataKey="BMMSCs" fill={colors.red} />
+              <Bar dataKey="Placebo" fill={colors.blue} />
             </BarChart>
           </ResponsiveContainer>
         </div>

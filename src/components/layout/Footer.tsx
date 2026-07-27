@@ -9,6 +9,7 @@ export default function Footer() {
     { label: "About", href: "/about" },
     { label: "Doctor", href: "/doctor" },
     { label: "Contact", href: "/contact" },
+    { label: "Disclaimer", href: "/disclaimer" },
   ] as const;
 
   return (
@@ -63,7 +64,7 @@ export default function Footer() {
           </div>
 
           {/* Mobile layout for small screens */}
-          <div className="flex flex-col gap-4 lg:hidden">
+          <div className="flex flex-col gap-6 lg:hidden">
             {/* Logo first for mobile */}
             <div className="flex justify-center">
               <img
@@ -72,6 +73,22 @@ export default function Footer() {
                 className="h-20 lg:h-24 w-auto shrink-0"
               />
             </div>
+
+            {/* Mobile Nav Links */}
+            <div className="flex flex-wrap justify-center gap-5 text-sm text-slate-600 px-4">
+              {nav.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className={`hover:text-sky-600 transition-colors font-medium ${
+                    location.pathname === item.href ? "text-sky-700" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
             <div className="mx-auto flex w-full max-w-sm flex-col gap-3 text-sm text-slate-600">
               <div className="grid grid-cols-[16px_1fr] items-center gap-3 text-left">
                 <Mail className="h-4 w-4 text-sky-700" />
