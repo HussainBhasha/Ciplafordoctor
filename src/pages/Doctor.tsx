@@ -786,13 +786,13 @@ export default function Doctor() {
                   >
                     <div className="text-base font-semibold text-slate-900">{x.title}</div>
                     <div className="mt-2 text-sm leading-relaxed text-slate-600 min-h-[48px]">{x.text}</div>
-                    <div className="mt-6 -mx-8 mb-4 h-[240px] sm:h-[290px]">
+                    <div className="mt-6 -mx-8 mb-4 sm:h-[290px]">
                       <img
                         src={x.image}
                         alt={x.title}
                         width={1200}
                         height={800}
-                        className="h-full w-full object-cover object-center"
+                        className="h-auto w-full object-contain object-center sm:h-full sm:object-cover"
                         decoding="async"
                         loading="lazy"
                       />
