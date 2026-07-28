@@ -37,14 +37,12 @@ export function Phase3VASDecreaseChart() {
       <div className="flex-1 w-full relative">
         <h3 className="text-center text-xl font-bold text-slate-900 mb-2">% decrease in VAS score</h3>
         <h4 className="text-center font-semibold text-slate-700 mb-6">VAS - Percentage change</h4>
-        <div className="h-[400px] w-full">
+        <div className="h-[400px] w-full border border-black rounded-xl p-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={vasDecreaseData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} barGap={2} barSize={20}>
+            <BarChart data={vasDecreaseData} margin={{ top: 20, right: 20, bottom: 20, left: 30 }} barGap={2} barSize={20}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} />
-              <YAxis domain={[-70, 10]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false}>
-                <Label value="% decrease in VAS score" angle={-90} position="insideLeft" style={{ textAnchor: 'middle', fill: '#0f172a', fontWeight: 'bold' }} dx={15} />
-              </YAxis>
+              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold' }} />
+              <YAxis domain={[-70, 10]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'VAS SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
               <Bar dataKey="Placebo" fill={colors.blue} />
@@ -91,13 +89,13 @@ export function Phase3MRICartilageChart() {
   return (
     <div className="w-full bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="w-full relative">
-        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Average Cartilage Score<br/><span className="text-base font-semibold text-slate-700">(Medial femoro tibial compartment)</span></h3>
-        <div className="h-[350px] w-full max-w-3xl mx-auto">
+        <h3 className="text-center text-xl font-bold text-slate-900 mb-6">MRI T2 Cartigram : Average Cartilage Score<br/><span className="text-base font-semibold text-slate-700">(Medial femoro tibial compartment)</span></h3>
+        <div className="h-[350px] w-full max-w-3xl mx-auto border border-black rounded-xl p-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={mriCartilageData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} barGap={0} barSize={40}>
+            <BarChart data={mriCartilageData} margin={{ top: 20, right: 20, bottom: 20, left: 30 }} barGap={0} barSize={40}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} />
-              <YAxis domain={[35, 43]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false} />
+              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold' }} />
+              <YAxis domain={[35, 43]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'VAS SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
               <Bar dataKey="BMMSCs" fill={colors.red} />
@@ -138,12 +136,12 @@ export function Phase3IL10Chart() {
       <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
       <div className="flex-1 w-full relative">
         <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Interleukin-10 (IL-10) <span className="font-normal text-slate-600 text-lg">(change from baseline)</span></h3>
-        <div className="h-[400px] w-full">
+        <div className="h-[400px] w-full border border-black rounded-xl p-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={il10Data} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} barGap={0} barSize={25}>
+            <BarChart data={il10Data} margin={{ top: 20, right: 20, bottom: 20, left: 30 }} barGap={0} barSize={25}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} />
-              <YAxis domain={[-1, 0.8]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false} />
+              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold' }} />
+              <YAxis domain={[-1, 0.8]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Change from baseline', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
               <Bar dataKey="BMMSCs" fill={colors.red} />
@@ -195,12 +193,12 @@ export function Phase3CTXIIChart() {
       <div className="w-full relative mb-8">
         <h3 className="text-center text-xl sm:text-2xl font-bold text-slate-900 mb-2">CTX – II (urine)</h3>
         <p className="static text-center lg:absolute lg:top-0 lg:right-4 text-sm font-semibold text-slate-600 mb-6 lg:mb-0 mt-2 lg:mt-0">Normal: 65 – 618 pg/ml</p>
-        <div className="h-[350px] w-full max-w-5xl mx-auto">
+        <div className="h-[350px] w-full max-w-5xl mx-auto border border-black rounded-xl p-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={ctx2Data} margin={{ top: 30, right: 10, bottom: 0, left: -20 }} barGap={0} maxBarSize={35}>
+            <BarChart data={ctx2Data} margin={{ top: 30, right: 10, bottom: 20, left: 20 }} barGap={0} maxBarSize={35}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} />
-              <YAxis domain={[0, 600]} tick={{fontSize: 12, fill: '#0f172a'}} axisLine={false} tickLine={false} />
+              <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={true} tickLine={false} dy={10} label={{ value: 'Days', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold' }} />
+              <YAxis domain={[0, 600]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'CTX-II (pg/ml)', angle: -90, position: 'insideLeft', offset: -5, fill: '#000000', fontSize: 14, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="square" wrapperStyle={{ fontSize: '12px', fontWeight: 'bold', paddingTop: '20px' }} />
               <Bar dataKey="BMMSCs" fill={colors.red} />

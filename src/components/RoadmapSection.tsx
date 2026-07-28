@@ -2,7 +2,7 @@ import React from 'react';
 
 const milestones = [
   {
-    year: "2009-2011",
+    year: "2008-2011",
     title: "Pre-clinical safety & tolerability studies",
     description: "",
   },
@@ -38,8 +38,8 @@ const milestones = [
   },
   {
     year: "2025",
-    title: "Post-marketing surveillance study",
-    description: "Ongoing Follow-up for 3 years",
+    title: "Phase IV clinical trials Ongoing",
+    description: "",
   },
 ];
 

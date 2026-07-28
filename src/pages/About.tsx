@@ -67,19 +67,7 @@ export default function About() {
             <div className="mx-auto grid min-h-auto md:min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-6 md:gap-12 py-8 md:py-14 lg:grid-cols-2">
               <div className="max-w-xl">
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mb-2 md:mb-4">
-                    <img
-                      src={ciplaLogo}
-                      alt="Cipla"
-                      width={1000}
-                      height={300}
-                      className="w-[150px] sm:w-[180px] md:w-[220px] lg:w-[260px] xl:w-[300px] h-auto object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mt-0 text-lg md:text-xl font-medium text-black">
+                  <div className="mt-0 text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight">
                     Allogeneic Mesenchymal Stem Cells
                   </div>
                 </div>
@@ -116,7 +104,7 @@ export default function About() {
               <div className="relative mx-auto w-full max-w-md flex justify-center">
                 <img
                   src={newstemcellImage}
-                  alt="CiploStem vial"
+                  alt="Ciplostem™ vial"
                   width={800}
                   height={1000}
                   className="h-[280px] md:h-[450px] w-auto select-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.15)] animate-[spin_32s_linear_infinite]"

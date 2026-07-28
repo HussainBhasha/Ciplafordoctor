@@ -92,49 +92,49 @@ export function Phase3WOMACChart() {
   return (
     <div className="w-full flex flex-col gap-8">
       <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-      <div className="flex-1 w-full relative">
-        <h3 className="text-center text-xl font-bold text-slate-900 mb-6 flex flex-col gap-1">
-          <span>WOMAC Total Score</span>
-          <span className="font-semibold text-slate-700 text-lg">Assessment of Pain, Stiffness & Physical Function</span>
-        </h3>
-        <div className="h-[400px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={phase3Womac} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{fontSize: 14, fill: '#0f172a', fontWeight: 'bold'}} axisLine={false} tickLine={false} dy={10} />
-              <YAxis domain={[-500, 2500]} tick={{fontSize: 12, fill: '#0f172a', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC Total Score', angle: -90, position: 'insideLeft', fontWeight: 'bold' }} />
-              <Tooltip content={<CustomTooltip />} />
-              <Legend iconType="circle" wrapperStyle={{ fontSize: '14px', fontWeight: 'bold', paddingTop: '30px' }} />
-              <Line type="monotone" dataKey="BMMSCs" stroke={colors.red} strokeWidth={4} dot={{ r: 6, fill: colors.red }} activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="Placebo" stroke={colors.blue} strokeWidth={4} dot={{ r: 6, fill: colors.blue }} activeDot={{ r: 8 }} />
-            </LineChart>
-          </ResponsiveContainer>
+        <div className="flex-1 w-full relative">
+          <h3 className="text-center text-xl font-bold text-slate-900 mb-6 flex flex-col gap-1">
+            <span>WOMAC Total Score</span>
+            <span className="font-semibold text-slate-700 text-lg">Assessment of Pain, Stiffness & Physical Function</span>
+          </h3>
+          <div className="h-[400px] w-full border border-black rounded-xl p-2">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={phase3Womac} margin={{ top: 20, right: 20, bottom: 20, left: 30 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <XAxis dataKey="time" tick={{fontSize: 14, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} dy={10} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold' }} />
+                <YAxis domain={[-500, 2500]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC TOTAL SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 14, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend iconType="circle" wrapperStyle={{ fontSize: '14px', fontWeight: 'bold', paddingTop: '30px' }} />
+                <Line type="monotone" dataKey="BMMSCs" stroke={colors.red} strokeWidth={4} dot={{ r: 6, fill: colors.red }} activeDot={{ r: 8 }} />
+                <Line type="monotone" dataKey="Placebo" stroke={colors.blue} strokeWidth={4} dot={{ r: 6, fill: colors.blue }} activeDot={{ r: 8 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <p className="mt-6 text-xs text-slate-500 text-center px-4 leading-relaxed max-w-2xl mx-auto">
+            <span className="font-semibold">WOMAC:</span> Western Ontario and McMaster Universities Osteoarthritis Index – a validated questionnaire used to assess pain, stiffness, and physical function in patients with knee osteoarthritis.
+          </p>
         </div>
-        <p className="mt-6 text-xs text-slate-500 text-center px-4 leading-relaxed max-w-2xl mx-auto">
-          <span className="font-semibold">WOMAC:</span> Western Ontario and McMaster Universities Osteoarthritis Index – a validated questionnaire used to assess pain, stiffness, and physical function in patients with knee osteoarthritis.
-        </p>
-      </div>
-      
-      <div className="w-full lg:w-1/3 flex flex-col gap-12 border-l-2 border-sky-200 pl-8">
-        <div className="flex items-center gap-4">
-          <svg className="w-16 h-16 text-red-600" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 21l-9-9h6V3h6v9h6z"/>
-          </svg>
-          <div className="bg-yellow-300 px-4 py-2 text-xl font-bold text-slate-900">
-            45.4% decrease in 1 year
+
+        <div className="w-full lg:w-auto flex flex-col gap-12 border-l-2 border-sky-200 pl-8">
+          <div className="flex items-center gap-4">
+            <svg className="w-16 h-16 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21l-9-9h6V3h6v9h6z"/>
+            </svg>
+            <div className="bg-yellow-300 px-4 py-2 text-xl font-bold text-slate-900 whitespace-nowrap text-left">
+              45.4% decrease in 1 year
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <svg className="w-16 h-16 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21l-9-9h6V3h6v9h6z"/>
+            </svg>
+            <div className="bg-yellow-300 px-4 py-2 text-xl font-bold text-slate-900 whitespace-nowrap text-left">
+              71.4% decrease in 2 years
+            </div>
           </div>
         </div>
-        
-        <div className="flex items-center gap-4">
-          <svg className="w-16 h-16 text-red-600" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 21l-9-9h6V3h6v9h6z"/>
-          </svg>
-          <div className="bg-yellow-300 px-4 py-2 text-xl font-bold text-slate-900">
-            71.4% decrease in 2 years
-          </div>
-        </div>
       </div>
-    </div>
       
     <div className="bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 text-center max-w-4xl mx-auto px-4 w-full">
       <p className="text-sm md:text-base text-slate-700 font-medium leading-relaxed">

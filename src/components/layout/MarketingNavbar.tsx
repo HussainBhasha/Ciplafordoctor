@@ -53,12 +53,12 @@ export default function MarketingNavbar() {
           <div className="inline-flex items-center gap-2 shrink-0">
             <img
               src={brandLogo}
-              alt="CiploStem"
+              alt="Ciplostem™"
               className="h-10 sm:h-14 lg:h-16 w-auto object-contain contrast-125"
               decoding="async"
               loading="eager"
             />
-            <span className="sr-only">CiploStem</span>
+            <span className="sr-only">Ciplostem™</span>
           </div>
         </div>
         <Container>

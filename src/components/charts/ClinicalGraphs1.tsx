@@ -45,12 +45,12 @@ export function Phase2VASChart() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm relative group">
           <h4 className="text-center font-bold text-slate-700 mb-4">VAS (C1)</h4>
-          <div className="h-[300px] w-full">
+          <div className="h-[300px] w-full border border-black rounded-xl p-2">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={vasDataC1} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+              <LineChart data={vasDataC1} margin={{ top: 5, right: 20, bottom: 20, left: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
-                <YAxis domain={[0, 100]} tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
+                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
+                <YAxis domain={[0, 100]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'VAS SCORE', angle: -90, position: 'insideLeft', offset: -5, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
                 <Line type="monotone" dataKey="25M" stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />
@@ -64,12 +64,12 @@ export function Phase2VASChart() {
 
         <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
           <h4 className="text-center font-bold text-slate-700 mb-4">VAS (C2)</h4>
-          <div className="h-[300px] w-full">
+          <div className="h-[300px] w-full border border-black rounded-xl p-2">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={vasDataC2} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+              <LineChart data={vasDataC2} margin={{ top: 5, right: 20, bottom: 20, left: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
-                <YAxis domain={[0, 100]} tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
+                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
+                <YAxis domain={[0, 100]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'VAS SCORE', angle: -90, position: 'insideLeft', offset: -5, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
                 <Line type="monotone" dataKey="75M" stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />
@@ -83,7 +83,7 @@ export function Phase2VASChart() {
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col items-center">
         <p className="text-lg md:text-xl font-bold text-slate-800 text-center leading-relaxed">
-          Significant <span className="text-sky-600">improvement in pain reduction</span> was noted in the group treated with <span className="text-sky-600">25M Stempeucel/Mesenchymal Stem Cells dose</span> @ 3, 6 & 12 months
+          Significant <span className="text-sky-600">improvement in pain reduction</span> was noted in the group treated with <span className="text-sky-600">25M Stempeucel®/Ciplostem™ dose</span> @ 3, 6 & 12 months
         </p>
         <div className="mt-4 inline-block bg-white px-6 py-2 rounded-full border border-sky-100 shadow-sm">
           <p className="text-sky-700 font-bold"><span className="text-xl">67.4% reduction</span> in the 25M group @ 12 months</p>
@@ -116,12 +116,12 @@ export function Phase2WOMACChart() {
         <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm relative group">
           <div className="absolute top-2 left-4 text-2xl font-bold text-slate-900">a</div>
           <h4 className="text-center font-bold text-slate-700 mb-4">WOMAC Composite (C1)</h4>
-          <div className="h-[300px] w-full">
+          <div className="h-[300px] w-full border border-black rounded-xl p-2">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={womacDataC1} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+              <LineChart data={womacDataC1} margin={{ top: 5, right: 20, bottom: 20, left: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
-                <YAxis domain={[0, 2500]} tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
+                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
+                <YAxis domain={[0, 2500]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC TOTAL SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
                 <Line type="monotone" dataKey="25M" stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />
@@ -135,12 +135,12 @@ export function Phase2WOMACChart() {
         <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm relative">
           <div className="absolute top-2 left-4 text-2xl font-bold text-slate-900">b</div>
           <h4 className="text-center font-bold text-slate-700 mb-4">WOMAC Composite (C2)</h4>
-          <div className="h-[300px] w-full">
+          <div className="h-[300px] w-full border border-black rounded-xl p-2">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={womacDataC2} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+              <LineChart data={womacDataC2} margin={{ top: 5, right: 20, bottom: 20, left: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
-                <YAxis domain={[0, 2500]} tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
+                <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
+                <YAxis domain={[0, 2500]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC TOTAL SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
                 <Line type="monotone" dataKey="75M" stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />
@@ -154,7 +154,7 @@ export function Phase2WOMACChart() {
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col items-center">
         <p className="text-lg md:text-xl font-bold text-slate-800 text-center leading-relaxed">
-          Patients receiving the <span className="text-sky-600">25 million Stempeucel (BMMSC) dose</span> demonstrated significant <span className="text-sky-600">improvements in pain, stiffness, and physical function</span> at 3, 6, and 12 months.
+          Patients receiving the <span className="text-sky-600">25 million Stempeucel®/Ciplostem™ dose</span> demonstrated significant <span className="text-sky-600">improvements in pain, stiffness, and physical function</span> at 3, 6, and 12 months.
         </p>
       </div>
     </div>

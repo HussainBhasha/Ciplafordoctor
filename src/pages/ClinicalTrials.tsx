@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 import { Phase2VASChart, Phase2WOMACChart } from "@/components/charts/ClinicalGraphs1";
 import { Phase2ICOAPChart } from "@/components/charts/ClinicalGraphs2";
 import { Phase2WormsTable, Phase3WOMACChart } from "@/components/charts/ClinicalGraphs3";
-import { Phase3VASDecreaseChart, Phase3MRICartilageChart, Phase3IL10Chart, Phase3CTXIIChart } from "@/components/charts/ClinicalGraphs4";
+import { Phase3VASDecreaseChart, Phase3MRICartilageChart, Phase3IL10Chart } from "@/components/charts/ClinicalGraphs4";
 
 export default function ClinicalTrials() {
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function ClinicalTrials() {
                 Clinical Trials
               </h1>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
-                Comprehensive clinical evaluation demonstrating the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.
+                Comprehensive clinical evaluation has demonstrated the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.
               </p>
             </div>
           </Container>
@@ -57,9 +57,9 @@ export default function ClinicalTrials() {
                   "Phase I Clinical trial",
                   "Phase II dose finding study",
                   "Phase III Clinical Trial",
-                  "Phase 3 Extension Clinical trial",
-                  "DCGI/CDSCO",
-                  "Post marketing surveillance study"
+                  "Phase III Extension Clinical trial",
+                  "DCGI/CDSCO Approval",
+                  "Phase IV clinical trial"
                 ].map((milestone, idx, arr) => (
                   <Fragment key={idx}>
                     <div className="relative flex flex-1 items-stretch justify-center group w-full opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${idx * 150}ms` }}>
@@ -108,22 +108,22 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Patient Population</h3>
-                  <p className="text-slate-700 leading-relaxed">Patients with diagnosed with Grade II and Grade III Knee Osteoarthritis.</p>
+                  <p className="text-slate-700 leading-relaxed">Patients diagnosed with Grade II and Grade III Knee Osteoarthritis.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Dose Groups</h3>
-                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses vs Placebo arm.</p>
+                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M, 150M) vs Placebo arm.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Primary Endpoints</h3>
-                  <p className="text-slate-700 leading-relaxed">Significant reduction in pain and stiffness as measured by WOMAC and VAS scores.</p>
+                  <p className="text-slate-700 leading-relaxed">Significant improvement in pain,stiffness and physical function as measured by WOMAC and VAS scores.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Follow-up Duration</h3>
-                  <p className="text-slate-700 leading-relaxed">Comprehensive follow-up extending beyond 12 months for long-term safety evaluation.</p>
+                  <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6,12 months.</p>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function ClinicalTrials() {
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Study Participants</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146 (73 Active; 73 Placebo)</td>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146 (n=73 Treatment Group; n=73 Placebo Group)</td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Treatment Arms</th>
@@ -221,8 +221,7 @@ export default function ClinicalTrials() {
                 <hr className="border-slate-100" />
                 <Phase3IL10Chart />
 
-                <hr className="border-slate-100" />
-                <Phase3CTXIIChart />
+
               </div>
             </div>
           </Container>

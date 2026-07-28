@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phase3WOMACChart } from '@/components/charts/ClinicalGraphs3';
-import { Phase3VASDecreaseChart, Phase3MRICartilageChart, Phase3IL10Chart, Phase3CTXIIChart } from '@/components/charts/ClinicalGraphs4';
+import { Phase3VASDecreaseChart, Phase3MRICartilageChart, Phase3IL10Chart } from '@/components/charts/ClinicalGraphs4';
 
 // Reusable animated section component
 const FadeUpSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
@@ -83,9 +83,7 @@ export default function PatientOutcomes() {
                 <div className="bg-white rounded-3xl p-4 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow">
                   <Phase3IL10Chart />
                 </div>
-                <div className="bg-white rounded-3xl p-4 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow">
-                  <Phase3CTXIIChart />
-                </div>
+
               </div>
             </div>
           </FadeUpSection>
@@ -121,7 +119,7 @@ export default function PatientOutcomes() {
                     desc: "Patients experienced sustained improvements in daily activities and overall function."
                   },
                   {
-                    title: "Long-Term Benefit",
+                    title: "Sustained Benefit",
                     desc: "Clinical improvements remained consistent through the 24-month follow-up period."
                   }
                 ].map((benefit, i) => (

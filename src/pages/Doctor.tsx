@@ -407,10 +407,10 @@ export default function Doctor() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based cellular therapy solutions for Knee Osteoarthritis management
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.9rem,1vw,1rem)]", heroInView && "reveal-fade-visible")}>
-                    Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved joint health.
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
                   </p>
                 </div>
 
@@ -423,11 +423,10 @@ export default function Doctor() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based cellular therapy solutions for Knee Osteoarthritis management
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1vw,1.02rem)]", heroInView && "reveal-fade-visible")}>
-                    Explore the science behind Mesenchymal Stem Cells, clinical evidence, and regenerative approaches designed to support improved
-                    joint health.
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
                   </p>
                 </div>
 
@@ -473,37 +472,13 @@ export default function Doctor() {
 
               <div className="flex flex-col justify-center">
                 <div className="font-display text-2xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-3xl">
-                  <RevealWords text="The Future of Orthopaedic Regenerative therapy" active={orthoInView} />
+                  <RevealWords text="Allogeneic Mesenchymal Stem Cell therapy" active={orthoInView} />
                 </div>
                 <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", orthoInView && "reveal-fade-visible")}>
-                  Orthobiologics use biological substances and cellular therapies to support tissue repair, healing and restoration.
+                  Promotes tissue repair, healing and preservation.
                 </p>
 
-                <div className="mt-8 grid gap-4">
-                  {[
-                    { title: "Cell Based Therapies", items: ["Mesenchymal Stem Cells (MSCs)", "Anti-inflammatory", "Immunomodulatory", "Self-replication", "Differentiation", "Low Immunogenicity"] },
-                  ].map((card, idx) => (
-                    <div
-                      key={card.title}
-                      className={cn(
-                        "rounded-[24px] bg-white/75 p-6 ring-1 ring-sky-300/70 shadow-[0_18px_60px_rgba(2,132,199,0.14)] backdrop-blur-xl transition-all duration-700 ease-out hover:-translate-y-0.5 hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.20)]",
-                        "js-scroll-card",
-                        orthoInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-                      )}
-                      style={{ transitionDelay: `${idx * 90}ms` }}
-                    >
-                      <div className="text-lg font-semibold text-slate-900 text-center mb-4">{card.title}</div>
-                      <div className="mt-3 grid gap-3 sm:grid-cols-2 text-sm text-slate-600">
-                        {card.items.map((x) => (
-                          <div key={x} className="flex items-start gap-3">
-                            <div className="mt-1.5 h-2 w-2 flex-none rounded-full bg-sky-600" />
-                            <div className="min-w-0">{x}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+
               </div>
             </div>
           </Container>
@@ -518,7 +493,7 @@ export default function Doctor() {
                   <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
                 <p className={cn("mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", techInView && "reveal-fade-visible")}>
-                  Stempeucel is an allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
+                  Ciplostem™(Stempeucel®) is an allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -572,10 +547,10 @@ export default function Doctor() {
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
               <div>
                 <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
-                  <RevealWords text="Mesenchymal Stem Cells (MSCs)" active={mscInView} />
+                  <RevealWords text="Properties of Mesenchymal Stem Cells (MSCs)" active={mscInView} />
                 </div>
                 <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", mscInView && "reveal-fade-visible")}>
-                  MSCs are unique cells with self-renewal ability, differentiation potential and immunomodulatory properties.
+                  MSCs are unique cells with following properties
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -647,7 +622,9 @@ export default function Doctor() {
               {/* Main Title */}
               <div className="text-center mb-12">
                 <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
-                  <RevealWords text="Mesenchymal Stem Cells - Mechanism of Action in Knee OA" active={moaInView} />
+                  <RevealWords text="Mesenchymal Stem Cells -" active={moaInView} />
+                  <br />
+                  <RevealWords text="Mechanism of Action in Knee OA" active={moaInView} delay={0.16} />
                 </div>
                 <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base max-w-3xl mx-auto reveal-fade", moaInView && "reveal-fade-visible")}>
                   Multi-modal action addressing the key pathophysiological pathways in knee osteoarthritis
@@ -773,7 +750,7 @@ export default function Doctor() {
 
               <div ref={evidenceScrollRef} className="mt-10 grid gap-6 md:grid-cols-2 md:items-stretch">
                 {[
-                  { title: "Clinical Trials", text: "Phase I, Phase II and Phase III clinical evaluation", image: clinicalTrialsImage },
+                  { title: "Clinical Trials", text: "pre clinical, Phase II and Phase III clinical evaluation", image: clinicalTrialsImage },
                   { title: "Patient Outcomes", text: "Assessment through pain, function and cartilage quality parameters", image: patientOutcomesImage },
                 ].map((x, idx) => (
                   <div
@@ -829,17 +806,6 @@ export default function Doctor() {
               <div ref={resourcesScrollRef} className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
                 {[
                   {
-                    image: scientificPublicationsImage,
-                    label: "Scientific Publications",
-                    link: "https://online.fliphtml5.com/leljv/Scientific-publications/",
-                    external: true,
-                  },
-                  {
-                    image: clinicalTrialsImage,
-                    label: "Clinical Trial Data",
-                    target: "evidence",
-                  },
-                  {
                     image: mechanismIllustrationImage,
                     label: "Mechanism of Action",
                     target: "moa",
@@ -851,8 +817,7 @@ export default function Doctor() {
                     external: true,
                   },
                 ].map((x, idx) => {
-                  // Reveal 2 at a time: cards 0,1 → step>=1; cards 2,3 → step>=3
-                  const visible = idx < 2 ? resourcesStep >= 1 : resourcesStep >= 3;
+                  const visible = resourcesStep >= 1;
                   return (
                     <div
                       key={x.label}

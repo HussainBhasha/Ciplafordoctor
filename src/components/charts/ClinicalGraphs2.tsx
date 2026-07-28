@@ -60,12 +60,12 @@ export function Phase2ICOAPChart() {
     <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm relative group">
       <div className="absolute top-2 left-4 text-xl font-bold text-slate-900">{letter}</div>
       <h4 className="text-center font-bold text-slate-700 mb-4">{title}</h4>
-      <div className="h-[300px] w-full">
+      <div className="h-[300px] w-full border border-black rounded-xl p-2">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+          <LineChart data={data} margin={{ top: 5, right: 20, bottom: 20, left: 30 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-            <XAxis dataKey="time" tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
-            <YAxis domain={[-10, 100]} tick={{fontSize: 12, fill: '#64748b'}} axisLine={false} tickLine={false} />
+            <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
+            <YAxis domain={[-10, 100]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC TOTAL SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
             <Tooltip content={<CustomTooltip />} />
             <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
             <Line type="monotone" dataKey={isC1 ? "25M" : "75M"} stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />

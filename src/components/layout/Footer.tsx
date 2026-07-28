@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="hidden lg:flex justify-start">
               <img
                 src={brandLogo}
-                alt="CiploStem"
+                alt="Ciplostem™"
                 className="h-14 sm:h-16 w-auto shrink-0 max-w-full"
               />
             </div>
@@ -69,7 +69,7 @@ export default function Footer() {
             <div className="flex justify-center">
               <img
                 src={brandLogo}
-                alt="CiploStem"
+                alt="Ciplostem™"
                 className="h-20 lg:h-24 w-auto shrink-0"
               />
             </div>
