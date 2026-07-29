@@ -65,7 +65,7 @@ export function Phase2ICOAPChart() {
           <LineChart data={data} margin={{ top: 5, right: 20, bottom: 20, left: 30 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
             <XAxis dataKey="time" tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'Months', position: 'insideBottom', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold' }} />
-            <YAxis domain={[-10, 100]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'WOMAC TOTAL SCORE', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
+            <YAxis domain={[-10, 100]} tick={{fontSize: 12, fill: '#000000', fontWeight: 'bold'}} axisLine={false} tickLine={false} label={{ value: 'ICOAP', angle: -90, position: 'insideLeft', offset: -15, fill: '#000000', fontSize: 12, fontWeight: 'bold', style: { textAnchor: 'middle' } }} />
             <Tooltip content={<CustomTooltip />} />
             <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '20px' }} />
             <Line type="monotone" dataKey={isC1 ? "25M" : "75M"} stroke={colors.blue} strokeWidth={3} dot={{ r: 4, fill: colors.blue }} activeDot={{ r: 6 }} />
