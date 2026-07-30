@@ -750,7 +750,7 @@ export default function Doctor() {
 
               <div ref={evidenceScrollRef} className="mt-10 grid gap-6 md:grid-cols-2 md:items-stretch">
                 {[
-                  { title: "Clinical Trials", text: "pre clinical, Phase II and Phase III clinical evaluation", image: clinicalTrialsImage },
+                  { title: "Clinical Trials", text: "Pre clinical, Phase II and Phase III clinical evaluation", image: clinicalTrialsImage },
                   { title: "Patient Outcomes", text: "Assessment through pain, function and cartilage quality parameters", image: patientOutcomesImage },
                 ].map((x, idx) => (
                   <div

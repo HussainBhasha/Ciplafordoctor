@@ -73,7 +73,7 @@ export default function About() {
                 </div>
 
                 <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg" : "reveal-fade mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg"}>
-                  A next-generation orthobiologic product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
+                  A next-generation orthobiological product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
                 </p>
 
                 <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">
