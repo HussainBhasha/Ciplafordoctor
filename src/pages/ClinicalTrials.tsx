@@ -27,24 +27,8 @@ export default function ClinicalTrials() {
           </Link>
         </div>
 
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-24 sm:pt-32 pb-16 border-b border-sky-100">
-          {/* Subtle Abstract Molecular Lines Background */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #0f172a 0, #0f172a 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #0f172a 0, #0f172a 1px, transparent 0, transparent 50%)', backgroundSize: '60px 60px' }}></div>
-          <Container>
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black mb-6">
-                Clinical Trials
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
-                Comprehensive clinical evaluation has demonstrated the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.
-              </p>
-            </div>
-          </Container>
-        </section>
-
         {/* SECTION 1: Clinical Development Program (Horizontal Timeline) */}
-        <section className="py-20 bg-transparent">
+        <section className="pt-24 sm:pt-32 pb-16 bg-transparent">
           <Container>
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-black mb-12 text-center tracking-tight border-b border-slate-200 pb-4">
@@ -87,6 +71,22 @@ export default function ClinicalTrials() {
           </Container>
         </section>
 
+        {/* HERO SECTION (Now placed after Clinical Development Program) */}
+        <section className="relative overflow-hidden py-16 border-t border-sky-100">
+          {/* Subtle Abstract Molecular Lines Background */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #0f172a 0, #0f172a 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #0f172a 0, #0f172a 1px, transparent 0, transparent 50%)', backgroundSize: '60px 60px' }}></div>
+          <Container>
+            <div className="relative z-10 max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black mb-6">
+                Clinical Trials
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
+                Comprehensive clinical evaluation has demonstrated the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.
+              </p>
+            </div>
+          </Container>
+        </section>
+
         {/* SECTION 2: Phase II Clinical Trial */}
         <section className="py-20 bg-transparent border-y border-sky-100">
           <Container>
@@ -113,7 +113,7 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Dose Groups</h3>
-                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M, 150M) vs Placebo arm.</p>
+                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M and 150M) vs Placebo arm.</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
@@ -123,7 +123,7 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Follow-up Duration</h3>
-                  <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6,12 months.</p>
+                  <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6 and 12 months.</p>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function ClinicalTrials() {
                 </div>
                 <hr className="border-slate-100" />
                 <div>
-                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">3</span> <span>ICOAP (Intermittent and Constant Osteoarthritis Pain) evaluates both constant and intermittent pain associated with knee osteoarthritis.</span></h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-6 flex items-start sm:items-center gap-4"><span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm shrink-0 mt-1 sm:mt-0">3</span> <span>ICOAP Score (Intermittent and Constant Osteoarthritis Pain) evaluates both constant and intermittent pain associated with knee osteoarthritis.</span></h3>
                   <Phase2ICOAPChart />
                 </div>
                 <hr className="border-slate-100" />
@@ -185,9 +185,9 @@ export default function ClinicalTrials() {
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Treatment Arms</th>
                       <td className="border border-slate-200 py-5 px-6 text-slate-700 font-medium leading-relaxed">
-                        <span className="text-sky-700">25 Million Allogeneic BMMSCs + Hyaluronic Acid (n=73)</span>
+                        <span className="text-sky-700">25 Million Allogeneic BMMSCs + Hyaluronic Acid (20mg/2ml)</span>
                         <span className="mx-3 text-slate-400 text-xs uppercase font-bold inline-block">vs</span>
-                        <span className="text-slate-600">Placebo + Hyaluronic Acid (n=73)</span>
+                        <span className="text-slate-600">Placebo + Hyaluronic Acid (20mg/2ml)</span>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">

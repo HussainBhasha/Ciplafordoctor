@@ -720,7 +720,7 @@ export default function Doctor() {
                     </div>
                     <div className="space-y-2 text-left w-full">
                       {[
-                        "To mature existing progenitor cells into Chondrocytes",
+                        "Matures existing progenitor cells into Chondrocytes",
                         "Maintains Hyaline Cartilage: Enhancing Collagen I, IX & XI production",
                         "Prevents Fibrous cartilage: Modulating Collagen X"
                       ].map((item, i) => (
