@@ -47,7 +47,7 @@ export default function ClinicalTrials() {
                 ].map((milestone, idx, arr) => (
                   <Fragment key={idx}>
                     <div className="relative flex flex-1 items-stretch justify-center group w-full opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]" style={{ animationDelay: `${idx * 150}ms` }}>
-                      <div className="bg-white border-2 border-sky-200 rounded-2xl flex items-center justify-center p-3 w-full transition-all duration-300 group-hover:border-sky-500 group-hover:shadow-md shadow-sm z-10 min-h-[90px] md:min-h-[90px]">
+                      <div className="bg-white border-2 border-sky-200 rounded-2xl flex items-center justify-center p-3 w-full group-hover:border-sky-500 group- shadow-sm z-10 min-h-[90px] md:min-h-[90px] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <span className="text-sm md:text-[11px] lg:text-xs xl:text-sm font-bold text-slate-800 text-center leading-snug">
                           {milestone}
                         </span>
@@ -96,32 +96,32 @@ export default function ClinicalTrials() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Objective</h3>
                   <p className="text-slate-700 leading-relaxed">To determine the optimal dose and evaluate the safety and efficacy of allogeneic BM-MSCs.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Study Design</h3>
                   <p className="text-slate-700 leading-relaxed">Randomized, double-blind, multicentric, placebo-controlled, dose-finding study.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Patient Population</h3>
                   <p className="text-slate-700 leading-relaxed">Patients diagnosed with Grade II and Grade III Knee Osteoarthritis.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Dose Groups</h3>
                   <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M and 150M) vs Placebo arm.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Primary Endpoints</h3>
                   <p className="text-slate-700 leading-relaxed">Significant improvement in pain,stiffness and physical function as measured by WOMAC and VAS scores.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Follow-up Duration</h3>
                   <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6 and 12 months.</p>
                 </div>
@@ -171,7 +171,7 @@ export default function ClinicalTrials() {
                 Phase III Clinical Trial Overview
               </h2>
 
-              <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+              <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <table className="w-full text-left text-sm md:text-base border-collapse">
                   <tbody>
                     <tr className="hover:bg-slate-50 transition-colors">

@@ -33,7 +33,7 @@ const vasDecreaseData = [
 
 export function Phase3VASDecreaseChart() {
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="flex-1 w-full relative">
         <h3 className="text-center text-xl font-bold text-slate-900 mb-2">% decrease in VAS score</h3>
         <h4 className="text-center font-semibold text-slate-700 mb-6">VAS - Percentage change</h4>
@@ -87,7 +87,7 @@ const mriCartilageData = [
 
 export function Phase3MRICartilageChart() {
   return (
-    <div className="w-full bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-full bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="w-full relative">
         <h3 className="text-center text-xl font-bold text-slate-900 mb-6">MRI T2 Cartigram : Average Cartilage Score<br/><span className="text-base font-semibold text-slate-700">(Medial femoro tibial compartment)</span></h3>
         <div className="h-[350px] w-full max-w-3xl mx-auto border border-black rounded-xl p-2">
@@ -133,7 +133,7 @@ const il10Data = [
 export function Phase3IL10Chart() {
   return (
     <div className="w-full flex flex-col gap-8">
-      <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="w-full flex flex-col lg:flex-row gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="flex-1 w-full relative">
         <h3 className="text-center text-xl font-bold text-slate-900 mb-6">Interleukin-10 (IL-10) <span className="font-normal text-slate-600 text-lg">(change from baseline)</span></h3>
         <div className="h-[400px] w-full border border-black rounded-xl p-2">
@@ -189,7 +189,7 @@ const ctx2Data = [
 
 export function Phase3CTXIIChart() {
   return (
-    <div className="w-full flex flex-col items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-full flex flex-col items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="w-full relative mb-8">
         <h3 className="text-center text-xl sm:text-2xl font-bold text-slate-900 mb-2">CTX – II (urine)</h3>
         <p className="static text-center lg:absolute lg:top-0 lg:right-4 text-sm font-semibold text-slate-600 mb-6 lg:mb-0 mt-2 lg:mt-0">Normal: 65 – 618 pg/ml</p>

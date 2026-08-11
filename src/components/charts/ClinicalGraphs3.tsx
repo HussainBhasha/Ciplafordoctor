@@ -91,7 +91,7 @@ const phase3Womac = [
 export function Phase3WOMACChart() {
   return (
     <div className="w-full flex flex-col gap-8">
-      <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
         <div className="flex-1 w-full relative">
           <h3 className="text-center text-xl font-bold text-slate-900 mb-6 flex flex-col gap-1">
             <span>WOMAC Total Score</span>

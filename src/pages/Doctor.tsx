@@ -506,7 +506,7 @@ export default function Doctor() {
                     <div
                       key={x}
                       className={cn(
-                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-0.5 hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
+                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
                         "js-scroll-card",
                         techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
@@ -565,7 +565,7 @@ export default function Doctor() {
                     <div
                       key={x.title}
                       className={cn(
-                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-700 ease-out flex items-center h-full",
+                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-500 ease-out flex items-center h-full hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:ring-sky-400/80",
                         "js-scroll-card",
                         mscInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
@@ -976,7 +976,7 @@ export default function Doctor() {
                     { phase: "II", icon: "👥", color: "from-blue-400 to-indigo-500" },
                     { phase: "III", icon: "🏥", color: "from-purple-400 to-violet-500" }
                   ].map((item, i) => (
-                    <div key={i} className="flex flex-col items-center gap-3 p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 shadow-lg">
+                    <div key={i} className="flex flex-col items-center gap-3 p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className={`h-20 w-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center text-5xl shadow-xl`}>
                         {item.icon}
                       </div>
@@ -1003,7 +1003,7 @@ export default function Doctor() {
                     <div className="font-display text-2xl font-bold mb-6 text-emerald-800">
                       Pre-Clinical Study
                     </div>
-                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-emerald-100 overflow-hidden">
+                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-emerald-100 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="text-center flex flex-col items-center gap-2">
                         <FlaskConical className="h-10 w-10 text-emerald-600" />
                         <div className="text-xs text-slate-600 font-medium">OA Rat Model</div>
@@ -1020,7 +1020,7 @@ export default function Doctor() {
                       </div>
                     </div>
                     <div className="grid gap-6">
-                      <div className="bg-white rounded-2xl p-6 border border-emerald-100">
+                      <div className="bg-white rounded-2xl p-6 border border-emerald-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <div className="text-base font-bold text-emerald-800 mb-4">Key Outcomes</div>
                         <div className="space-y-3">
                           {[
@@ -1039,7 +1039,7 @@ export default function Doctor() {
                           ))}
                         </div>
                       </div>
-                      <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border border-emerald-200">
+                      <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border border-emerald-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <div className="flex items-start gap-4">
                           <div className="text-3xl">🛡️</div>
                           <div className="text-sm text-emerald-900 font-medium leading-relaxed">
@@ -1059,7 +1059,7 @@ export default function Doctor() {
                     <div className="font-display text-2xl font-bold mb-6 text-blue-800">
                       Human Studies: Clinical Trials
                     </div>
-                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-blue-100 overflow-hidden">
+                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-blue-100 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="text-center flex flex-col items-center gap-2">
                         <Users className="h-10 w-10 text-blue-600" />
                         <div className="text-xs text-slate-600 font-medium">Patient Enrollment</div>
@@ -1082,7 +1082,7 @@ export default function Doctor() {
                     </div>
                     <div className="grid gap-6">
                       <div className="grid gap-4">
-                        <div className="bg-white rounded-2xl p-6 border border-blue-100">
+                        <div className="bg-white rounded-2xl p-6 border border-blue-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                           <div className="text-sm font-bold text-slate-700 mb-4">WOMAC Score</div>
                           <div className="h-36">
                             <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1139,7 +1139,7 @@ export default function Doctor() {
                             Significant Improvement
                           </div>
                         </div>
-                        <div className="bg-white rounded-2xl p-6 border border-blue-100">
+                        <div className="bg-white rounded-2xl p-6 border border-blue-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                           <div className="text-sm font-bold text-slate-700 mb-4">VAS Pain Score</div>
                           <div className="h-36">
                             <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1211,7 +1211,7 @@ export default function Doctor() {
                           </div>
                         ))}
                       </div>
-                      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
+                      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <div className="flex items-start gap-4">
                           <div className="text-3xl">👥</div>
                           <div className="text-sm text-blue-900 font-medium leading-relaxed">
@@ -1231,7 +1231,7 @@ export default function Doctor() {
                     <div className="font-display text-2xl font-bold mb-6 text-purple-800">
                       Clinical Trial: Phase III & Extension Study
                     </div>
-                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-purple-100">
+                    <div className="flex items-center justify-around mb-8 p-6 bg-white rounded-2xl border border-purple-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="text-center">
                         <div className="text-4xl">🗺️</div>
                         <div className="text-xs text-slate-600 mt-2 font-medium">Multi-Centric Sites Across India</div>
@@ -1254,7 +1254,7 @@ export default function Doctor() {
                     </div>
                     <div className="grid gap-6">
                       <div className="grid gap-4">
-                        <div className="bg-white rounded-2xl p-6 border border-purple-100">
+                        <div className="bg-white rounded-2xl p-6 border border-purple-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                           <div className="text-sm font-bold text-slate-700 mb-4">WOMAC Score Improvement</div>
                           <div className="h-36">
                             <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1311,7 +1311,7 @@ export default function Doctor() {
                             71.4% Improvement
                           </div>
                         </div>
-                        <div className="bg-white rounded-2xl p-6 border border-purple-100">
+                        <div className="bg-white rounded-2xl p-6 border border-purple-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                           <div className="text-sm font-bold text-slate-700 mb-4">VAS Pain Reduction</div>
                           <div className="h-36">
                             <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1383,7 +1383,7 @@ export default function Doctor() {
                           </div>
                         ))}
                       </div>
-                      <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-200">
+                      <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <div className="flex items-start gap-4">
                           <div className="text-3xl">🛡️</div>
                           <div className="text-sm text-purple-900 font-medium leading-relaxed">
@@ -1410,7 +1410,7 @@ export default function Doctor() {
                       { icon: "🎯", label: "Stop Disease Progression" },
                       { icon: "🔄", label: "Cartilage Regeneration" }
                     ].map((item, i) => (
-                      <div key={i} className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                      <div key={i} className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-4xl border border-slate-200 shadow-sm">
                           {item.icon}
                         </div>
@@ -1454,7 +1454,7 @@ export default function Doctor() {
                   <div className="font-display text-2xl font-bold mb-6 text-slate-800">
                     WOMAC Score Reduction
                   </div>
-                  <div className="bg-white rounded-2xl p-6 border border-slate-200 mb-6">
+                  <div className="bg-white rounded-2xl p-6 border border-slate-200 mb-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div className="text-sm font-bold text-slate-700 mb-4">Change from Baseline (%)</div>
                     <div className="h-36">
                       <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1511,7 +1511,7 @@ export default function Doctor() {
                     </div>
                   </div>
                   <div className="grid gap-4">
-                    <div className="bg-white rounded-2xl p-5 border border-slate-200">
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center text-slate-800 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1519,7 +1519,7 @@ export default function Doctor() {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white rounded-2xl p-5 border border-slate-200">
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center text-slate-800 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1539,7 +1539,7 @@ export default function Doctor() {
                   <div className="font-display text-2xl font-bold mb-6 text-rose-800">
                     VAS Pain Reduction
                   </div>
-                  <div className="bg-white rounded-2xl p-6 border border-rose-100 mb-6">
+                  <div className="bg-white rounded-2xl p-6 border border-rose-100 mb-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div className="text-sm font-bold text-slate-700 mb-4">Pain Intensity (0-10 Scale)</div>
                     <div className="h-36">
                       <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1597,7 +1597,7 @@ export default function Doctor() {
                     </div>
                   </div>
                   <div className="grid gap-4">
-                    <div className="bg-white rounded-2xl p-5 border border-rose-100">
+                    <div className="bg-white rounded-2xl p-5 border border-rose-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-700 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1605,7 +1605,7 @@ export default function Doctor() {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white rounded-2xl p-5 border border-rose-100">
+                    <div className="bg-white rounded-2xl p-5 border border-rose-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-700 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1626,7 +1626,7 @@ export default function Doctor() {
                     Treatment Satisfaction
                   </div>
                   <div className="grid gap-6 mb-6">
-                    <div className="bg-white rounded-2xl p-6 border border-amber-100">
+                    <div className="bg-white rounded-2xl p-6 border border-amber-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="text-sm font-bold text-slate-700 mb-4">Satisfaction Rating</div>
                       <div className="h-36">
                         <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1668,7 +1668,7 @@ export default function Doctor() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200">
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div className="flex items-start gap-4">
                       <div className="text-3xl">😊</div>
                       <div className="text-sm text-amber-900 font-medium leading-relaxed">
@@ -1687,7 +1687,7 @@ export default function Doctor() {
                   <div className="font-display text-2xl font-bold mb-6 text-emerald-800">
                     Activity Resumption
                   </div>
-                  <div className="bg-white rounded-2xl p-6 border border-emerald-100 mb-6">
+                  <div className="bg-white rounded-2xl p-6 border border-emerald-100 mb-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div className="text-sm font-bold text-slate-700 mb-4">Activity Levels Over Time</div>
                     <div className="h-36">
                       <svg viewBox="0 0 400 140" className="w-full h-full">
@@ -1745,7 +1745,7 @@ export default function Doctor() {
                     </div>
                   </div>
                   <div className="grid gap-4">
-                    <div className="bg-white rounded-2xl p-5 border border-emerald-100">
+                    <div className="bg-white rounded-2xl p-5 border border-emerald-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1753,7 +1753,7 @@ export default function Doctor() {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white rounded-2xl p-5 border border-emerald-100">
+                    <div className="bg-white rounded-2xl p-5 border border-emerald-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="flex items-start gap-3">
                         <div className="mt-1 h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 text-xs">✓</div>
                         <div className="text-sm text-slate-700">
@@ -1777,7 +1777,7 @@ export default function Doctor() {
                     { stat: "71%", label: "Pain Reduction" },
                     { stat: "85%", label: "Return to Activities" }
                   ].map((item, i) => (
-                    <div key={i} className="flex flex-col items-center gap-2 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex flex-col items-center gap-2 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <div className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                         {item.stat}
                       </div>
