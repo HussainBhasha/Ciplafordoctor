@@ -36,8 +36,14 @@ body {
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.font-display,
+.text-display,
+.text-h1,
+.text-h2,
+.text-h3 {
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif !important;
+  font-weight: 400 !important;
 }
 /* ───────────────────────────────────────────────────────────── */
 
@@ -116,26 +122,26 @@ video {
     font-size: var(--fs-display);
     line-height: 1.04;
     letter-spacing: -0.02em;
-    font-weight: 700;
+    font-weight: 400;
   }
   .text-h1 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--fs-h1);
     line-height: 1.08;
     letter-spacing: -0.02em;
-    font-weight: 700;
+    font-weight: 400;
   }
   .text-h2 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--fs-h2);
     line-height: 1.15;
     letter-spacing: -0.015em;
-    font-weight: 700;
+    font-weight: 400;
   }
   .text-h3 {
     font-size: var(--fs-h3);
     line-height: 1.25;
-    font-weight: 600;
+    font-weight: 400;
   }
   .text-lead {
     font-size: var(--fs-lead);
