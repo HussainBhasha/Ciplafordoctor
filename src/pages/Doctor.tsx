@@ -17,6 +17,15 @@ import newstemcellImage from "@/assets/newstemcell.png";
 import icon1 from "@/assets/icon1.png";
 import icon2 from "@/assets/icon2.png";
 import icon3 from "@/assets/icon3.png";
+import prep1 from "@/assets/1.png";
+import prep2 from "@/assets/2.png";
+import prep3 from "@/assets/3.png";
+import prep4 from "@/assets/4.png";
+import prep5 from "@/assets/5.png";
+import prep6 from "@/assets/6.png";
+import prep7 from "@/assets/7.png";
+import prep8 from "@/assets/8.png";
+import prep9 from "@/assets/9.png";
 import { ArrowRight, ChevronDown, X, FlaskConical, Syringe, Bone, Users, Pill, FileText, BarChart3, Shield, Flame, Activity, Microscope, Dna, Sparkles, Zap, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useInView } from "@/hooks/useInView";
@@ -409,7 +418,7 @@ export default function Doctor() {
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
                     Evidence-based stem cell therapy for Knee Osteoarthritis management
                   </div>
-                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.9rem,1vw,1rem)]", heroInView && "reveal-fade-visible")}>
+                  <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
                     Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
                   </p>
                 </div>
@@ -425,7 +434,7 @@ export default function Doctor() {
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
                     Evidence-based stem cell therapy for Knee Osteoarthritis management
                   </div>
-                  <p className={cn("mt-4 leading-relaxed text-slate-700 drop-shadow-[0_10px_24px_rgba(255,255,255,0.75)] reveal-fade text-[clamp(0.95rem,1vw,1.02rem)]", heroInView && "reveal-fade-visible")}>
+                  <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
                     Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
                   </p>
                 </div>
@@ -474,7 +483,7 @@ export default function Doctor() {
                 <div className="font-display text-2xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-3xl">
                   <RevealWords text="Allogeneic Mesenchymal Stem Cell therapy" active={orthoInView} />
                 </div>
-                <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", orthoInView && "reveal-fade-visible")}>
+                <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", orthoInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
                   Promotes tissue repair, healing and preservation.
                 </p>
 
@@ -492,7 +501,7 @@ export default function Doctor() {
                 <div className="font-display text-2xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-3xl">
                   <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
-                <p className={cn("mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", techInView && "reveal-fade-visible")}>
+                <p className={cn("mt-4 max-w-2xl leading-relaxed text-slate-600 reveal-fade", techInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
                   Ciplostem™(Stempeucel®) is an allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
                 </p>
 
@@ -549,7 +558,7 @@ export default function Doctor() {
                 <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
                   <RevealWords text="Properties of Mesenchymal Stem Cells (MSCs)" active={mscInView} />
                 </div>
-                <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base reveal-fade", mscInView && "reveal-fade-visible")}>
+                <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", mscInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
                   MSCs are unique cells with following properties
                 </p>
 
@@ -608,6 +617,279 @@ export default function Doctor() {
             </div>
           </Container>
         </section>
+
+        {/* ── Stem Cell Preparation ──────────────────────────────── */}
+        <section className="bg-sky-50 py-14 sm:py-20">
+          <Container>
+            <div className="mx-auto text-center" style={{ maxWidth: '900px' }}>
+              <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
+                <RevealWords text="Stem Cell Preparation" active={true} />
+              </div>
+              <p className="mt-5 leading-relaxed text-slate-600" style={{ fontSize: '0.9rem' }}>
+                Allogeneic Bone Marrow-Derived Mesenchymal Stem Cells (BMMSCs) undergo a carefully controlled<br />
+                multi-stage manufacturing process, including isolation, expansion, cell banking, and<br />
+                cryopreservation, to ensure quality, safety, and therapeutic effectiveness.
+              </p>
+            </div>
+
+            {/* Image (Top) + Step cards (Bottom) for better readability */}
+            <div className="mt-12 w-full max-w-[1400px] mx-auto px-4">
+              {/* Desktop Grid Layout (Hidden on Mobile) */}
+              <div className="hidden lg:grid grid-cols-5 gap-x-[3.5rem] gap-y-16 relative w-full items-start">
+
+                {/* Row 1 */}
+                <div className="col-span-2 relative">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-[280px]">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep1} alt="Bone Marrow Aspiration" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex flex-col items-center justify-center min-h-[85px]">
+                      <h4 className="font-bold text-black text-[14px] leading-tight text-center">Bone Marrow Aspiration</h4>
+                      <ul className="text-[12px] text-blue-700 mt-1 space-y-0.5 font-bold leading-tight text-center">
+                        <li>- Already done from &quot;Healthy Adult donors&quot;</li>
+                        <li>- Through the Informed Consent process:</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="absolute -right-[2.5rem] top-[130px] -translate-y-1/2 z-10 text-red-500">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Box 2 */}
+                <div className="col-span-1 relative">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-[280px]">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep2} alt="Isolation & Culture" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                      <span className="absolute top-[2%] left-1/2 -translate-x-1/2 font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 1</span>
+                      <span className="absolute top-[36%] left-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 2</span>
+                      <span className="absolute top-[36%] right-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[13.5px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br/><span className="text-xs font-bold">(In GLP-certified lab)</span></p>
+                    </div>
+                  </div>
+                  <div className="absolute -right-[2.5rem] top-[130px] -translate-y-1/2 z-10 text-red-500">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Box 3 */}
+                <div className="col-span-1 relative">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-[280px]">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep3} alt="Expansion" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Expansion of BMMSCs</p>
+                    </div>
+                  </div>
+                  <div className="absolute -right-[2.5rem] top-[130px] -translate-y-1/2 z-10 text-red-500">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Box 4 */}
+                <div className="col-span-1 relative">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-[280px]">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep4} alt="Master Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br/>Master Cell Bank (MCB)</p>
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 -bottom-[3.5rem] -translate-x-1/2 z-10 text-red-500">
+                    <svg className="w-10 h-10 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Row 2 - Col 1 */}
+                <div className="col-start-1 relative h-[280px]">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-full">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep9} alt="Cryopreserved" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Cryopreserved<br/><span className="text-[12px] font-bold mt-1 block">(-185°C to -195°C)</span></p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 2 - Col 2 */}
+                <div className="col-start-2 relative h-[280px]">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-full">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep8} alt="Quantified into Vials" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Quantified into<br/>25M cells in Vials</p>
+                    </div>
+                  </div>
+                  <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Row 2 - Col 3 */}
+                <div className="col-start-3 relative h-[280px]">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-full">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep7} alt="Large Scale" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Large scale expansion</p>
+                    </div>
+                  </div>
+                  <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+
+                {/* Row 2 - Col 4 (WCB) */}
+                <div className="col-start-4 relative h-[280px]">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-full">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep4} alt="Working Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br/>Working Cell Bank (WCB)</p>
+                    </div>
+                  </div>
+                  <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                  {/* Circular Icon (prep6) floating over the top border */}
+                  <div className="absolute -left-[80px] top-[15px] -translate-y-1/2 z-20">
+                    <div className="w-[110px] h-[110px] rounded-full shadow-md border-[3px] border-sky-300 bg-gradient-to-b from-cyan-100 to-cyan-300 flex justify-center items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-sky-400 hover:scale-105 cursor-pointer relative">
+                      <img src={prep6} alt="Vials" className="w-[75px] h-[75px] object-contain z-10" />
+                      <div className="absolute -left-[50px] top-1/2 -translate-y-1/2 text-red-500 rotate-[155deg] z-20">
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                      </div>
+                      <div className="absolute -right-[50px] top-1/2 -translate-y-1/2 text-red-500 rotate-[205deg] z-20">
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 2 - Col 5 */}
+                <div className="col-start-5 relative h-[280px]">
+                  <div className="bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden h-full">
+                    <div className="flex-1 flex justify-center items-center p-1 relative bg-white">
+                      <img src={prep5} alt="Pooled & Expanded" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                      <span className="absolute top-[2%] left-[2%] font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 1</span>
+                      <span className="absolute top-[2%] left-1/2 -translate-x-1/2 font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 2</span>
+                      <span className="absolute top-[2%] right-[2%] font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
+                    </div>
+                    <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Pooled &amp; Expanded</p>
+                    </div>
+                  </div>
+                  <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M13 5l7 7-7 7M6 5l7 7-7 7" /></svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile version (Vertical Flow) */}
+              <div className="flex lg:hidden flex-col items-center gap-6 w-full px-2">
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep1} alt="Bone Marrow Aspiration" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex flex-col items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Bone Marrow Aspiration</p>
+                    <ul className="text-[13px] text-blue-700 mt-1 space-y-0.5 font-bold leading-tight text-center">
+                      <li>- Already done from &quot;Healthy Adult donors&quot;</li>
+                      <li>- Through the Informed Consent process:</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative">
+                    <img src={prep2} alt="Isolation & Culture" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    <span className="absolute top-[2%] left-1/2 -translate-x-1/2 font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 1</span>
+                    <span className="absolute top-[36%] left-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 2</span>
+                    <span className="absolute top-[36%] right-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
+                  </div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br/><span className="text-sm font-bold">(In GLP-certified lab)</span></p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep3} alt="Expansion" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Expansion of BMMSCs</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep4} alt="Master Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br/>Master Cell Bank (MCB)</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative">
+                    <img src={prep5} alt="Pooled & Expanded" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
+                    <span className="absolute top-[2%] left-[2%] font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 1</span>
+                    <span className="absolute top-[2%] left-1/2 -translate-x-1/2 font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 2</span>
+                    <span className="absolute top-[2%] right-[2%] font-extrabold text-black text-[11px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
+                  </div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Pooled &amp; Expanded</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep4} alt="Working Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br/>Working Cell Bank (WCB)</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="z-20 flex justify-center relative my-1">
+                  <div className="w-[110px] h-[110px] rounded-full shadow-md border-[3px] border-sky-300 bg-gradient-to-b from-cyan-100 to-cyan-300 flex justify-center items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-sky-400 hover:scale-105 cursor-pointer">
+                    <img src={prep6} alt="Vials" className="w-[75px] h-[75px] object-contain z-10" />
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep7} alt="Large Scale" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Large scale expansion</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep8} alt="Quantified into Vials" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Quantified into<br/>25M cells in Vials</p>
+                  </div>
+                </div>
+                <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
+
+                <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
+                  <div className="flex justify-center p-1 bg-white relative"><img src={prep9} alt="Cryopreserved" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
+                  <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Cryopreserved<br/><span className="text-sm font-bold">(-185°C to -195°C)</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+        {/* ──────────────────────────────────────────────────────────── */}
 
         <section
           id="moa"
