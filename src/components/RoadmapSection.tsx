@@ -12,12 +12,12 @@ const milestones = [
     description: "",
   },
   {
-    year: "2009-10",
+    year: "2009-2010",
     title: "Phase I Clinical Trial for human safety",
     description: "",
   },
   {
-    year: "2011-14",
+    year: "2011-2014",
     title: "Phase II Clinical Trial",
     description: "Dose finding study proves 25 million Allogeneic BMMSC is the appropriate dose for Grade II & III Knee OA",
   },
@@ -32,13 +32,13 @@ const milestones = [
     description: "DCGI approved Allogeneic BMMSCs for Knee OA in non-obese patients",
   },
   {
-    year: "2023-24",
+    year: "2023-2024",
     title: "Phase III Extension Clinical Trial 2 year follow-up",
     description: "Significant sustained symptom control & cartilage preservation for 24 months compared to Placebo",
   },
   {
     year: "2025",
-    title: "Phase IV clinical trial Ongoing",
+    title: "Phase IV clinical Trial Ongoing",
     description: "",
   },
 ];

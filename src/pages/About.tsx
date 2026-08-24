@@ -67,7 +67,7 @@ export default function About() {
             <div className="mx-auto grid min-h-auto md:min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-6 md:gap-12 py-8 md:py-14 lg:grid-cols-2">
               <div className="max-w-xl">
                 <div className={heroInView ? "reveal-fade reveal-fade-visible" : "reveal-fade"}>
-                  <div className="mt-0 text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight">
+                  <div className="mt-0 text-4xl md:text-5xl lg:text-6xl font-normal text-black tracking-tight">
                     Allogeneic Mesenchymal Stem Cells
                   </div>
                 </div>
@@ -165,12 +165,10 @@ export default function About() {
                 <div className="text-sm font-bold tracking-[0.3em] text-blue-600 uppercase">
                   • OUR VALUES •
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
                   The principles that <span className="text-blue-600">drive our mission</span>
+                  <span className="block mt-1 sm:mt-2">and innovation in regenerative medicine</span>
                 </h2>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">
-                  and innovation in regenerative medicine
-                </h3>
                 <div className="flex justify-center mt-4">
                   <div className="w-20 h-1 bg-blue-600 rounded-full" />
                 </div>
