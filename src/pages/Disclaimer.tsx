@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, AlertTriangle } from "lucide-react";
+import { ArrowLeft, AlertTriangle, Info } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
@@ -88,6 +88,33 @@ export default function Disclaimer() {
                     <span className="leading-relaxed">Any unauthorised person having possession of this document should discard it or inform, notify, or return it to Cipla Ltd.</span>
                   </li>
                 </ul>
+
+                {/* Document Information Box */}
+                <div className="mt-10 rounded-2xl border border-sky-400 bg-sky-50/20 p-6 not-prose">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Info className="h-5 w-5 text-sky-500 shrink-0" />
+                    <h3 className="text-base sm:text-lg font-semibold text-sky-600 m-0">Document Information</h3>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-200 bg-white overflow-hidden text-sm sm:text-base">
+                    <div className="grid grid-cols-1 sm:grid-cols-[240px_1fr] border-b border-slate-200">
+                      <div className="px-5 py-3.5 text-slate-600 font-normal sm:border-r border-slate-200">
+                        Document Code
+                      </div>
+                      <div className="px-5 py-3.5 font-semibold text-slate-800">
+                        IN-IL-NP-SO-2026-0008
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-[240px_1fr]">
+                      <div className="px-5 py-3.5 text-slate-600 font-normal sm:border-r border-slate-200">
+                        Designed and Developed
+                      </div>
+                      <div className="px-5 py-3.5 font-semibold text-slate-800">
+                        Aug 2026
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
             </div>
@@ -99,3 +126,4 @@ export default function Disclaimer() {
     </div>
   );
 }
+
