@@ -43,15 +43,14 @@ type RevealWordsProps = {
 const RevealWords = memo(function RevealWords({ text, active, stagger = 0.04, delay = 0 }: RevealWordsProps) {
   const words = text.split(" ").filter(Boolean);
   return (
-    <span aria-label={text} role="text">
+    <span aria-label={text} role="text" className="inline">
       {words.map((word, idx) => (
         <span
           key={`${word}-${idx}`}
-          className={cn("reveal-word", active && "reveal-word-visible")}
+          className={cn("reveal-word mr-[0.25em] last:mr-0", active && "reveal-word-visible")}
           style={active ? { animationDelay: `${delay + idx * stagger}s` } : undefined}
         >
           {word}
-          {idx < words.length - 1 ? "\u00A0" : null}
         </span>
       ))}
     </span>
@@ -1199,24 +1198,24 @@ export default function Doctor() {
           </Container>
         </section>
 
-        <section ref={(node) => { ctaRef.current = node; }} className="relative overflow-hidden py-14 sm:py-20">
+        <section ref={(node) => { ctaRef.current = node; }} className="relative overflow-hidden py-8 sm:py-16 md:py-20">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_circle_at_50%_0%,rgba(56,189,248,0.22),transparent_60%)]" />
           <Container>
             <div className={cn(
-              "mx-auto max-w-6xl rounded-[36px] bg-white/70 p-10 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-700 ease-out sm:p-14",
+              "mx-auto max-w-6xl rounded-[24px] sm:rounded-[36px] bg-white/80 px-5 py-8 sm:px-10 sm:py-12 md:p-14 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-700 ease-out",
               "js-scroll-card",
               ctaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             )}>
               <div className="mx-auto max-w-3xl text-center">
-                <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-5xl">
+                <div className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-slate-900 leading-tight sm:leading-tight">
                   <RevealWords text="Partnering With Doctors In The Future Of Regenerative Medicine" active={ctaInView} />
                 </div>
-                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base leading-relaxed text-slate-600 px-1">
                   Explore advanced cellular therapy approaches for the evolving management of knee osteoarthritis.
                 </p>
-                <div className="mt-8 flex justify-center">
-                  <Button type="button" onClick={() => navigate("/contact")}>
-                    Connect With Our Medical Team <ArrowRight className="h-4 w-4" />
+                <div className="mt-6 sm:mt-8 flex justify-center w-full">
+                  <Button type="button" className="w-full sm:w-auto text-xs sm:text-sm px-5 py-3" onClick={() => navigate("/contact")}>
+                    Connect With Our Medical Team <ArrowRight className="h-4 w-4 shrink-0" />
                   </Button>
                 </div>
               </div>
