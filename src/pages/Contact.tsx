@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 import MarketingNavbar from "@/components/layout/MarketingNavbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -42,18 +42,6 @@ export default function Contact() {
                 <div className="rounded-[22px] bg-white/90 p-5 ring-1 ring-sky-200/60 shadow-soft-xl transition-all duration-300 hover:shadow-[0_10px_40px_rgba(2,132,199,0.15)] hover:ring-sky-300">
                   <div className="flex items-start gap-3">
                     <div className="grid h-10 w-10 place-items-center rounded-xl bg-sky-50 ring-1 ring-sky-100 text-sky-700">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-900">Toll-Free Support</div>
-                      <a href="tel:18001234567" className="mt-1 block text-sm text-sky-700 hover:text-sky-800">1800-123-4567</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-[22px] bg-white/90 p-5 ring-1 ring-sky-200/60 shadow-soft-xl transition-all duration-300 hover:shadow-[0_10px_40px_rgba(2,132,199,0.15)] hover:ring-sky-300">
-                  <div className="flex items-start gap-3">
-                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-sky-50 ring-1 ring-sky-100 text-sky-700">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
@@ -74,11 +62,12 @@ export default function Contact() {
                         href="https://www.google.com/maps?q=PENINSULA%20BUSINESS%20PARK%20GANPATRAO%20KADAM%20MARG%20LOWER%20PAREL%20MUMBAI"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 block text-xs leading-relaxed text-slate-600 hover:text-sky-700"
+                        className="mt-1 block text-sm leading-relaxed text-slate-600 hover:text-sky-700"
                       >
-                        CIPLA LTD HEAD OFFICE-MUMBAI<br/>
-                        PENINSULA BUSINESS PARK, GANPATRAO KADAM<br/>
-                        MARG, LOWER PAREL, MUMBAI.
+                        Cipla Ltd Head Office - Mumbai<br />
+                        Peninsula Business Park,<br />
+                        Ganpatrao Kadam Marg,<br />
+                        Lower Parel, Mumbai.
                       </a>
                     </div>
                   </div>

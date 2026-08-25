@@ -38,7 +38,7 @@ const milestones = [
   },
   {
     year: "2025",
-    title: "Phase IV clinical Trial Ongoing",
+    title: "Phase IV Clinical Trial Ongoing",
     description: "",
   },
 ];

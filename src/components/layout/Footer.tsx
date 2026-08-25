@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import Container from "@/components/ui/Container";
 import brandLogo from "@/assets/Cipla_logo.svg.png";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   const location = useLocation();
@@ -48,16 +48,13 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-sky-700" />
                 <div>info@cipla.com</div>
               </div>
-              <div className="grid grid-cols-[16px_1fr] items-center gap-3 text-left">
-                <Phone className="h-4 w-4 text-sky-700" />
-                <div>Toll Free: 1800-123-4567</div>
-              </div>
               <div className="grid grid-cols-[16px_1fr] items-start gap-3 text-left">
                 <MapPin className="mt-0.5 h-4 w-4 text-sky-700" />
                 <div>
-                  <div className="font-semibold">CIPLA LTD HEAD OFFICE-MUMBAI</div>
-                  <div>PENINSULA BUSINESS PARK, GANPATRAO KADAM</div>
-                  <div>MARG, LOWER PAREL, MUMBAI.</div>
+                  <div className="font-semibold">Cipla Ltd Head Office - Mumbai</div>
+                  <div>Peninsula Business Park,</div>
+                  <div>Ganpatrao Kadam Marg,</div>
+                  <div>Lower Parel, Mumbai.</div>
                 </div>
               </div>
             </div>
@@ -94,16 +91,13 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-sky-700" />
                 <div>info@cipla.com</div>
               </div>
-              <div className="grid grid-cols-[16px_1fr] items-center gap-3 text-left">
-                <Phone className="h-4 w-4 text-sky-700" />
-                <div>Toll Free: 1800-123-4567</div>
-              </div>
               <div className="grid grid-cols-[16px_1fr] items-start gap-3 text-left">
                 <MapPin className="mt-0.5 h-4 w-4 text-sky-700" />
                 <div>
-                  <div className="font-semibold">CIPLA LTD HEAD OFFICE-MUMBAI</div>
-                  <div>PENINSULA BUSINESS PARK, GANPATRAO KADAM</div>
-                  <div>MARG, LOWER PAREL, MUMBAI.</div>
+                  <div className="font-semibold">Cipla Ltd Head Office - Mumbai</div>
+                  <div>Peninsula Business Park,</div>
+                  <div>Ganpatrao Kadam Marg,</div>
+                  <div>Lower Parel, Mumbai.</div>
                 </div>
               </div>
             </div>
