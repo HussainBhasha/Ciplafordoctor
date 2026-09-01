@@ -26,6 +26,11 @@ import prep6 from "@/assets/6.png";
 import prep7 from "@/assets/7.png";
 import prep8 from "@/assets/8.png";
 import prep9 from "@/assets/9.png";
+import cryoshipperImage from "@/assets/cryoshipper.png";
+import waterBathImage from "@/assets/water_bath.png";
+import plasmalyteBagImage from "@/assets/plasmalyte_bag.png";
+import intraArticularImage from "@/assets/Intra-articular Injection.png";
+import ciplostemVideo from "@/assets/Ciplostem Final 04 Compressed.mp4";
 import { ArrowRight, ChevronDown, X, FlaskConical, Syringe, Bone, Users, Pill, FileText, BarChart3, Shield, Flame, Activity, Microscope, Dna, Sparkles, Zap, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useInView } from "@/hooks/useInView";
@@ -132,8 +137,72 @@ export default function Doctor() {
   const overviewScrollRef = useRef<HTMLDivElement | null>(null);
   const evidenceScrollRef = useRef<HTMLDivElement | null>(null);
   const resourcesScrollRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoSectionRef = useRef<HTMLElement | null>(null);
+
+  // Restore scroll position when exiting video fullscreen (prevents page jump to top)
+  useEffect(() => {
+    let scrollLockInterval: ReturnType<typeof setInterval> | null = null;
+
+    const clearLock = () => {
+      if (scrollLockInterval !== null) {
+        clearInterval(scrollLockInterval);
+        scrollLockInterval = null;
+      }
+    };
+
+    const onFullscreenChange = () => {
+      const isFullscreen = !!(
+        document.fullscreenElement ||
+        (document as any).webkitFullscreenElement
+      );
+      if (isFullscreen) {
+        clearLock();
+      } else {
+        // Force the video section back into view when exiting fullscreen
+        clearLock();
+        scrollLockInterval = setInterval(() => {
+          if (videoSectionRef.current) {
+            videoSectionRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+          }
+        }, 16);
+        setTimeout(clearLock, 700);
+      }
+    };
+
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+    return () => {
+      clearLock();
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', onFullscreenChange);
+    };
+  }, []);
+
+
+  // Stop and reset video when scrolled out of view
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      },
+      { threshold: 0.01 } // Trigger immediately as it goes completely out of view
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+
     const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     if (prefersReduced) return;
 
@@ -501,7 +570,7 @@ export default function Doctor() {
                   <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
                 <p className={cn("mt-4 max-w-2xl leading-relaxed text-slate-600 reveal-fade", techInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                  Ciplostem™(Stempeucel®) is an allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
+                  Ciplostem™ (Stempeucel®) is a regulatory approved (DCGI/CDSCO), allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -510,12 +579,14 @@ export default function Doctor() {
                     "Standardized Cell Preparation",
                     "GMP Manufacturing",
                     "Off-the-Shelf Availability",
+                    "DCGI/CDSCO Approved",
                   ].map((x, idx, arr) => (
                     <div
                       key={x}
                       className={cn(
-                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:ring-sky-400/80 hover:shadow-[0_22px_70px_rgba(2,132,199,0.18)]",
+                        "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl cursor-pointer transition-all duration-[250ms] ease-out hover:-translate-y-3 hover:scale-[1.10] hover:ring-2 hover:ring-sky-400 hover:shadow-[0_30px_80px_rgba(2,132,199,0.35)] hover:bg-gradient-to-br hover:from-white hover:to-sky-100/60 hover:z-10 relative",
                         "js-scroll-card",
+                        idx === arr.length - 1 && "sm:col-span-2 sm:w-1/2 sm:mx-auto",
                         techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
                       style={{ transitionDelay: `${idx * 70}ms` }}
@@ -529,6 +600,7 @@ export default function Doctor() {
                     </div>
                   ))}
                 </div>
+
               </div>
 
               <div className={cn("transition-all duration-700 ease-out h-full", techInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")}>
@@ -573,7 +645,7 @@ export default function Doctor() {
                     <div
                       key={x.title}
                       className={cn(
-                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl transition-all duration-500 ease-out flex items-center h-full hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:ring-sky-400/80",
+                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl cursor-pointer transition-all duration-[250ms] ease-out flex items-center h-full relative hover:-translate-y-3 hover:scale-[1.10] hover:ring-2 hover:ring-sky-400 hover:shadow-[0_30px_80px_rgba(2,132,199,0.35)] hover:bg-gradient-to-br hover:from-white hover:to-sky-100/60 hover:z-10",
                         "js-scroll-card",
                         mscInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
@@ -889,6 +961,135 @@ export default function Doctor() {
           </Container>
         </section>
         {/* ──────────────────────────────────────────────────────────── */}
+
+        {/* ── Injection Procedure ──────────────────────────────────── */}
+        <section className="bg-sky-50 py-14 sm:py-20">
+          <Container>
+            <div className="relative bg-[#F5FAFF] py-16 px-6 sm:px-12 rounded-[40px] shadow-sm ring-1 ring-sky-100/50">
+              {/* Full-width header */}
+              <div className="flex flex-col items-center text-center">
+                <h2 className="font-display text-4xl font-bold tracking-[-0.03em] text-black sm:text-5xl">
+                  Injection Procedure
+                </h2>
+                <p className="mt-5 max-w-3xl mx-auto leading-relaxed text-slate-600" style={{ fontSize: '0.9rem' }}>
+                  The Mesenchymal Stem Cells vial is transported, thawed, reconstituted with PlasmaLyte A, and administered via intra-articular injection together with Hyaluronic Acid.
+                </p>
+              </div>
+
+              {/* Horizontal Workflow timeline */}
+              <div className="mt-16 w-full max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
+                  {[
+                    {
+                      step: "STEP 01",
+                      title: "Cryoshipper Storage",
+                      desc: "Mesenchymal Stem Cells are transported inside a validated cryoshipper maintained between \u2013185\u00b0C and \u2013196\u00b0C.",
+                      image: cryoshipperImage,
+                    },
+                    {
+                      step: "STEP 02",
+                      title: "Controlled Thawing",
+                      desc: "The cryopreserved vial is thawed in a sterile warm water bath at 37 degree celsius for 3\u20134 minutes.",
+                      image: waterBathImage,
+                    },
+                    {
+                      step: "STEP 03",
+                      title: "Reconstitution",
+                      desc: "1 ml of Plasmalyte A (Multiple Electrolyte solution) is added to prepare the stem cell suspension for administration.",
+                      image: plasmalyteBagImage,
+                    },
+                    {
+                      step: "STEP 04",
+                      title: "Intra-articular Injection",
+                      desc: "2 mL of BMMSCs together with 1 mL of PlasmaLyte is injected into the affected Knee followed by Administration of 2mL of Hyaluronic Acid, which acts as the biological scaffold.",
+                      image: intraArticularImage,
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col relative group cursor-default">
+                      {/* Gradient Connector Arrow - Desktop (Between columns) */}
+                      {(i + 1) % 2 !== 0 && (
+                        <div className="hidden md:block absolute top-[40%] -right-10 w-12 text-sky-300 z-20">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="miter" className="w-12 h-12 drop-shadow-sm"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                      )}
+
+                      <div className="w-full bg-white/80 backdrop-blur-xl rounded-[28px] p-6 ring-1 ring-sky-100 shadow-[0_8px_30px_rgba(2,132,199,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(2,132,199,0.12)] hover:ring-sky-300 relative z-10 flex flex-col h-full overflow-hidden">
+
+                        <div className="relative w-full aspect-[4/3] rounded-[20px] mb-6 overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+                          />
+                        </div>
+
+                        <div className="flex flex-col flex-1">
+                          <div className="inline-block w-fit text-[11px] font-bold tracking-widest text-sky-600 bg-sky-50 px-3 py-1.5 rounded-full ring-1 ring-sky-100 mb-4">
+                            {item.step}
+                          </div>
+                          <h3 className="text-xl font-bold text-black mb-3 leading-tight">{item.title}</h3>
+                          <p className="text-[14px] text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </Container>
+        </section>
+        {/* ──────────────────────────────────────────────────────────── */}
+
+        {/* ── Ciplostem Video Section ──────────────────────────────── */}
+        <section ref={videoSectionRef} className="relative bg-sky-50 py-8 sm:py-12 overflow-hidden">
+          {/* Decorative blobs */}
+          <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-sky-100/60 blur-[100px]" />
+          <div className="pointer-events-none absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/40 blur-[100px]" />
+          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-sky-50/80 blur-[80px]" />
+
+          <Container>
+            {/* Section heading */}
+            <div className="text-center mb-12">
+              <h2 className="font-display text-4xl font-bold tracking-[-0.03em] text-black sm:text-5xl">
+                Ciplostem™ in Action
+              </h2>
+              <p className="mt-4 mx-auto leading-relaxed text-slate-600" style={{ fontSize: '0.9rem', maxWidth: '600px' }}>
+                Watch how Ciplostem™ (Stempeucel®) is prepared and administered — a seamless, clinically validated process from cryostorage to intra-articular delivery.
+              </p>
+            </div>
+
+            {/* Video card */}
+            <div className="relative mx-auto pb-8" style={{ width: '80vw', maxWidth: '1200px' }}>
+              {/* Outer glow ring */}
+              <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-br from-sky-300/40 via-sky-100/20 to-transparent blur-2xl" />
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-br from-sky-400/30 to-sky-200/10 blur-md" />
+
+              {/* Video container */}
+              <div className="relative rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(2,132,199,0.20)] ring-2 ring-sky-200/60 bg-black">
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 z-10 bg-gradient-to-r from-sky-400 via-sky-300 to-sky-500" />
+
+                <video
+                  ref={videoRef}
+                  src={ciplostemVideo}
+                  controls
+                  controlsList="nodownload"
+                  autoPlay={false}
+                  loop={false}
+                  playsInline
+                  className="w-full block"
+                  style={{ aspectRatio: '16/9', objectFit: 'cover', background: '#000', display: 'block' }}
+                />
+              </div>
+
+
+            </div>
+
+          </Container>
+        </section>
+        {/* ──────────────────────────────────────────────────────────── */}
+
 
         <section
           id="moa"
