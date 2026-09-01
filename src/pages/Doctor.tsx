@@ -1048,7 +1048,7 @@ export default function Doctor() {
           <div className="pointer-events-none absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-sky-200/40 blur-[100px]" />
           <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-sky-50/80 blur-[80px]" />
 
-          <Container>
+          <Container className="relative z-10">
             {/* Section heading */}
             <div className="text-center mb-12">
               <h2 className="font-display text-4xl font-bold tracking-[-0.03em] text-black sm:text-5xl">
@@ -1060,7 +1060,7 @@ export default function Doctor() {
             </div>
 
             {/* Video card */}
-            <div className="relative mx-auto pb-8" style={{ width: '80vw', maxWidth: '1200px' }}>
+            <div className="relative mx-auto pb-8 w-full md:w-[80vw] max-w-[1200px]">
               {/* Outer glow ring */}
               <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-br from-sky-300/40 via-sky-100/20 to-transparent blur-2xl" />
               <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-br from-sky-400/30 to-sky-200/10 blur-md" />
