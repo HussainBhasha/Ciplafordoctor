@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import newstemcellImage from "@/assets/newstemcell.png";
 import ciplaLogo from "@/assets/Cipla_logo.svg.png";
 import { useInView } from "@/hooks/useInView";
-import { Award, Globe, Lightbulb, Users } from "lucide-react";
+import { Award, Globe, Lightbulb, Users, Trophy } from "lucide-react";
 import { RoadmapSection } from '@/components/RoadmapSection';
 
 const features = [
@@ -43,7 +43,24 @@ const values = [
     titleColor: "text-slate-900",
     delay: "450ms",
   },
-
+  {
+    title: "Excellence Focussed",
+    text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to “Caring For Life”.",
+    icon: <Trophy className="h-10 w-10" />,
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
+    delay: "600ms",
+  },
+  {
+    title: "Innovation Driven",
+    text: "We believe that innovation is more radical and transformational than improvement and therefore, is a critical component in leading the organization towards its goal.",
+    icon: <Lightbulb className="h-10 w-10" />,
+    iconBg: "from-sky-400 to-sky-600",
+    accentColor: "bg-sky-500",
+    titleColor: "text-slate-900",
+    delay: "750ms",
+  },
 ];
 
 export default function About() {
