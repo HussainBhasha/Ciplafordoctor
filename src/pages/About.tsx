@@ -44,7 +44,7 @@ const values = [
     delay: "450ms",
   },
   {
-    title: "Excellence Focussed",
+    title: "Excellence Focused",
     text: "We always aim at setting the gold standard in healthcare and going above and beyond to stay true to “Caring For Life”.",
     icon: <Trophy className="h-10 w-10" />,
     iconBg: "from-sky-400 to-sky-600",
