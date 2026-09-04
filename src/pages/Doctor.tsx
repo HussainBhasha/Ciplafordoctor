@@ -37,6 +37,8 @@ import { useInView } from "@/hooks/useInView";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReferencesSection from "@/components/ReferencesSection";
+import IntroVideoOverlay from "@/components/media/IntroVideoOverlay";
+import introVideo from "@/assets/introvideo.mp4";
 
 type RevealWordsProps = {
   text: string;
@@ -112,6 +114,37 @@ export default function Doctor() {
   useEffect(() => {
     document.title = "Cipla";
   }, []);
+
+  const [showIntro, setShowIntro] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("intro") === "1" || params.get("intro") === "true") {
+        return true;
+      }
+      return sessionStorage.getItem("ciplostem:welcomeGate") !== "1";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    if (!showIntro) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [showIntro]);
+
+  const handleIntroDone = () => {
+    try {
+      sessionStorage.setItem("ciplostem:portal", "doctor");
+      sessionStorage.setItem("ciplostem:welcomeGate", "1");
+    } catch {
+      void 0;
+    }
+    setShowIntro(false);
+  };
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: orthoRef, inView: orthoInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: mscRef, inView: mscInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
@@ -2277,6 +2310,13 @@ export default function Doctor() {
             </div>
           )}
         </div>
+      )}
+
+      {showIntro && (
+        <IntroVideoOverlay
+          src={introVideo}
+          onDone={handleIntroDone}
+        />
       )}
     </div>
   );

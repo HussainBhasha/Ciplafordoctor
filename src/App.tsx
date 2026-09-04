@@ -1,9 +1,8 @@
 import React, { Suspense, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import About from "@/pages/About";
 import Doctor from "@/pages/Doctor";
 import Contact from "@/pages/Contact";
-import Home from "@/pages/Home";
 import ClinicalTrials from "@/pages/ClinicalTrials";
 import PatientOutcomes from "@/pages/PatientOutcomes";
 import Disclaimer from "@/pages/Disclaimer"; // Legal Disclaimer Page
@@ -47,9 +46,9 @@ export default function App() {
       <ScrollToTop />
       <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Navigate to="/doctor" replace />} />
           <Route path="/doctor" element={<Doctor />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/clinical-trials" element={<ClinicalTrials />} />
           <Route path="/patient-outcomes" element={<PatientOutcomes />} />
