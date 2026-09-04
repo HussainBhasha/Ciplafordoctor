@@ -484,10 +484,10 @@ export default function Doctor() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based stem cell therapy for Knee Osteoarthritis management
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2</sup>
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,6</sup>
                   </p>
                 </div>
 
@@ -500,10 +500,10 @@ export default function Doctor() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based stem cell therapy for Knee Osteoarthritis management
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2</sup>
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,6</sup>
                   </p>
                 </div>
 
@@ -552,7 +552,7 @@ export default function Doctor() {
                   <RevealWords text="Allogeneic Mesenchymal Stem Cell therapy" active={orthoInView} />
                 </div>
                 <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", orthoInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                  Promotes tissue repair, healing and preservation.
+                  Promotes tissue repair, healing and preservation.<sup>3</sup>
                 </p>
 
 
@@ -570,19 +570,19 @@ export default function Doctor() {
                   <RevealWords text="Mesenchymal Stem Cells — Advanced Cellular Therapy" active={techInView} />
                 </div>
                 <p className={cn("mt-4 max-w-2xl leading-relaxed text-slate-600 reveal-fade", techInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                  Ciplostem™ (Stempeucel®) is a regulatory approved (DCGI/CDSCO), allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).
+                  Ciplostem™ (Stempeucel®) is a regulatory approved (DCGI/CDSCO), allogeneic mesenchymal stromal cell therapy derived from adult human bone marrow. It consists of expanded, cultured, and pooled bone marrow-derived mesenchymal stromal cells (BMMSCs).<sup>5,6</sup>
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
-                    "Bone Marrow-Derived BMMSCs",
-                    "Standardized Cell Preparation",
-                    "GMP Manufacturing",
-                    "Off-the-Shelf Availability",
-                    "DCGI/CDSCO Approved",
-                  ].map((x, idx, arr) => (
+                    { label: "Bone Marrow-Derived BMMSCs", ref: "5,6" },
+                    { label: "Standardized Cell Preparation", ref: "6" },
+                    { label: "GMP Manufacturing", ref: "5,6" },
+                    { label: "Off-the-Shelf Availability", ref: "6" },
+                    { label: "DCGI/CDSCO Approved", ref: "6" },
+                  ].map((item, idx, arr) => (
                     <div
-                      key={x}
+                      key={item.label}
                       className={cn(
                         "rounded-[24px] bg-gradient-to-br from-white/85 to-sky-50/35 p-4 sm:p-5 ring-1 ring-sky-200/70 shadow-[0_18px_60px_rgba(2,132,199,0.12)] backdrop-blur-xl cursor-pointer transition-all duration-[250ms] ease-out hover:-translate-y-3 hover:scale-[1.10] hover:ring-2 hover:ring-sky-400 hover:shadow-[0_30px_80px_rgba(2,132,199,0.35)] hover:bg-gradient-to-br hover:from-white hover:to-sky-100/60 hover:z-10 relative",
                         "js-scroll-card",
@@ -595,7 +595,9 @@ export default function Doctor() {
                         <div className="mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-100 text-xs">
                           ✓
                         </div>
-                        <div className="text-sm font-semibold text-slate-900">{x}</div>
+                        <div className="text-sm font-semibold text-slate-900">
+                          {item.label}<sup>{item.ref}</sup>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -630,30 +632,32 @@ export default function Doctor() {
                   <RevealWords text="Properties of Mesenchymal Stem Cells (MSCs)" active={mscInView} />
                 </div>
                 <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", mscInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                  MSCs are unique cells with following properties
+                  MSCs are unique cells with following properties<sup>3,4</sup>
                 </p>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
                   {[
-                    { title: "Self-Replication" },
-                    { title: "Differentiation" },
-                    { title: "Anti-Inflammatory" },
-                    { title: "Immunomodulatory" },
-                    { title: "Anti-Catabolic" },
-                    { title: "Low Immunogenicity" },
+                    { title: "Self-Replication", ref: "3,4" },
+                    { title: "Differentiation", ref: "3,4" },
+                    { title: "Anti-Inflammatory", ref: "3,4" },
+                    { title: "Immunomodulatory", ref: "3,4" },
+                    { title: "Anti-Catabolic", ref: "3,4" },
+                    { title: "Low Immunogenicity", ref: "3,4,5" },
                   ].map((x, idx) => (
                     <div
                       key={x.title}
                       className={cn(
-                        "rounded-[24px] bg-white/70 p-6 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl cursor-pointer transition-all duration-[250ms] ease-out flex items-center h-full relative hover:-translate-y-3 hover:scale-[1.10] hover:ring-2 hover:ring-sky-400 hover:shadow-[0_30px_80px_rgba(2,132,199,0.35)] hover:bg-gradient-to-br hover:from-white hover:to-sky-100/60 hover:z-10",
+                        "rounded-[20px] bg-white/75 px-4 py-4 sm:px-4 sm:py-4.5 ring-1 ring-sky-200/60 shadow-soft-xl backdrop-blur-xl cursor-pointer transition-all duration-[250ms] ease-out flex items-center h-full relative hover:-translate-y-2 hover:scale-[1.05] hover:ring-2 hover:ring-sky-400 hover:shadow-[0_20px_50px_rgba(2,132,199,0.3)] hover:bg-gradient-to-br hover:from-white hover:to-sky-100/60 hover:z-10",
                         "js-scroll-card",
                         mscInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                       )}
                       style={{ transitionDelay: `${idx * 90}ms` }}
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0">
                         <div className="h-2 w-2 flex-none rounded-full bg-sky-600" />
-                        <div className="text-sm font-semibold text-slate-900 uppercase tracking-wide">{x.title}</div>
+                        <div className="text-[12.5px] sm:text-[13px] xl:text-sm font-semibold text-slate-900 uppercase tracking-tight whitespace-nowrap">
+                          {x.title}<sup className="ml-0.5 text-[0.7em] font-bold">{x.ref}</sup>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -699,7 +703,7 @@ export default function Doctor() {
               <p className="mt-5 leading-relaxed text-slate-600" style={{ fontSize: '0.9rem' }}>
                 Allogeneic Bone Marrow-Derived Mesenchymal Stem Cells (BMMSCs) undergo a carefully controlled<br />
                 multi-stage manufacturing process, including isolation, expansion, cell banking, and<br />
-                cryopreservation, to ensure quality, safety, and therapeutic effectiveness.
+                cryopreservation, to ensure quality, safety, and therapeutic effectiveness.<sup>5,6</sup>
               </p>
             </div>
 
@@ -972,7 +976,7 @@ export default function Doctor() {
                   Injection Procedure
                 </h2>
                 <p className="mt-5 max-w-3xl mx-auto leading-relaxed text-slate-600" style={{ fontSize: '0.9rem' }}>
-                  The Mesenchymal Stem Cells vial is transported, thawed, reconstituted with PlasmaLyte A, and administered via intra-articular injection together with Hyaluronic Acid.
+                  The Mesenchymal Stem Cells vial is transported, thawed, reconstituted with PlasmaLyte A, and administered via intra-articular injection together with Hyaluronic Acid.<sup>2,6</sup>
                 </p>
               </div>
 
@@ -1028,7 +1032,7 @@ export default function Doctor() {
                             {item.step}
                           </div>
                           <h3 className="text-xl font-bold text-black mb-3 leading-tight">{item.title}</h3>
-                          <p className="text-[14px] text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                          <p className="text-[14px] text-slate-600 leading-relaxed font-medium">{item.desc}<sup>6</sup></p>
                         </div>
                       </div>
                     </div>
@@ -1109,7 +1113,7 @@ export default function Doctor() {
                   <RevealWords text="Mechanism of Action in Knee OA" active={moaInView} delay={0.16} />
                 </div>
                 <p className={cn("mt-4 text-sm leading-relaxed text-slate-600 sm:text-base max-w-3xl mx-auto reveal-fade", moaInView && "reveal-fade-visible")}>
-                  Multi-modal action addressing the key pathophysiological pathways in knee osteoarthritis
+                  Multi-modal action addressing the key pathophysiological pathways in knee osteoarthritis.<sup>6</sup>
                 </p>
               </div>
 
@@ -1128,7 +1132,7 @@ export default function Doctor() {
                         <img src={icon1} alt="Anti-inflammatory" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-blue-800 mb-3">ANTI-INFLAMMATORY</h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-blue-800 mb-3">ANTI-INFLAMMATORY<sup>2,6</sup></h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Counteracts Chronic Inflammation</p>
                     </div>
@@ -1163,7 +1167,7 @@ export default function Doctor() {
                         <img src={icon2} alt="Immunomodulatory" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-teal-800 mb-3">IMMUNOMODULATORY</h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-slate-900 mb-3">IMMUNOMODULATORY<sup>3,4</sup></h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Reduces Immune Cell Involvement</p>
                     </div>
@@ -1196,7 +1200,7 @@ export default function Doctor() {
                         <img src={icon3} alt="Cartilage Preservation" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CHONDROPRESERVATIVE</h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CHONDROPRESERVATIVE<sup>2,6</sup></h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Stimulates Differentiation & Maintains Cartilage Integrity</p>
                     </div>

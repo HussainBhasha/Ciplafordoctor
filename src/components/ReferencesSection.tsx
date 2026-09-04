@@ -1,13 +1,9 @@
 const references = [
-  "Knee Osteoarthritis. JAMA. 2024;332(22):1954.",
-  "Osteoarthritis: Epidemiology and Burden. Rheumatol Ther. 2022 Feb;9(1):151-174.",
-  "Inflammatory Processes in Knee OA. Front Immunol. 2024 Jun 4;15:1385006.",
-  "Knee OA Pathophysiology. J Pain Res. 2018 Oct 5;11:2189-2196.",
-  "Stem Cell Fundamentals. Orthop Rev (Pavia). 2022 Aug 25;14(3):37498.",
-  "Mesenchymal Stem Cells. Am J Orthop (Belle Mead NJ). 2016;45(5):280-326.",
-  "MSC Differentiation Potential. Appl Sci. 2023;13:10617.",
-  "Orthobiologics in Knee OA. J Arthrosc Surg Sports Med. 2024;5:119-124.",
-  "Gupta PK, et al. Clinical Evaluation of Allogenic BMMSCs in Knee OA. Am J Sports Med. 2023;51(9):2254-2266.",
+  "Bioengineering (Basel). 2025 Feb 07;12(2):161.",
+  "Gupta P.K. et al. The American Journal of Sports Medicine. 2023;51(9):2254–2266.",
+  "Am J Orthop (Belle Mead NJ). 2016;45(5):280–326.",
+  "Appl. Sci. 2023, 13, 10617.",
+  "J Clin Orthop Trauma. 2022 Feb 9;26:101804; Transplantation. 2015;99:1681–1690.",
   "Stempeutics Research Pvt. Ltd. Data on File.",
 ];
 

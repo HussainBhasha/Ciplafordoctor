@@ -83,7 +83,7 @@ export function Phase2VASChart() {
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col items-center">
         <p className="text-lg md:text-xl font-bold text-slate-800 text-center leading-relaxed">
-          Significant <span className="text-sky-600">improvement in pain reduction</span> was noted in the group treated with <span className="text-sky-600">25M Stempeucel®/Ciplostem™ dose</span> @ 3, 6 & 12 months
+          Significant <span className="text-sky-600">improvement in pain reduction</span> was noted in the group treated with <span className="text-sky-600">25M Stempeucel®/Ciplostem™ dose</span> @ 3, 6 & 12 months<sup>2,6</sup>
         </p>
         <div className="mt-4 inline-block bg-white px-6 py-2 rounded-full border border-sky-100 shadow-sm">
           <p className="text-sky-700 font-bold"><span className="text-xl">67.4% reduction</span> in the 25M group @ 12 months</p>
@@ -154,7 +154,7 @@ export function Phase2WOMACChart() {
       
       <div className="mt-8 bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 flex flex-col items-center">
         <p className="text-lg md:text-xl font-bold text-slate-800 text-center leading-relaxed">
-          Patients receiving the <span className="text-sky-600">25 million Stempeucel®/Ciplostem™ dose</span> demonstrated significant <span className="text-sky-600">improvements in pain, stiffness, and physical function</span> at 3, 6, and 12 months.
+          Patients receiving the <span className="text-sky-600">25 million Stempeucel®/Ciplostem™ dose</span> demonstrated significant <span className="text-sky-600">improvements in pain, stiffness, and physical function</span> at 3, 6, and 12 months.<sup>2,6</sup>
         </p>
       </div>
     </div>

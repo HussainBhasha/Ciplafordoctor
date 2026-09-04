@@ -168,7 +168,7 @@ export function Phase3IL10Chart() {
       
     <div className="bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 text-center max-w-4xl mx-auto px-4 w-full">
       <p className="text-sm md:text-base text-slate-700 font-medium leading-relaxed">
-        Interleukin-10 (IL-10) is an anti-inflammatory cytokine that helps regulate immune responses and protect cartilage from inflammation-associated damage. Higher IL-10 levels are associated with reduced inflammation and improved cartilage health in patients with osteoarthritis.
+        Interleukin-10 (IL-10) is an anti-inflammatory cytokine that helps regulate immune responses and protect cartilage from inflammation-associated damage. Higher IL-10 levels are associated with reduced inflammation and improved cartilage health in patients with osteoarthritis.<sup>2,6</sup>
       </p>
     </div>
   </div>

@@ -39,7 +39,7 @@ export default function PatientOutcomes() {
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Pain & Functional Improvement</h2>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Clinical studies demonstrated statistically significant improvements in pain, stiffness and physical function compared with baseline and placebo over 24 months.
+                  Clinical studies demonstrated statistically significant improvements in pain, stiffness and physical function compared with baseline and placebo over 24 months.<sup>2,6</sup>
                 </p>
               </div>
 
@@ -60,7 +60,7 @@ export default function PatientOutcomes() {
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Cartilage Preservation</h2>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  MRI T2 cartilage mapping demonstrated maintenance of cartilage quality over 24 months, indicating structural preservation of the knee joint following treatment.
+                  MRI T2 cartilage mapping demonstrated maintenance of cartilage quality over 24 months, indicating structural preservation of the knee joint following treatment.<sup>2,6</sup>
                 </p>
               </div>
 
@@ -125,7 +125,7 @@ export default function PatientOutcomes() {
                 ].map((benefit, i) => (
                   <div key={i} className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-transparent hover:border-sky-200 hover:shadow-[0_12px_40px_rgb(14_165_233_/_0.15)] hover:-translate-y-1.5 transition-all duration-300">
                     <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{benefit.desc}</p>
+                    <p className="text-slate-600 leading-relaxed">{benefit.desc}<sup>2,6</sup></p>
                   </div>
                 ))}
               </div>

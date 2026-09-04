@@ -55,7 +55,7 @@ export function Phase2WormsTable() {
       
       <div className="mt-8 text-center max-w-3xl mx-auto px-4">
         <p className="text-sm md:text-base text-slate-700 font-normal leading-relaxed">
-          No significant change in WORMS scores was observed from baseline to follow-up across all treatment groups, indicating stable structural joint features with no detectable progression of cartilage damage or other MRI-assessed abnormalities.
+          No significant change in WORMS scores was observed from baseline to follow-up across all treatment groups, indicating stable structural joint features with no detectable progression of cartilage damage or other MRI-assessed abnormalities.<sup>2,6</sup>
         </p>
       </div>
     </div>
@@ -138,7 +138,7 @@ export function Phase3WOMACChart() {
       
     <div className="bg-sky-50/50 rounded-2xl p-6 border border-sky-100/50 text-center max-w-4xl mx-auto px-4 w-full">
       <p className="text-sm md:text-base text-slate-700 font-medium leading-relaxed">
-        A progressive reduction in WOMAC Total Score was observed in the BMMSC-treated group throughout the 24-month follow-up, reflecting sustained improvements in pain, stiffness, and physical function compared with the placebo group. Lower WOMAC scores indicate improved patient outcomes.
+        A progressive reduction in WOMAC Total Score was observed in the BMMSC-treated group throughout the 24-month follow-up, reflecting sustained improvements in pain, stiffness, and physical function compared with the placebo group. Lower WOMAC scores indicate improved patient outcomes.<sup>2,6</sup>
       </p>
     </div>
   </div>

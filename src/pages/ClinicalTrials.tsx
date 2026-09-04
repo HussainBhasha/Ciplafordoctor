@@ -81,7 +81,7 @@ export default function ClinicalTrials() {
                 Clinical Trials
               </h1>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
-                Comprehensive clinical evaluation has demonstrated the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.
+                Comprehensive clinical evaluation has demonstrated the safety, efficacy and cartilage preservation potential of Mesenchymal Stem Cells in Grade II and Grade III Knee Osteoarthritis.<sup>2,6</sup>
               </p>
             </div>
           </Container>
@@ -98,32 +98,32 @@ export default function ClinicalTrials() {
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Objective</h3>
-                  <p className="text-slate-700 leading-relaxed">To determine the optimal dose and evaluate the safety and efficacy of allogeneic BM-MSCs.</p>
+                  <p className="text-slate-700 leading-relaxed">To determine the optimal dose and evaluate the safety and efficacy of allogeneic BM-MSCs.<sup>2,6</sup></p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Study Design</h3>
-                  <p className="text-slate-700 leading-relaxed">Randomized, double-blind, multicentric, placebo-controlled, dose-finding study.</p>
+                  <p className="text-slate-700 leading-relaxed">Randomized, double-blind, multicentric, placebo-controlled, dose-finding study.<sup>2,6</sup></p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Patient Population</h3>
-                  <p className="text-slate-700 leading-relaxed">Patients diagnosed with Grade II and Grade III Knee Osteoarthritis.</p>
+                  <p className="text-slate-700 leading-relaxed">Patients diagnosed with Grade II and Grade III Knee Osteoarthritis.<sup>2,6</sup></p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Dose Groups</h3>
-                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M and 150M) vs Placebo arm.</p>
+                  <p className="text-slate-700 leading-relaxed">Evaluation across multiple cellular doses(25M, 50M, 75M and 150M) vs Placebo arm.<sup>2,6</sup></p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Primary Endpoints</h3>
-                  <p className="text-slate-700 leading-relaxed">Significant improvement in pain,stiffness and physical function as measured by WOMAC and VAS scores.</p>
+                  <p className="text-slate-700 leading-relaxed">Significant improvement in pain,stiffness and physical function as measured by WOMAC and VAS scores.<sup>2,6</sup></p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <h3 className="text-sm font-bold tracking-wider text-sky-700 uppercase mb-3">Follow-up Duration</h3>
-                  <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6 and 12 months.</p>
+                  <p className="text-slate-700 leading-relaxed">Follow-up done at 3,6 and 12 months.<sup>2,6</sup></p>
                 </div>
               </div>
             </div>
@@ -176,23 +176,23 @@ export default function ClinicalTrials() {
                   <tbody>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Study Type</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700">Randomized, Double Blind, Placebo Controlled</td>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700">Randomized, Double Blind, Placebo Controlled<sup>2,6</sup></td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Study Participants</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146 (n=73 Treatment Group; n=73 Placebo Group)</td>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700">146 (n=73 Treatment Group; n=73 Placebo Group)<sup>2,6</sup></td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Treatment Arms</th>
                       <td className="border border-slate-200 py-5 px-6 text-slate-700 font-medium leading-relaxed">
                         <span className="text-sky-700">25 Million Allogeneic BMMSCs + Hyaluronic Acid (20mg/2ml)</span>
                         <span className="mx-3 text-slate-400 text-xs uppercase font-bold inline-block">vs</span>
-                        <span className="text-slate-600">Placebo + Hyaluronic Acid (20mg/2ml)</span>
+                        <span className="text-slate-600">Placebo + Hyaluronic Acid (20mg/2ml)</span><sup>2,6</sup>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <th className="border border-slate-200 py-5 px-6 font-semibold text-slate-900 w-1/3 bg-slate-50/50">Follow-up</th>
-                      <td className="border border-slate-200 py-5 px-6 text-slate-700">24 Months</td>
+                      <td className="border border-slate-200 py-5 px-6 text-slate-700">24 Months<sup>2,6</sup></td>
                     </tr>
                   </tbody>
                 </table>

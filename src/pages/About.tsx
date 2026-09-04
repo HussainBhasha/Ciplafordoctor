@@ -9,9 +9,9 @@ import { Award, Globe, Lightbulb, Users, Trophy } from "lucide-react";
 import { RoadmapSection } from '@/components/RoadmapSection';
 
 const features = [
-  { label: "CELL TYPE", value: "Allogeneic Bone marrow derived MSCs" },
-  { label: "INDICATION", value: "Grade II & III Knee Osteoarthritis" },
-  { label: "APPROACH", value: "Protocol-driven" },
+  { label: "CELL TYPE", value: "Allogeneic Bone marrow derived MSCs", ref: "5,6" },
+  { label: "INDICATION", value: "Grade II & III Knee Osteoarthritis", ref: "2,6" },
+  { label: "APPROACH", value: "Protocol-driven", ref: "6" },
 ];
 
 const values = [
@@ -90,7 +90,7 @@ export default function About() {
                 </div>
 
                 <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg" : "reveal-fade mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg"}>
-                  A next-generation orthobiological product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.
+                  A next-generation orthobiological product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.<sup>2,6</sup>
                 </p>
 
                 <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">
@@ -111,7 +111,7 @@ export default function About() {
                         {x.label}
                       </div>
                       <div className="mt-1 text-xs md:text-sm font-semibold text-slate-900">
-                        {x.value}
+                        {x.value}<sup>{x.ref}</sup>
                       </div>
                     </div>
                   ))}
