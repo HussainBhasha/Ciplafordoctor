@@ -285,47 +285,6 @@ video {
       line-height: 1.05 !important;
     }
   }
-
-  .text-slate-900,
-  .text-slate-800,
-  .text-slate-700,
-  .text-slate-600,
-  .text-slate-500,
-  .text-sky-700,
-  .text-sky-700\/80,
-  .text-sky-700\/90,
-  .text-blue-900,
-  .text-blue-800,
-  .text-blue-700,
-  .text-blue-600,
-  .text-cyan-700,
-  .text-cyan-600,
-  .text-purple-900,
-  .text-purple-800,
-  .text-purple-700,
-  .text-rose-800,
-  .text-rose-700,
-  .text-amber-900,
-  .text-amber-800,
-  .text-amber-700,
-  .text-emerald-900,
-  .text-emerald-800,
-  .text-emerald-700,
-  .text-indigo-700,
-  .text-indigo-600 {
-    color: #000 !important;
-  }
-
-  .fill-slate-600,
-  .fill-slate-700 {
-    fill: #000 !important;
-  }
-
-  .bg-clip-text.text-transparent {
-    background-image: none !important;
-    color: #000 !important;
-    -webkit-text-fill-color: #000 !important;
-  }
 }
 
 @keyframes floaty {
@@ -362,6 +321,53 @@ video {
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.55; transform: scale(0.98); }
   50% { opacity: 0.9; transform: scale(1.03); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes reveal-word {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn-slow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes underline-grow {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+@layer components {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  .animate-reveal-word {
+    animation: reveal-word 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-gradient-shift {
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+  .animate-fadeIn-slow {
+    animation: fadeIn-slow 1.2s ease-out forwards;
+  }
+  .animate-underline-grow {
+    animation: underline-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+    transform: scaleX(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

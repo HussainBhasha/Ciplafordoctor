@@ -24,8 +24,8 @@ import prep4 from "@/assets/4.png";
 import prep5 from "@/assets/5.png";
 import prep6 from "@/assets/6.png";
 import prep7 from "@/assets/7.png";
-import prep8 from "@/assets/8.png";
-import prep9 from "@/assets/9.png";
+import prep8 from "@/assets/8.jpeg";
+import prep9 from "@/assets/9.jpeg";
 import cryoshipperImage from "@/assets/cryoshipper.png";
 import waterBathImage from "@/assets/water_bath.png";
 import plasmalyteBagImage from "@/assets/plasmalyte_bag.png";
@@ -39,6 +39,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReferencesSection from "@/components/ReferencesSection";
 import IntroVideoOverlay from "@/components/media/IntroVideoOverlay";
 import introVideo from "@/assets/introvideo.mp4";
+import DoctorAuthGate from "@/components/auth/DoctorAuthGate";
+import { useDoctorAuth } from "@/context/DoctorAuthContext";
 
 type RevealWordsProps = {
   text: string;
@@ -110,11 +112,13 @@ const PlaceholderImage = memo(function PlaceholderImage({
 });
 
 export default function Doctor() {
-  const navigate = useNavigate();
   useEffect(() => {
     document.title = "Cipla";
   }, []);
 
+  const { isAuthenticated } = useDoctorAuth();
+
+  // Intro video state — only applies during the unauthenticated welcome sequence
   const [showIntro, setShowIntro] = useState(() => {
     try {
       const params = new URLSearchParams(window.location.search);
@@ -127,14 +131,14 @@ export default function Doctor() {
     }
   });
 
-  useEffect(() => {
-    if (!showIntro) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [showIntro]);
+  // Controls whether DoctorAuthGate is mounted.
+  // If no intro video is needed, mount immediately. If intro is playing,
+  // mount it when the video begins fading out so animations play in perfect sync with the transition.
+  const [gateMounted, setGateMounted] = useState(!showIntro);
+
+  const handleStartFade = () => {
+    setGateMounted(true);
+  };
 
   const handleIntroDone = () => {
     try {
@@ -143,8 +147,39 @@ export default function Doctor() {
     } catch {
       void 0;
     }
+    setGateMounted(true);
     setShowIntro(false);
   };
+
+  useEffect(() => {
+    if (!isAuthenticated && sessionStorage.getItem("ciplostem:welcomeGate") !== "1") {
+      setShowIntro(true);
+      setGateMounted(false);
+    }
+  }, [isAuthenticated]);
+
+  // If not authenticated, render the auth gate with intro video
+  if (!isAuthenticated) {
+    return (
+      <div className="relative min-h-screen bg-sky-50">
+        {gateMounted && <DoctorAuthGate />}
+        {showIntro && (
+          <IntroVideoOverlay
+            src={introVideo}
+            onStartFade={handleStartFade}
+            onDone={handleIntroDone}
+          />
+        )}
+      </div>
+    );
+  }
+
+  return <DoctorPortalContent />;
+}
+
+function DoctorPortalContent() {
+  const navigate = useNavigate();
+
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: orthoRef, inView: orthoInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: mscRef, inView: mscInView } = useInView({ threshold: 0.18, rootMargin: "0px 0px -10% 0px" });
@@ -155,6 +190,7 @@ export default function Doctor() {
   const { ref: overviewRef, inView: overviewInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: gapRef, inView: gapInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
   const { ref: ctaRef, inView: ctaInView } = useInView({ threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+
   const [openMoaStep, setOpenMoaStep] = useState<string | null>(null);
   const [evidenceStep, setEvidenceStep] = useState(0);
   const [resourcesStep, setResourcesStep] = useState(0);
@@ -653,7 +689,7 @@ export default function Doctor() {
         <section
           id="science"
           ref={(node) => { mscRef.current = node; }}
-          className="relative overflow-hidden bg-sky-50/60 py-14 sm:py-20"
+          className="relative overflow-hidden bg-sky-50/60 py-14 sm:py-20 scroll-mt-20 sm:scroll-mt-24"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_70%_30%,rgba(56,189,248,0.18),transparent_55%)]" />
           <div className="pointer-events-none absolute inset-0 opacity-70 hero-dots" />
@@ -774,7 +810,7 @@ export default function Doctor() {
                       <span className="absolute top-[36%] right-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
                     </div>
                     <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
-                      <p className="font-bold text-black text-[13.5px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br/><span className="text-xs font-bold">(In GLP-certified lab)</span></p>
+                      <p className="font-bold text-black text-[13.5px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br /><span className="text-xs font-bold">(In GLP-certified lab)</span></p>
                     </div>
                   </div>
                   <div className="absolute -right-[2.5rem] top-[130px] -translate-y-1/2 z-10 text-red-500">
@@ -804,7 +840,7 @@ export default function Doctor() {
                       <img src={prep4} alt="Master Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
                     </div>
                     <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
-                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br/>Master Cell Bank (MCB)</p>
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br />Master Cell Bank (MCB)</p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 -bottom-[3.5rem] -translate-x-1/2 z-10 text-red-500">
@@ -819,7 +855,7 @@ export default function Doctor() {
                       <img src={prep9} alt="Cryopreserved" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
                     </div>
                     <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
-                      <p className="font-bold text-black text-[14px] leading-tight text-center">Cryopreserved<br/><span className="text-[12px] font-bold mt-1 block">(-185°C to -195°C)</span></p>
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Cryopreserved<br /><span className="text-[12px] font-bold mt-1 block">(-185°C to -195°C)</span></p>
                     </div>
                   </div>
                 </div>
@@ -831,7 +867,7 @@ export default function Doctor() {
                       <img src={prep8} alt="Quantified into Vials" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
                     </div>
                     <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
-                      <p className="font-bold text-black text-[14px] leading-tight text-center">Quantified into<br/>25M cells in Vials</p>
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Quantified into<br />25M cells in Vials</p>
                     </div>
                   </div>
                   <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
@@ -861,7 +897,7 @@ export default function Doctor() {
                       <img src={prep4} alt="Working Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" />
                     </div>
                     <div className="border-t-2 border-sky-300 p-2 bg-white relative z-10 flex items-center justify-center min-h-[85px]">
-                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br/>Working Cell Bank (WCB)</p>
+                      <p className="font-bold text-black text-[14px] leading-tight text-center">Stored in<br />Working Cell Bank (WCB)</p>
                     </div>
                   </div>
                   <div className="absolute -left-[2.5rem] top-1/2 -translate-y-1/2 z-10 text-red-500 rotate-180">
@@ -922,7 +958,7 @@ export default function Doctor() {
                     <span className="absolute top-[36%] right-[2%] font-extrabold text-black text-[13px] tracking-wide z-10 drop-shadow-md">Donor 3</span>
                   </div>
                   <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
-                    <p className="font-bold text-black text-[15px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br/><span className="text-sm font-bold">(In GLP-certified lab)</span></p>
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Isolation &amp; Culture of BMMSCs<br /><span className="text-sm font-bold">(In GLP-certified lab)</span></p>
                   </div>
                 </div>
                 <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
@@ -938,7 +974,7 @@ export default function Doctor() {
                 <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
                   <div className="flex justify-center p-1 bg-white relative"><img src={prep4} alt="Master Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
                   <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
-                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br/>Master Cell Bank (MCB)</p>
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br />Master Cell Bank (MCB)</p>
                   </div>
                 </div>
                 <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
@@ -959,7 +995,7 @@ export default function Doctor() {
                 <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
                   <div className="flex justify-center p-1 bg-white relative"><img src={prep4} alt="Working Cell Bank" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
                   <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
-                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br/>Working Cell Bank (WCB)</p>
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Stored in<br />Working Cell Bank (WCB)</p>
                   </div>
                 </div>
                 <div className="text-red-500 flex flex-col items-center my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
@@ -982,7 +1018,7 @@ export default function Doctor() {
                 <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
                   <div className="flex justify-center p-1 bg-white relative"><img src={prep8} alt="Quantified into Vials" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
                   <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
-                    <p className="font-bold text-black text-[15px] leading-tight text-center">Quantified into<br/>25M cells in Vials</p>
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Quantified into<br />25M cells in Vials</p>
                   </div>
                 </div>
                 <div className="text-red-500 flex flex-col items-center -my-2"><svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="miter" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></div>
@@ -990,7 +1026,7 @@ export default function Doctor() {
                 <div className="w-full max-w-sm bg-white rounded-2xl ring-2 ring-sky-300 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:ring-sky-400 cursor-default flex flex-col overflow-hidden">
                   <div className="flex justify-center p-1 bg-white relative"><img src={prep9} alt="Cryopreserved" className="w-full h-auto object-contain max-h-[170px] scale-[1.15]" /></div>
                   <div className="border-t-2 border-sky-300 p-3 bg-white relative z-10 flex items-center justify-center">
-                    <p className="font-bold text-black text-[15px] leading-tight text-center">Cryopreserved<br/><span className="text-sm font-bold">(-185°C to -195°C)</span></p>
+                    <p className="font-bold text-black text-[15px] leading-tight text-center">Cryopreserved<br /><span className="text-sm font-bold">(-185°C to -195°C)</span></p>
                   </div>
                 </div>
               </div>
@@ -1046,7 +1082,7 @@ export default function Doctor() {
                       {/* Gradient Connector Arrow - Desktop (Between columns) */}
                       {(i + 1) % 2 !== 0 && (
                         <div className="hidden md:block absolute top-[40%] -right-10 w-12 text-sky-300 z-20">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="miter" className="w-12 h-12 drop-shadow-sm"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="miter" className="w-12 h-12 drop-shadow-sm"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                         </div>
                       )}
 
@@ -1332,8 +1368,9 @@ export default function Doctor() {
                   {
                     image: newstemcellImage,
                     label: "Product Information",
-                    link: "https://online.fliphtml5.com/leljv/CIPLOSTEM_PPT2/",
-                    external: true,
+                    // link: "https://online.fliphtml5.com/leljv/CIPLOSTEM_PPT2/",
+                    // external: true,
+                    target: "science",
                   },
                 ].map((x, idx) => {
                   const visible = resourcesStep >= 1;
@@ -1409,10 +1446,11 @@ export default function Doctor() {
                         <Button
                           type="button"
                           onClick={() => {
-                            if (x.external && x.link) {
-                              window.open(x.link, "_blank");
-                              return;
-                            }
+                            // When clicked, redirect to new website is commented out:
+                            // if (x.external && x.link) {
+                            //   window.open(x.link, "_blank");
+                            //   return;
+                            // }
 
                             if (x.target) {
                               document
@@ -2310,13 +2348,6 @@ export default function Doctor() {
             </div>
           )}
         </div>
-      )}
-
-      {showIntro && (
-        <IntroVideoOverlay
-          src={introVideo}
-          onDone={handleIntroDone}
-        />
       )}
     </div>
   );

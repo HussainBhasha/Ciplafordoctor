@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 type Props = {
   src: string;
   onDone: () => void;
+  onStartFade?: () => void;
 };
 
-export default function IntroVideoOverlay({ src, onDone }: Props) {
+export default function IntroVideoOverlay({ src, onDone, onStartFade }: Props) {
   const ref = useRef<HTMLVideoElement | null>(null);
   const [blocked, setBlocked] = useState(false);
   const [fadingOut, setFadingOut] = useState(false);
@@ -19,8 +20,9 @@ export default function IntroVideoOverlay({ src, onDone }: Props) {
       clearTimeout(fallbackTimerRef.current);
     }
     setFadingOut(true);
-    // Smooth 900ms crossfade revealing the website underneath
-    setTimeout(onDone, 900);
+    onStartFade?.();
+    // Smooth 700ms crossfade revealing the website underneath
+    setTimeout(onDone, 700);
   };
 
   useEffect(() => {
@@ -68,8 +70,8 @@ export default function IntroVideoOverlay({ src, onDone }: Props) {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-slate-950 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
-        fadingOut ? "opacity-0 pointer-events-none scale-[1.03] blur-[2px]" : "opacity-100 scale-100 blur-0"
+      className={`fixed inset-0 z-[100] bg-slate-950 transition-opacity duration-700 ease-out ${
+        fadingOut ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}
       role="dialog"
       aria-modal="true"

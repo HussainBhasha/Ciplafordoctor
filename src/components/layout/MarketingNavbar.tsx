@@ -49,7 +49,7 @@ export default function MarketingNavbar() {
           scrolled ? "shadow-[0_4px_18px_rgb(2_8_23/0.06)]" : "",
         )}
       >
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pr-4 sm:pr-6 lg:pr-8 flex items-center">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pr-4 sm:pr-6 lg:pr-8 flex items-center gap-3">
           <div className="inline-flex items-center gap-2 shrink-0">
             <img
               src={brandLogo}
@@ -67,7 +67,7 @@ export default function MarketingNavbar() {
             <div className="relative z-20">
               <button
                 type="button"
-                className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/80 ring-1 ring-sky-200/70 text-slate-80 backdrop-blur transition active:scale-95"
+                className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/80 ring-1 ring-sky-200/70 text-slate-800 backdrop-blur transition active:scale-95"
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}

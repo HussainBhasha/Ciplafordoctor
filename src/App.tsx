@@ -6,6 +6,8 @@ import Contact from "@/pages/Contact";
 import ClinicalTrials from "@/pages/ClinicalTrials";
 import PatientOutcomes from "@/pages/PatientOutcomes";
 import Disclaimer from "@/pages/Disclaimer"; // Legal Disclaimer Page
+import Admin from "@/pages/Admin";
+import { DoctorAuthProvider, useDoctorAuth } from "@/context/DoctorAuthContext";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -40,21 +42,80 @@ function ScrollToTop() {
   return null;
 }
 
+// Protected route component that requires Doctor authentication
+function ProtectedDoctorRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated } = useDoctorAuth();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/doctor" replace />;
+  }
+
+  return <>{children}</>;
+}
+
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/doctor" replace />} />
-          <Route path="/doctor" element={<Doctor />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/clinical-trials" element={<ClinicalTrials />} />
-          <Route path="/patient-outcomes" element={<PatientOutcomes />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-        </Routes>
-      </Suspense>
-    </Router>
+    <DoctorAuthProvider>
+      <Router>
+        <ScrollToTop />
+        <Suspense
+          fallback={
+            <div className="min-h-dvh flex items-center justify-center bg-sky-50">
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-10 w-10 rounded-full border-4 border-sky-200 border-t-sky-600 animate-spin" />
+                <p className="text-sm font-semibold text-sky-800">Loading CiploStem...</p>
+              </div>
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Navigate to="/doctor" replace />} />
+            <Route path="/doctor" element={<Doctor />} />
+            <Route
+              path="/about"
+              element={
+                <ProtectedDoctorRoute>
+                  <About />
+                </ProtectedDoctorRoute>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <ProtectedDoctorRoute>
+                  <Contact />
+                </ProtectedDoctorRoute>
+              }
+            />
+            <Route
+              path="/clinical-trials"
+              element={
+                <ProtectedDoctorRoute>
+                  <ClinicalTrials />
+                </ProtectedDoctorRoute>
+              }
+            />
+            <Route
+              path="/patient-outcomes"
+              element={
+                <ProtectedDoctorRoute>
+                  <PatientOutcomes />
+                </ProtectedDoctorRoute>
+              }
+            />
+            <Route
+              path="/disclaimer"
+              element={
+                <ProtectedDoctorRoute>
+                  <Disclaimer />
+                </ProtectedDoctorRoute>
+              }
+            />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="*" element={<Navigate to="/doctor" replace />} />
+          </Routes>
+        </Suspense>
+      </Router>
+    </DoctorAuthProvider>
   );
 }
