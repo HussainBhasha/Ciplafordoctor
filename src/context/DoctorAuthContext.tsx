@@ -2,10 +2,10 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 export interface DoctorUser {
   id?: number;
-  email: string;
-  city: string;
-  phone: string;
   mci_code: string;
+  email?: string;
+  city?: string;
+  phone?: string;
   is_verified?: boolean;
 }
 
@@ -43,7 +43,7 @@ function readStoredAuth(): DoctorUser | null {
 export function DoctorAuthProvider({ children }: { children: React.ReactNode }) {
   const [doctor, setDoctor] = useState<DoctorUser | null>(() => readStoredAuth());
 
-  const isAuthenticated = !!doctor && !!doctor.email;
+  const isAuthenticated = !!doctor && (!!doctor.mci_code || !!doctor.email);
 
   const login = (user: DoctorUser) => {
     try {

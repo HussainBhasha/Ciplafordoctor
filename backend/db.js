@@ -18,7 +18,6 @@ const pool = mysql.createPool({
 // Initialize database and tables
 export async function initDB() {
   try {
-    // Check database connection
     const connection = await pool.getConnection();
     console.log("Database connected");
 
@@ -31,7 +30,7 @@ export async function initDB() {
     // Select database
     await pool.query(`USE \`${process.env.DB_NAME || "ciplostem_db"}\``);
 
-    // Create contact table
+    // Create contacts table
     await pool.query(`
       CREATE TABLE IF NOT EXISTS contacts (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -44,33 +43,46 @@ export async function initDB() {
       )
     `);
 
-    // Create users table for doctors
+    // Create users table for doctors with MCI Code as primary credential
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        email VARCHAR(255) NOT NULL UNIQUE,
-        city VARCHAR(255) NOT NULL,
-        phone VARCHAR(50) NOT NULL,
         mci_code VARCHAR(100) NOT NULL,
-        is_verified BOOLEAN DEFAULT FALSE,
+        email VARCHAR(255) NULL,
+        city VARCHAR(255) NULL,
+        phone VARCHAR(50) NULL,
+        is_verified BOOLEAN DEFAULT TRUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        INDEX idx_mci_code (mci_code)
       )
     `);
 
-    // Create otps table for email authentication
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS otps (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        email VARCHAR(255) NOT NULL,
-        otp VARCHAR(10) NOT NULL,
-        expires_at DATETIME NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        INDEX idx_email_otp (email, otp)
-      )
-    `);
+    // Ensure email, city, phone are nullable if table was created previously with NOT NULL
+    try {
+      await pool.query(`ALTER TABLE users MODIFY COLUMN email VARCHAR(255) NULL`);
+    } catch {
+      // ignore
+    }
+    try {
+      await pool.query(`ALTER TABLE users MODIFY COLUMN city VARCHAR(255) NULL`);
+    } catch {
+      // ignore
+    }
+    try {
+      await pool.query(`ALTER TABLE users MODIFY COLUMN phone VARCHAR(50) NULL`);
+    } catch {
+      // ignore
+    }
 
-    console.log("Database initialized successfully with users, otps, and contacts tables!");
+    // Clean up unused otps table
+    try {
+      await pool.query(`DROP TABLE IF EXISTS otps`);
+    } catch {
+      // ignore
+    }
+
+    console.log("Database initialized successfully (contacts & doctor MCI tables ready).");
   } catch (error) {
     console.error("Database initialization error:", error);
     throw error;

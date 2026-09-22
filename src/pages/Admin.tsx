@@ -36,10 +36,10 @@ interface Contact {
 
 interface DoctorUser {
   id: number;
-  email: string;
-  city: string;
-  phone: string;
   mci_code: string;
+  email?: string;
+  city?: string;
+  phone?: string;
   is_verified: boolean | number;
   created_at: string;
 }
@@ -509,7 +509,7 @@ export default function Admin() {
                   placeholder={
                     activeTab === "contact"
                       ? "Search by name, email, subject, or message..."
-                      : "Search by email, MCI code, city, or phone..."
+                      : "Search by MCI code..."
                   }
                   value={activeTab === "contact" ? contactSearch : userSearch}
                   onChange={(e) =>
@@ -619,11 +619,8 @@ export default function Admin() {
                   <thead>
                     <tr className="border-b border-slate-200 bg-slate-50/75 text-[11px] font-bold uppercase tracking-wider text-slate-500">
                       <th className="py-3.5 pl-6 pr-3">#</th>
-                      <th className="py-3.5 px-3">Registered Date</th>
-                      <th className="py-3.5 px-3">Email ID</th>
-                      <th className="py-3.5 px-3">MCI Code</th>
-                      <th className="py-3.5 px-3">City</th>
-                      <th className="py-3.5 px-3">Phone</th>
+                      <th className="py-3.5 px-3">Access Date & Time</th>
+                      <th className="py-3.5 px-3">MCI / Registration Code</th>
                       <th className="py-3.5 px-3">Status</th>
                       <th className="py-3.5 pl-3 pr-6 text-right">Action</th>
                     </tr>
@@ -641,33 +638,10 @@ export default function Admin() {
                           {formatDate(user.created_at)}
                         </td>
                         <td className="py-4 px-3 whitespace-nowrap">
-                          <div className="flex items-center gap-1.5">
-                            <Mail className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                            <a
-                              href={`mailto:${user.email}`}
-                              className="text-slate-800 font-medium hover:text-[#0b3a66] truncate max-w-[200px]"
-                            >
-                              {user.email}
-                            </a>
-                          </div>
-                        </td>
-                        <td className="py-4 px-3 whitespace-nowrap">
-                          <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2.5 py-0.5 text-xs font-semibold text-violet-700 ring-1 ring-inset ring-violet-200">
-                            <FileCheck2 className="h-3 w-3" />
+                          <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 ring-1 ring-inset ring-violet-200">
+                            <FileCheck2 className="h-3.5 w-3.5" />
                             {user.mci_code}
                           </span>
-                        </td>
-                        <td className="py-4 px-3 whitespace-nowrap">
-                          <div className="flex items-center gap-1.5">
-                            <MapPin className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                            <span className="text-slate-800 font-medium">{user.city}</span>
-                          </div>
-                        </td>
-                        <td className="py-4 px-3 whitespace-nowrap">
-                          <div className="flex items-center gap-1.5">
-                            <Phone className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                            <span className="text-slate-700 font-mono text-xs">{user.phone}</span>
-                          </div>
                         </td>
                         <td className="py-4 px-3 whitespace-nowrap">
                           {user.is_verified ? (
@@ -684,7 +658,7 @@ export default function Admin() {
                           <button
                             onClick={() => setUserToDelete(user)}
                             className="inline-flex items-center gap-1.5 rounded-lg p-1.5 text-slate-400 transition hover:bg-red-50 hover:text-red-600"
-                            title="Delete Doctor Registration"
+                            title="Delete Doctor Access Record"
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>
@@ -828,14 +802,14 @@ export default function Admin() {
               <Trash2 className="h-6 w-6" />
             </div>
             <h3 className="mt-4 text-center text-base font-bold text-slate-900">
-              Delete Doctor Registration?
+              Delete Doctor Record?
             </h3>
             <p className="mt-1 text-center text-xs text-slate-500">
-              Are you sure you want to permanently delete the doctor registration for{" "}
+              Are you sure you want to permanently delete the entry for MCI code{" "}
               <strong className="text-slate-800">
-                {userToDelete.email}
-              </strong>{" "}
-              (MCI: {userToDelete.mci_code})? This action cannot be undone.
+                {userToDelete.mci_code}
+              </strong>
+              ? This action cannot be undone.
             </p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <button
