@@ -10,7 +10,7 @@ import { RoadmapSection } from '@/components/RoadmapSection';
 
 const features = [
   { label: "CELL TYPE", value: "Allogeneic Bone marrow derived MSCs", ref: "5,6" },
-  { label: "INDICATION", value: "Grade II & III Knee Osteoarthritis", ref: "2,6" },
+  { label: "INDICATION", value: "Grade II & III Knee Osteoarthritis", ref: "2,7,6" },
   { label: "APPROACH", value: "Protocol-driven", ref: "6" },
 ];
 
@@ -90,7 +90,7 @@ export default function About() {
                 </div>
 
                 <p className={heroInView ? "reveal-fade reveal-fade-visible mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg" : "reveal-fade mt-3 md:mt-4 text-sm md:text-base leading-relaxed text-black sm:text-lg"}>
-                  A next-generation orthobiological product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.<sup>2,6</sup>
+                  A next-generation orthobiological product designed to support cartilage preservation with a clinically disciplined pathway—from preparation to delivery and recovery guidance.<sup>2,7,6</sup>
                 </p>
 
                 <div className="mt-6 md:mt-8 grid gap-2 md:gap-3 sm:grid-cols-2">

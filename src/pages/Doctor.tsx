@@ -553,10 +553,10 @@ function DoctorPortalContent() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.9rem,1.2vw,1.05rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2</sup>
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2,7</sup>
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,6</sup>
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,7,6</sup>
                   </p>
                 </div>
 
@@ -569,10 +569,10 @@ function DoctorPortalContent() {
                     <RevealWords text="Advancing Knee Care Through Joint Preservation" active={heroInView} />
                   </div>
                   <div className={cn("mt-4 font-semibold text-sky-700 drop-shadow-[0_10px_26px_rgba(255,255,255,0.8)] reveal-fade text-[clamp(0.95rem,1.15vw,1.1rem)]", heroInView && "reveal-fade-visible")}>
-                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2</sup>
+                    Evidence-based stem cell therapy for Knee Osteoarthritis management<sup>1,2,7</sup>
                   </div>
                   <p className={cn("mt-4 leading-relaxed text-slate-600 reveal-fade", heroInView && "reveal-fade-visible")} style={{ fontSize: '1rem' }}>
-                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,6</sup>
+                    Explore the science behind Allogeneic Mesenchymal Stem Cells and their clinical evidence in improving joint health.<sup>1,2,7,6</sup>
                   </p>
                 </div>
 
@@ -1045,7 +1045,7 @@ function DoctorPortalContent() {
                   Injection Procedure
                 </h2>
                 <p className="mt-5 max-w-3xl mx-auto leading-relaxed text-slate-600" style={{ fontSize: '0.9rem' }}>
-                  The Mesenchymal Stem Cells vial is transported, thawed, reconstituted with PlasmaLyte A, and administered via intra-articular injection together with Hyaluronic Acid.<sup>2,6</sup>
+                  The Mesenchymal Stem Cells vial is transported, thawed, reconstituted with PlasmaLyte A, and administered via intra-articular injection together with Hyaluronic Acid.<sup>2,7,6</sup>
                 </p>
               </div>
 
@@ -1056,7 +1056,7 @@ function DoctorPortalContent() {
                     {
                       step: "STEP 01",
                       title: "Cryoshipper Storage",
-                      desc: "Mesenchymal Stem Cells are transported inside a validated cryoshipper maintained between \u2013185\u00b0C and \u2013196\u00b0C.",
+                      desc: "The vial containing the Mesenchymal Stem Cells is transported inside a validated cryoshipper maintained between \u2013185\u00b0C and \u2013196\u00b0C.",
                       image: cryoshipperImage,
                     },
                     {
@@ -1074,7 +1074,7 @@ function DoctorPortalContent() {
                     {
                       step: "STEP 04",
                       title: "Intra-articular Injection",
-                      desc: "2 mL of BMMSCs together with 1 mL of PlasmaLyte is injected into the affected Knee followed by Administration of 2mL of Hyaluronic Acid, which acts as the biological scaffold.",
+                      desc: "1 mL of BMMSCs together with 1 mL of PlasmaLyte is injected into the affected Knee followed by Administration of 2mL of Hyaluronic Acid, which acts as the biological scaffold.",
                       image: intraArticularImage,
                     }
                   ].map((item, i) => (
@@ -1201,7 +1201,7 @@ function DoctorPortalContent() {
                         <img src={icon1} alt="Anti-inflammatory" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-blue-800 mb-3">ANTI-INFLAMMATORY<sup>2,6</sup></h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-blue-800 mb-3">ANTI-INFLAMMATORY<sup>2,7,6</sup></h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Counteracts Chronic Inflammation</p>
                     </div>
@@ -1269,7 +1269,7 @@ function DoctorPortalContent() {
                         <img src={icon3} alt="Cartilage Preservation" className="h-full w-full object-cover" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CHONDROPRESERVATIVE<sup>2,6</sup></h3>
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-purple-800 mb-3">CHONDROPRESERVATIVE<sup>2,7,6</sup></h3>
                     <div className="bg-white rounded-lg px-4 py-2 shadow-sm mb-4 w-full">
                       <p className="text-sm font-semibold text-slate-900">Stimulates Differentiation & Maintains Cartilage Integrity</p>
                     </div>

@@ -5,6 +5,7 @@ const references = [
   "Appl. Sci. 2023, 13, 10617.",
   "J Clin Orthop Trauma. 2022 Feb 9;26:101804; Transplantation. 2015;99:1681–1690.",
   "Stempeutics Research Pvt. Ltd. Data on File.",
+  "Gupta PK, Maheshwari S, Cherian JJ, et al. Two years efficacy and safety outcomes of using allogeneic, pooled mesenchymal stromal cells for osteoarthritis of knee in a double-blind randomized placebo-controlled phase 3 study. Osteoarthr Cartil Open. 2025 Dec 11;8(1):100723. doi: 10.1016/j.ocarto.2025.100723.",
 ];
 
 export default function ReferencesSection() {
