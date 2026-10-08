@@ -1,10 +1,10 @@
 const references = [
-  "Bioengineering (Basel). 2025 Feb 07;12(2):161.",
-  "Gupta P.K. et al. The American Journal of Sports Medicine. 2023;51(9):2254–2266.",
-  "Am J Orthop (Belle Mead NJ). 2016;45(5):280–326.",
-  "Appl. Sci. 2023, 13, 10617.",
-  "J Clin Orthop Trauma. 2022 Feb 9;26:101804; Transplantation. 2015;99:1681–1690.",
-  "Stempeutics Research Pvt. Ltd. Data on File.",
+  "Lana JF, de Brito GC, Kruel A, et al. Evolution and Innovations in Bone Marrow Cellular Therapy for Musculoskeletal Disorders: Tracing the Historical Trajectory and Contemporary Advances. Bioengineering (Basel). 2024 Sep 28;11(10):979. doi: 10.3390/bioengineering11100979.",
+  "Gupta PK, Maheshwari S, Cherian JJ, et al. Efficacy and Safety of Stempeucel in Osteoarthritis of the Knee: A Phase 3 Randomized, Double-Blind, Multicenter, Placebo-Controlled Study. Am J Sports Med. 2023 Jul;51(9):2254-2266. doi: 10.1177/03635465231180323.",
+  "Saltzman BM, Kuhns BD, Weber AE, Yanke A, Nho SJ. Stem Cells in Orthopedics: A Comprehensive Guide for the General Orthopedist. Am J Orthop (Belle Mead NJ). 2016 Jul-Aug;45(5):280-326.",
+  "Gherghel, R.; Macovei, L.A.; Burlui, M.-A.; et al. Osteoarthritis—The Role of Mesenchymal Stem Cells in Cartilage Regeneration. Appl. Sci. 2023, 13, 10617. doi: 10.3390/app131910617",
+  "Pandey V, Madi S, Gupta P. The promising role of autologous and allogeneic mesenchymal stromal cells in managing knee osteoarthritis. What is beyond Mesenchymal stromal cells? J Clin Orthop Trauma. 2022 Feb 9;26:101804. doi: 10.1016/j.jcot.2022.",
+  "Stempeutics Research Pvt Ltd. Home | Stempeutics [Internet]. Bengaluru (India): Stempeutics Research Pvt Ltd.; [cited 2026 Oct 8]. Available from: https://www.stempeutics.com/ (accessed on: 2026 Oct 8).",
   "Gupta PK, Maheshwari S, Cherian JJ, et al. Two years efficacy and safety outcomes of using allogeneic, pooled mesenchymal stromal cells for osteoarthritis of knee in a double-blind randomized placebo-controlled phase 3 study. Osteoarthr Cartil Open. 2025 Dec 11;8(1):100723. doi: 10.1016/j.ocarto.2025.100723.",
 ];
 
